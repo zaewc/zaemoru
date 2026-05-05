@@ -180,6 +180,11 @@ export interface HighlightProps extends CommonProps {
   tone?: HighlightTone;
 }
 
+export interface GridListProps extends CommonProps {
+  columns?: number;
+  gap?: "small" | "medium" | "large";
+}
+
 export type TableRowAlign = "start" | "center" | "end";
 
 export interface TableRowProps extends CommonProps {
