@@ -1,0 +1,32 @@
+{
+  "name": "zaemoru",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Framework-agnostic UI design system inspired by Toss DS.",
+  "license": "MIT",
+  "packageManager": "pnpm@10.33.0",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "dev": "pnpm --filter @zaemoru/docs dev",
+    "build": "pnpm -r --filter \"./packages/*\" build && pnpm --filter @zaemoru/docs build",
+    "typecheck": "pnpm -r typecheck",
+    "lint": "eslint .",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md,css,html}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md,css,html}\"",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "pnpm build && changeset publish"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.9",
+    "@types/node": "^20.14.10",
+    "eslint": "^9.10.0",
+    "globals": "^15.9.0",
+    "prettier": "^3.3.3",
+    "tsup": "^8.3.0",
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^8.5.0"
+  }
+}
