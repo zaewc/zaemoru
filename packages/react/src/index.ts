@@ -37,6 +37,7 @@ export { Tab } from "./Tab.js";
 export { ListHeader } from "./ListHeader.js";
 export { ListFooter } from "./ListFooter.js";
 export { BoardRow } from "./BoardRow.js";
+export { TableRow } from "./TableRow.js";
 
 export type {
   CommonProps,
@@ -95,4 +96,6 @@ export type {
   ListHeaderProps,
   ListFooterProps,
   BoardRowProps,
+  TableRowProps,
+  TableRowAlign,
 } from "./types.js";

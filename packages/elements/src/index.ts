@@ -75,6 +75,8 @@ export type { ZmTabItem, ZmTabVariant } from "./tab/zm-tab.js";
 export { ZmListHeader } from "./list-header/zm-list-header.js";
 export { ZmListFooter } from "./list-footer/zm-list-footer.js";
 export { ZmBoardRow } from "./board-row/zm-board-row.js";
+export { ZmTableRow } from "./table-row/zm-table-row.js";
+export type { ZmTableRowAlign } from "./table-row/zm-table-row.js";
 
 export { ZmBorder } from "./border/zm-border.js";
 export type {

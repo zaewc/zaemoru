@@ -180,6 +180,15 @@ export interface HighlightProps extends CommonProps {
   tone?: HighlightTone;
 }
 
+export type TableRowAlign = "start" | "center" | "end";
+
+export interface TableRowProps extends CommonProps {
+  label?: string;
+  value?: string;
+  emphasis?: boolean;
+  align?: TableRowAlign;
+}
+
 export interface BoardRowProps extends CommonProps {
   eyebrow?: string;
   title?: string;
