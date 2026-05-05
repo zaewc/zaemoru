@@ -180,6 +180,16 @@ export interface HighlightProps extends CommonProps {
   tone?: HighlightTone;
 }
 
+export interface StepperProps extends Omit<CommonProps, "children"> {
+  value?: number;
+  defaultValue?: number;
+  min?: number;
+  max?: number;
+  step?: number;
+  disabled?: boolean;
+  onChange?: (value: number, event: CustomEvent<{ value: number }>) => void;
+}
+
 export interface SearchFieldProps extends Omit<CommonProps, "children"> {
   placeholder?: string;
   value?: string;

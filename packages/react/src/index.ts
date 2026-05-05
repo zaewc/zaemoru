@@ -29,6 +29,7 @@ export { Highlight } from "./Highlight.js";
 export { Border } from "./Border.js";
 export { TextArea } from "./TextArea.js";
 export { SearchField } from "./SearchField.js";
+export { Stepper } from "./Stepper.js";
 
 export type {
   CommonProps,
@@ -76,4 +77,5 @@ export type {
   BorderTone,
   TextAreaProps,
   SearchFieldProps,
+  StepperProps,
 } from "./types.js";
