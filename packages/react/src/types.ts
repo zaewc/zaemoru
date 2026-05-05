@@ -180,6 +180,23 @@ export interface HighlightProps extends CommonProps {
   tone?: HighlightTone;
 }
 
+export interface TabItem {
+  value: string;
+  label: string;
+  badge?: string;
+  disabled?: boolean;
+}
+
+export type TabVariant = "underline" | "filled";
+
+export interface TabProps extends Omit<CommonProps, "children"> {
+  items: TabItem[];
+  value?: string;
+  variant?: TabVariant;
+  fullWidth?: boolean;
+  onChange?: (value: string, event: CustomEvent<{ value: string }>) => void;
+}
+
 export interface SegmentedOption {
   value: string;
   label: string;

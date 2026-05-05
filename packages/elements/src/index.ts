@@ -70,6 +70,8 @@ export { ZmSlider } from "./slider/zm-slider.js";
 export { ZmRating } from "./rating/zm-rating.js";
 export { ZmSegmentedControl } from "./segmented-control/zm-segmented-control.js";
 export type { ZmSegmentedOption } from "./segmented-control/zm-segmented-control.js";
+export { ZmTab } from "./tab/zm-tab.js";
+export type { ZmTabItem, ZmTabVariant } from "./tab/zm-tab.js";
 
 export { ZmBorder } from "./border/zm-border.js";
 export type {

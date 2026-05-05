@@ -33,6 +33,7 @@ export { Stepper } from "./Stepper.js";
 export { Slider } from "./Slider.js";
 export { Rating } from "./Rating.js";
 export { SegmentedControl } from "./SegmentedControl.js";
+export { Tab } from "./Tab.js";
 
 export type {
   CommonProps,
@@ -85,4 +86,7 @@ export type {
   RatingProps,
   SegmentedOption,
   SegmentedControlProps,
+  TabItem,
+  TabVariant,
+  TabProps,
 } from "./types.js";
