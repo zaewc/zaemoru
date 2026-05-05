@@ -30,6 +30,7 @@ export { Border } from "./Border.js";
 export { TextArea } from "./TextArea.js";
 export { SearchField } from "./SearchField.js";
 export { Stepper } from "./Stepper.js";
+export { Slider } from "./Slider.js";
 
 export type {
   CommonProps,
@@ -78,4 +79,5 @@ export type {
   TextAreaProps,
   SearchFieldProps,
   StepperProps,
+  SliderProps,
 } from "./types.js";

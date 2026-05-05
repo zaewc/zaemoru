@@ -180,6 +180,18 @@ export interface HighlightProps extends CommonProps {
   tone?: HighlightTone;
 }
 
+export interface SliderProps extends Omit<CommonProps, "children"> {
+  value?: number;
+  defaultValue?: number;
+  min?: number;
+  max?: number;
+  step?: number;
+  disabled?: boolean;
+  name?: string;
+  onInput?: (value: number, event: CustomEvent<{ value: number }>) => void;
+  onChange?: (value: number, event: CustomEvent<{ value: number }>) => void;
+}
+
 export interface StepperProps extends Omit<CommonProps, "children"> {
   value?: number;
   defaultValue?: number;
