@@ -180,6 +180,17 @@ export interface HighlightProps extends CommonProps {
   tone?: HighlightTone;
 }
 
+export interface SearchFieldProps extends Omit<CommonProps, "children"> {
+  placeholder?: string;
+  value?: string;
+  defaultValue?: string;
+  disabled?: boolean;
+  name?: string;
+  onInput?: (value: string, event: CustomEvent<{ value: string }>) => void;
+  onChange?: (value: string, event: CustomEvent<{ value: string }>) => void;
+  onClear?: () => void;
+}
+
 export interface TextAreaProps extends Omit<CommonProps, "children"> {
   label?: string;
   placeholder?: string;
