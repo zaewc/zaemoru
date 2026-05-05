@@ -180,6 +180,17 @@ export interface HighlightProps extends CommonProps {
   tone?: HighlightTone;
 }
 
+export interface ListHeaderProps extends CommonProps {
+  title?: string;
+  description?: string;
+  action?: ReactNode;
+}
+
+export interface ListFooterProps extends CommonProps {
+  description?: string;
+  action?: ReactNode;
+}
+
 export interface TabItem {
   value: string;
   label: string;

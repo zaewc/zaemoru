@@ -72,6 +72,8 @@ export { ZmSegmentedControl } from "./segmented-control/zm-segmented-control.js"
 export type { ZmSegmentedOption } from "./segmented-control/zm-segmented-control.js";
 export { ZmTab } from "./tab/zm-tab.js";
 export type { ZmTabItem, ZmTabVariant } from "./tab/zm-tab.js";
+export { ZmListHeader } from "./list-header/zm-list-header.js";
+export { ZmListFooter } from "./list-footer/zm-list-footer.js";
 
 export { ZmBorder } from "./border/zm-border.js";
 export type {

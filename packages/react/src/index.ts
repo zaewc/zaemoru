@@ -34,6 +34,8 @@ export { Slider } from "./Slider.js";
 export { Rating } from "./Rating.js";
 export { SegmentedControl } from "./SegmentedControl.js";
 export { Tab } from "./Tab.js";
+export { ListHeader } from "./ListHeader.js";
+export { ListFooter } from "./ListFooter.js";
 
 export type {
   CommonProps,
@@ -89,4 +91,6 @@ export type {
   TabItem,
   TabVariant,
   TabProps,
+  ListHeaderProps,
+  ListFooterProps,
 } from "./types.js";
