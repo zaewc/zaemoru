@@ -82,6 +82,12 @@ export { ZmBottomInfo } from "./bottom-info/zm-bottom-info.js";
 export type { ZmBottomInfoTone } from "./bottom-info/zm-bottom-info.js";
 export { ZmTop } from "./top/zm-top.js";
 export type { ZmTopVariant } from "./top/zm-top.js";
+export { ZmProgressBar } from "./progress-bar/zm-progress-bar.js";
+export type {
+  ZmProgressTone,
+  ZmProgressSize,
+} from "./progress-bar/zm-progress-bar.js";
+export { ZmProgressStepper } from "./progress-stepper/zm-progress-stepper.js";
 
 export { ZmBorder } from "./border/zm-border.js";
 export type {

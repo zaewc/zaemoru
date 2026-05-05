@@ -192,6 +192,22 @@ export interface BottomInfoProps extends CommonProps {
   icon?: ReactNode;
 }
 
+export type ProgressTone = "primary" | "success" | "warning" | "danger";
+export type ProgressSize = "small" | "medium";
+
+export interface ProgressBarProps extends Omit<CommonProps, "children"> {
+  value?: number;
+  max?: number;
+  indeterminate?: boolean;
+  tone?: ProgressTone;
+  size?: ProgressSize;
+}
+
+export interface ProgressStepperProps extends Omit<CommonProps, "children"> {
+  value?: number;
+  total?: number;
+}
+
 export type TopVariant = "default" | "transparent";
 
 export interface TopProps extends CommonProps {

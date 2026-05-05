@@ -41,6 +41,8 @@ export { TableRow } from "./TableRow.js";
 export { GridList } from "./GridList.js";
 export { BottomInfo } from "./BottomInfo.js";
 export { Top } from "./Top.js";
+export { ProgressBar } from "./ProgressBar.js";
+export { ProgressStepper } from "./ProgressStepper.js";
 
 export type {
   CommonProps,
@@ -106,4 +108,8 @@ export type {
   BottomInfoProps,
   TopVariant,
   TopProps,
+  ProgressTone,
+  ProgressSize,
+  ProgressBarProps,
+  ProgressStepperProps,
 } from "./types.js";
