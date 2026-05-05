@@ -192,6 +192,18 @@ export interface BottomInfoProps extends CommonProps {
   icon?: ReactNode;
 }
 
+export type TopVariant = "default" | "transparent";
+
+export interface TopProps extends CommonProps {
+  title?: string;
+  subtitle?: string;
+  variant?: TopVariant;
+  align?: "start" | "center";
+  sticky?: boolean;
+  leading?: ReactNode;
+  trailing?: ReactNode;
+}
+
 export type TableRowAlign = "start" | "center" | "end";
 
 export interface TableRowProps extends CommonProps {

@@ -40,6 +40,7 @@ export { BoardRow } from "./BoardRow.js";
 export { TableRow } from "./TableRow.js";
 export { GridList } from "./GridList.js";
 export { BottomInfo } from "./BottomInfo.js";
+export { Top } from "./Top.js";
 
 export type {
   CommonProps,
@@ -103,4 +104,6 @@ export type {
   GridListProps,
   BottomInfoTone,
   BottomInfoProps,
+  TopVariant,
+  TopProps,
 } from "./types.js";
