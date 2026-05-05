@@ -32,6 +32,7 @@ export { SearchField } from "./SearchField.js";
 export { Stepper } from "./Stepper.js";
 export { Slider } from "./Slider.js";
 export { Rating } from "./Rating.js";
+export { SegmentedControl } from "./SegmentedControl.js";
 
 export type {
   CommonProps,
@@ -82,4 +83,6 @@ export type {
   StepperProps,
   SliderProps,
   RatingProps,
+  SegmentedOption,
+  SegmentedControlProps,
 } from "./types.js";

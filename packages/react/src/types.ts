@@ -180,6 +180,19 @@ export interface HighlightProps extends CommonProps {
   tone?: HighlightTone;
 }
 
+export interface SegmentedOption {
+  value: string;
+  label: string;
+  disabled?: boolean;
+}
+
+export interface SegmentedControlProps extends Omit<CommonProps, "children"> {
+  options: SegmentedOption[];
+  value?: string;
+  fullWidth?: boolean;
+  onChange?: (value: string, event: CustomEvent<{ value: string }>) => void;
+}
+
 export interface RatingProps extends Omit<CommonProps, "children"> {
   value?: number;
   defaultValue?: number;

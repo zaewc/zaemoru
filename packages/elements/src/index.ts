@@ -68,6 +68,8 @@ export { ZmSearchField } from "./search-field/zm-search-field.js";
 export { ZmStepper } from "./stepper/zm-stepper.js";
 export { ZmSlider } from "./slider/zm-slider.js";
 export { ZmRating } from "./rating/zm-rating.js";
+export { ZmSegmentedControl } from "./segmented-control/zm-segmented-control.js";
+export type { ZmSegmentedOption } from "./segmented-control/zm-segmented-control.js";
 
 export { ZmBorder } from "./border/zm-border.js";
 export type {
