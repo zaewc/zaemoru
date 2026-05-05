@@ -41,3 +41,30 @@ export type { ZmSectionGap } from "./section/zm-section.js";
 
 export { ZmSpinner } from "./spinner/zm-spinner.js";
 export type { ZmSpinnerSize, ZmSpinnerTone } from "./spinner/zm-spinner.js";
+
+export { ZmTextButton } from "./text-button/zm-text-button.js";
+export type {
+  ZmTextButtonTone,
+  ZmTextButtonSize,
+} from "./text-button/zm-text-button.js";
+
+export { ZmIconButton } from "./icon-button/zm-icon-button.js";
+export type {
+  ZmIconButtonVariant,
+  ZmIconButtonSize,
+} from "./icon-button/zm-icon-button.js";
+
+export { ZmParagraph } from "./paragraph/zm-paragraph.js";
+export type {
+  ZmParagraphSize,
+  ZmParagraphTone,
+} from "./paragraph/zm-paragraph.js";
+
+export { ZmHighlight } from "./highlight/zm-highlight.js";
+export type { ZmHighlightTone } from "./highlight/zm-highlight.js";
+
+export { ZmBorder } from "./border/zm-border.js";
+export type {
+  ZmBorderOrientation,
+  ZmBorderTone,
+} from "./border/zm-border.js";

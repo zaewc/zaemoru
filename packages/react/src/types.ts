@@ -144,3 +144,47 @@ export interface SpinnerProps extends CommonProps {
   tone?: SpinnerTone;
   label?: string;
 }
+
+export type TextButtonTone = "primary" | "neutral" | "danger";
+export type TextButtonSize = "small" | "medium";
+
+export interface TextButtonProps extends CommonProps {
+  tone?: TextButtonTone;
+  size?: TextButtonSize;
+  disabled?: boolean;
+  onClick?: (e: React.MouseEvent<HTMLElement>) => void;
+}
+
+export type IconButtonVariant = "ghost" | "subtle" | "solid";
+export type IconButtonSize = "small" | "medium" | "large";
+
+export interface IconButtonProps extends CommonProps {
+  variant?: IconButtonVariant;
+  size?: IconButtonSize;
+  disabled?: boolean;
+  ariaLabel?: string;
+  onClick?: (e: React.MouseEvent<HTMLElement>) => void;
+}
+
+export type ParagraphSize = "sm" | "md" | "lg";
+export type ParagraphTone = "default" | "subtle" | "muted";
+
+export interface ParagraphProps extends CommonProps {
+  size?: ParagraphSize;
+  tone?: ParagraphTone;
+}
+
+export type HighlightTone = "primary" | "success" | "warning" | "danger";
+
+export interface HighlightProps extends CommonProps {
+  tone?: HighlightTone;
+}
+
+export type BorderOrientation = "horizontal" | "vertical";
+export type BorderTone = "subtle" | "default" | "strong";
+
+export interface BorderProps extends Omit<CommonProps, "children"> {
+  orientation?: BorderOrientation;
+  tone?: BorderTone;
+  thick?: boolean;
+}

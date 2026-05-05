@@ -22,6 +22,11 @@ export { Switch } from "./Switch.js";
 export { ListRow } from "./ListRow.js";
 export { Section } from "./Section.js";
 export { Spinner } from "./Spinner.js";
+export { TextButton } from "./TextButton.js";
+export { IconButton } from "./IconButton.js";
+export { Paragraph } from "./Paragraph.js";
+export { Highlight } from "./Highlight.js";
+export { Border } from "./Border.js";
 
 export type {
   CommonProps,
@@ -53,4 +58,18 @@ export type {
   SpinnerProps,
   SpinnerSize,
   SpinnerTone,
+  TextButtonProps,
+  TextButtonTone,
+  TextButtonSize,
+  IconButtonProps,
+  IconButtonVariant,
+  IconButtonSize,
+  ParagraphProps,
+  ParagraphSize,
+  ParagraphTone,
+  HighlightProps,
+  HighlightTone,
+  BorderProps,
+  BorderOrientation,
+  BorderTone,
 } from "./types.js";
