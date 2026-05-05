@@ -1,4 +1,4 @@
-import type { ReactNode, CSSProperties, Ref } from "react";
+import type { ReactNode, CSSProperties, Ref, MouseEvent } from "react";
 
 export type CommonProps = {
   className?: string;
@@ -18,7 +18,7 @@ export interface ButtonProps extends CommonProps {
   fullWidth?: boolean;
   loading?: boolean;
   type?: ButtonType;
-  onClick?: (e: React.MouseEvent<HTMLElement>) => void;
+  onClick?: (e: MouseEvent<HTMLElement>) => void;
   ref?: Ref<HTMLElement>;
 }
 
@@ -124,7 +124,7 @@ export interface ListRowProps extends CommonProps {
   chevron?: boolean;
   leading?: ReactNode;
   trailing?: ReactNode;
-  onClick?: (e: React.MouseEvent<HTMLElement>) => void;
+  onClick?: (e: MouseEvent<HTMLElement>) => void;
 }
 
 export type SectionGap = "none" | "small" | "medium" | "large";
@@ -152,7 +152,7 @@ export interface TextButtonProps extends CommonProps {
   tone?: TextButtonTone;
   size?: TextButtonSize;
   disabled?: boolean;
-  onClick?: (e: React.MouseEvent<HTMLElement>) => void;
+  onClick?: (e: MouseEvent<HTMLElement>) => void;
 }
 
 export type IconButtonVariant = "ghost" | "subtle" | "solid";
@@ -163,7 +163,7 @@ export interface IconButtonProps extends CommonProps {
   size?: IconButtonSize;
   disabled?: boolean;
   ariaLabel?: string;
-  onClick?: (e: React.MouseEvent<HTMLElement>) => void;
+  onClick?: (e: MouseEvent<HTMLElement>) => void;
 }
 
 export type ParagraphSize = "sm" | "md" | "lg";
@@ -178,6 +178,16 @@ export type HighlightTone = "primary" | "success" | "warning" | "danger";
 
 export interface HighlightProps extends CommonProps {
   tone?: HighlightTone;
+}
+
+export interface RatingProps extends Omit<CommonProps, "children"> {
+  value?: number;
+  defaultValue?: number;
+  max?: number;
+  size?: "small" | "medium" | "large";
+  readOnly?: boolean;
+  disabled?: boolean;
+  onChange?: (value: number, event: CustomEvent<{ value: number }>) => void;
 }
 
 export interface SliderProps extends Omit<CommonProps, "children"> {

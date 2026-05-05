@@ -31,6 +31,7 @@ export { TextArea } from "./TextArea.js";
 export { SearchField } from "./SearchField.js";
 export { Stepper } from "./Stepper.js";
 export { Slider } from "./Slider.js";
+export { Rating } from "./Rating.js";
 
 export type {
   CommonProps,
@@ -80,4 +81,5 @@ export type {
   SearchFieldProps,
   StepperProps,
   SliderProps,
+  RatingProps,
 } from "./types.js";

@@ -67,6 +67,7 @@ export { ZmTextArea } from "./text-area/zm-text-area.js";
 export { ZmSearchField } from "./search-field/zm-search-field.js";
 export { ZmStepper } from "./stepper/zm-stepper.js";
 export { ZmSlider } from "./slider/zm-slider.js";
+export { ZmRating } from "./rating/zm-rating.js";
 
 export { ZmBorder } from "./border/zm-border.js";
 export type {
