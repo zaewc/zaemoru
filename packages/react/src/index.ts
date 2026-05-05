@@ -27,6 +27,7 @@ export { IconButton } from "./IconButton.js";
 export { Paragraph } from "./Paragraph.js";
 export { Highlight } from "./Highlight.js";
 export { Border } from "./Border.js";
+export { TextArea } from "./TextArea.js";
 
 export type {
   CommonProps,
@@ -72,4 +73,5 @@ export type {
   BorderProps,
   BorderOrientation,
   BorderTone,
+  TextAreaProps,
 } from "./types.js";

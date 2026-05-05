@@ -63,6 +63,8 @@ export type {
 export { ZmHighlight } from "./highlight/zm-highlight.js";
 export type { ZmHighlightTone } from "./highlight/zm-highlight.js";
 
+export { ZmTextArea } from "./text-area/zm-text-area.js";
+
 export { ZmBorder } from "./border/zm-border.js";
 export type {
   ZmBorderOrientation,

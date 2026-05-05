@@ -180,6 +180,22 @@ export interface HighlightProps extends CommonProps {
   tone?: HighlightTone;
 }
 
+export interface TextAreaProps extends Omit<CommonProps, "children"> {
+  label?: string;
+  placeholder?: string;
+  value?: string;
+  defaultValue?: string;
+  rows?: number;
+  maxLength?: number;
+  disabled?: boolean;
+  invalid?: boolean;
+  helperText?: string;
+  errorMessage?: string;
+  name?: string;
+  onInput?: (value: string, event: CustomEvent<{ value: string }>) => void;
+  onChange?: (value: string, event: CustomEvent<{ value: string }>) => void;
+}
+
 export type BorderOrientation = "horizontal" | "vertical";
 export type BorderTone = "subtle" | "default" | "strong";
 
