@@ -36,6 +36,7 @@ export { SegmentedControl } from "./SegmentedControl.js";
 export { Tab } from "./Tab.js";
 export { ListHeader } from "./ListHeader.js";
 export { ListFooter } from "./ListFooter.js";
+export { BoardRow } from "./BoardRow.js";
 
 export type {
   CommonProps,
@@ -93,4 +94,5 @@ export type {
   TabProps,
   ListHeaderProps,
   ListFooterProps,
+  BoardRowProps,
 } from "./types.js";

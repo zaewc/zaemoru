@@ -180,6 +180,16 @@ export interface HighlightProps extends CommonProps {
   tone?: HighlightTone;
 }
 
+export interface BoardRowProps extends CommonProps {
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+  interactive?: boolean;
+  leading?: ReactNode;
+  trailing?: ReactNode;
+  onClick?: (e: MouseEvent<HTMLElement>) => void;
+}
+
 export interface ListHeaderProps extends CommonProps {
   title?: string;
   description?: string;
