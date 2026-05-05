@@ -208,6 +208,14 @@ export interface ProgressStepperProps extends Omit<CommonProps, "children"> {
   total?: number;
 }
 
+export type SkeletonShape = "rect" | "circle" | "text";
+
+export interface SkeletonProps extends Omit<CommonProps, "children"> {
+  shape?: SkeletonShape;
+  width?: string;
+  height?: string;
+}
+
 export type TopVariant = "default" | "transparent";
 
 export interface TopProps extends CommonProps {

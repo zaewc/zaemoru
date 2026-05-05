@@ -43,6 +43,7 @@ export { BottomInfo } from "./BottomInfo.js";
 export { Top } from "./Top.js";
 export { ProgressBar } from "./ProgressBar.js";
 export { ProgressStepper } from "./ProgressStepper.js";
+export { Skeleton } from "./Skeleton.js";
 
 export type {
   CommonProps,
@@ -112,4 +113,6 @@ export type {
   ProgressSize,
   ProgressBarProps,
   ProgressStepperProps,
+  SkeletonShape,
+  SkeletonProps,
 } from "./types.js";

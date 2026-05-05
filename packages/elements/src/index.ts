@@ -88,6 +88,8 @@ export type {
   ZmProgressSize,
 } from "./progress-bar/zm-progress-bar.js";
 export { ZmProgressStepper } from "./progress-stepper/zm-progress-stepper.js";
+export { ZmSkeleton } from "./skeleton/zm-skeleton.js";
+export type { ZmSkeletonShape } from "./skeleton/zm-skeleton.js";
 
 export { ZmBorder } from "./border/zm-border.js";
 export type {
