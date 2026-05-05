@@ -78,6 +78,8 @@ export { ZmBoardRow } from "./board-row/zm-board-row.js";
 export { ZmTableRow } from "./table-row/zm-table-row.js";
 export type { ZmTableRowAlign } from "./table-row/zm-table-row.js";
 export { ZmGridList } from "./grid-list/zm-grid-list.js";
+export { ZmBottomInfo } from "./bottom-info/zm-bottom-info.js";
+export type { ZmBottomInfoTone } from "./bottom-info/zm-bottom-info.js";
 
 export { ZmBorder } from "./border/zm-border.js";
 export type {

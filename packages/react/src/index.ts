@@ -39,6 +39,7 @@ export { ListFooter } from "./ListFooter.js";
 export { BoardRow } from "./BoardRow.js";
 export { TableRow } from "./TableRow.js";
 export { GridList } from "./GridList.js";
+export { BottomInfo } from "./BottomInfo.js";
 
 export type {
   CommonProps,
@@ -100,4 +101,6 @@ export type {
   TableRowProps,
   TableRowAlign,
   GridListProps,
+  BottomInfoTone,
+  BottomInfoProps,
 } from "./types.js";

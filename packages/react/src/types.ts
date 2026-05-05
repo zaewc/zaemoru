@@ -185,6 +185,13 @@ export interface GridListProps extends CommonProps {
   gap?: "small" | "medium" | "large";
 }
 
+export type BottomInfoTone = "default" | "primary" | "warning" | "danger";
+
+export interface BottomInfoProps extends CommonProps {
+  tone?: BottomInfoTone;
+  icon?: ReactNode;
+}
+
 export type TableRowAlign = "start" | "center" | "end";
 
 export interface TableRowProps extends CommonProps {
