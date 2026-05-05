@@ -1,0 +1,172 @@
+/**
+ * @zaemoru/tokens
+ *
+ * Framework-independent design tokens.
+ * All tokens are exposed as CSS variables on :root, prefixed with --zm-*.
+ * Inspired by Toss-style product UI: clean surfaces, generous spacing,
+ * large readable typography, soft rounded cards, strong primary CTA.
+ */
+
+:root {
+  color-scheme: light;
+
+  /* ------------------------------------------------------------------ */
+  /* Color — brand                                                       */
+  /* ------------------------------------------------------------------ */
+  --zm-color-primary: #3182f6;
+  --zm-color-primary-hover: #1b64da;
+  --zm-color-primary-pressed: #1957c2;
+  --zm-color-primary-subtle: #e8f1fe;
+  --zm-color-on-primary: #ffffff;
+
+  /* ------------------------------------------------------------------ */
+  /* Color — semantic                                                    */
+  /* ------------------------------------------------------------------ */
+  --zm-color-success: #00c471;
+  --zm-color-warning: #f5a623;
+  --zm-color-danger: #f04452;
+  --zm-color-danger-hover: #d8323f;
+  --zm-color-info: #3182f6;
+
+  /* ------------------------------------------------------------------ */
+  /* Color — surface / background                                        */
+  /* ------------------------------------------------------------------ */
+  --zm-color-background: #ffffff;
+  --zm-color-background-subtle: #f2f4f6;
+  --zm-color-background-muted: #e5e8eb;
+  --zm-color-surface: #ffffff;
+  --zm-color-surface-raised: #ffffff;
+
+  /* ------------------------------------------------------------------ */
+  /* Color — text                                                        */
+  /* ------------------------------------------------------------------ */
+  --zm-color-text: #191f28;
+  --zm-color-text-strong: #0d1117;
+  --zm-color-text-subtle: #4e5968;
+  --zm-color-text-muted: #8b95a1;
+  --zm-color-text-disabled: #b0b8c1;
+  --zm-color-text-on-primary: #ffffff;
+  --zm-color-text-danger: #f04452;
+
+  /* ------------------------------------------------------------------ */
+  /* Color — border                                                      */
+  /* ------------------------------------------------------------------ */
+  --zm-color-border: #e5e8eb;
+  --zm-color-border-strong: #d1d6db;
+  --zm-color-border-subtle: #eef0f2;
+  --zm-color-border-focus: #3182f6;
+  --zm-color-border-danger: #f04452;
+
+  /* ------------------------------------------------------------------ */
+  /* Typography                                                          */
+  /* ------------------------------------------------------------------ */
+  --zm-font-family-base:
+    "Pretendard", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+    "Helvetica Neue", "Segoe UI", "Roboto", "Noto Sans", sans-serif;
+  --zm-font-family-mono:
+    ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  --zm-font-size-xs: 12px;
+  --zm-font-size-sm: 14px;
+  --zm-font-size-md: 16px;
+  --zm-font-size-lg: 18px;
+  --zm-font-size-xl: 20px;
+  --zm-font-size-2xl: 24px;
+  --zm-font-size-3xl: 30px;
+  --zm-font-size-4xl: 36px;
+
+  --zm-font-weight-regular: 400;
+  --zm-font-weight-medium: 500;
+  --zm-font-weight-semibold: 600;
+  --zm-font-weight-bold: 700;
+
+  --zm-line-height-tight: 1.2;
+  --zm-line-height-snug: 1.35;
+  --zm-line-height-normal: 1.5;
+  --zm-line-height-relaxed: 1.7;
+
+  --zm-letter-spacing-tight: -0.02em;
+  --zm-letter-spacing-normal: -0.01em;
+  --zm-letter-spacing-wide: 0;
+
+  /* ------------------------------------------------------------------ */
+  /* Spacing — 4px scale                                                 */
+  /* ------------------------------------------------------------------ */
+  --zm-spacing-0: 0;
+  --zm-spacing-1: 4px;
+  --zm-spacing-2: 8px;
+  --zm-spacing-3: 12px;
+  --zm-spacing-4: 16px;
+  --zm-spacing-5: 20px;
+  --zm-spacing-6: 24px;
+  --zm-spacing-7: 32px;
+  --zm-spacing-8: 40px;
+  --zm-spacing-9: 48px;
+  --zm-spacing-10: 64px;
+
+  /* ------------------------------------------------------------------ */
+  /* Radius                                                              */
+  /* ------------------------------------------------------------------ */
+  --zm-radius-none: 0;
+  --zm-radius-sm: 6px;
+  --zm-radius-md: 10px;
+  --zm-radius-lg: 14px;
+  --zm-radius-xl: 20px;
+  --zm-radius-pill: 999px;
+
+  /* ------------------------------------------------------------------ */
+  /* Shadow                                                              */
+  /* ------------------------------------------------------------------ */
+  --zm-shadow-xs: 0 1px 2px rgba(20, 27, 38, 0.04);
+  --zm-shadow-sm: 0 1px 3px rgba(20, 27, 38, 0.06), 0 1px 2px rgba(20, 27, 38, 0.04);
+  --zm-shadow-md: 0 4px 12px rgba(20, 27, 38, 0.08);
+  --zm-shadow-lg: 0 10px 24px rgba(20, 27, 38, 0.10);
+  --zm-shadow-xl: 0 20px 40px rgba(20, 27, 38, 0.14);
+  --zm-shadow-focus-ring: 0 0 0 3px rgba(49, 130, 246, 0.32);
+  --zm-shadow-focus-ring-danger: 0 0 0 3px rgba(240, 68, 82, 0.28);
+
+  /* ------------------------------------------------------------------ */
+  /* Z-index                                                             */
+  /* ------------------------------------------------------------------ */
+  --zm-z-base: 0;
+  --zm-z-raised: 10;
+  --zm-z-dropdown: 1000;
+  --zm-z-sticky: 1100;
+  --zm-z-overlay: 1200;
+  --zm-z-modal: 1300;
+  --zm-z-popover: 1400;
+  --zm-z-toast: 1500;
+  --zm-z-tooltip: 1600;
+
+  /* ------------------------------------------------------------------ */
+  /* Animation                                                           */
+  /* ------------------------------------------------------------------ */
+  --zm-duration-instant: 0ms;
+  --zm-duration-fast: 120ms;
+  --zm-duration-base: 180ms;
+  --zm-duration-slow: 260ms;
+  --zm-duration-slower: 400ms;
+
+  --zm-easing-standard: cubic-bezier(0.2, 0, 0, 1);
+  --zm-easing-emphasized: cubic-bezier(0.2, 0, 0, 1.2);
+  --zm-easing-decelerated: cubic-bezier(0, 0, 0, 1);
+  --zm-easing-accelerated: cubic-bezier(0.3, 0, 1, 1);
+
+  /* ------------------------------------------------------------------ */
+  /* Component-level helper tokens                                       */
+  /* ------------------------------------------------------------------ */
+  --zm-control-height-sm: 36px;
+  --zm-control-height-md: 44px;
+  --zm-control-height-lg: 56px;
+
+  --zm-focus-ring: var(--zm-shadow-focus-ring);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --zm-duration-fast: 0ms;
+    --zm-duration-base: 0ms;
+    --zm-duration-slow: 0ms;
+    --zm-duration-slower: 0ms;
+  }
+}

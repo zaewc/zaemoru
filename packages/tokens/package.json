@@ -1,0 +1,29 @@
+{
+  "name": "@zaemoru/tokens",
+  "version": "0.1.0",
+  "description": "Framework-independent design tokens (CSS variables) for zaemoru.",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": ["**/*.css"],
+  "files": ["dist", "src"],
+  "exports": {
+    ".": {
+      "import": "./dist/index.css",
+      "require": "./dist/index.css",
+      "default": "./dist/index.css"
+    },
+    "./index.css": "./dist/index.css",
+    "./src/index.css": "./src/index.css"
+  },
+  "main": "./dist/index.css",
+  "style": "./dist/index.css",
+  "scripts": {
+    "build": "node ./scripts/build.mjs",
+    "dev": "node ./scripts/build.mjs --watch",
+    "typecheck": "echo \"no ts in tokens\" && exit 0",
+    "clean": "rm -rf dist"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
