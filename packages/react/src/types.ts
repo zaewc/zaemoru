@@ -1,0 +1,146 @@
+import type { ReactNode, CSSProperties, Ref } from "react";
+
+export type CommonProps = {
+  className?: string;
+  style?: CSSProperties;
+  id?: string;
+  children?: ReactNode;
+};
+
+export type ButtonVariant = "primary" | "secondary" | "tertiary" | "danger";
+export type ButtonSize = "small" | "medium" | "large";
+export type ButtonType = "button" | "submit" | "reset";
+
+export interface ButtonProps extends CommonProps {
+  variant?: ButtonVariant;
+  size?: ButtonSize;
+  disabled?: boolean;
+  fullWidth?: boolean;
+  loading?: boolean;
+  type?: ButtonType;
+  onClick?: (e: React.MouseEvent<HTMLElement>) => void;
+  ref?: Ref<HTMLElement>;
+}
+
+export type TextSize = "xs" | "sm" | "md" | "lg" | "xl";
+export type TextWeight = "regular" | "medium" | "semibold" | "bold";
+export type TextTone = "default" | "subtle" | "muted" | "primary" | "danger";
+
+export interface TextProps extends CommonProps {
+  size?: TextSize;
+  weight?: TextWeight;
+  tone?: TextTone;
+}
+
+export type HeadingLevel = "1" | "2" | "3" | "4";
+export type HeadingSize = "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl";
+
+export interface HeadingProps extends CommonProps {
+  level?: HeadingLevel;
+  size?: HeadingSize;
+}
+
+export type CardElevation = "flat" | "low" | "medium" | "high";
+export type CardPadding = "none" | "small" | "medium" | "large";
+
+export interface CardProps extends CommonProps {
+  elevation?: CardElevation;
+  padding?: CardPadding;
+}
+
+export type BadgeVariant =
+  | "neutral"
+  | "primary"
+  | "success"
+  | "warning"
+  | "danger";
+export type BadgeSize = "small" | "medium";
+
+export interface BadgeProps extends CommonProps {
+  variant?: BadgeVariant;
+  size?: BadgeSize;
+}
+
+export type TextFieldType =
+  | "text"
+  | "email"
+  | "password"
+  | "search"
+  | "tel"
+  | "url"
+  | "number";
+
+export type TextFieldSize = "small" | "medium" | "large";
+
+export interface TextFieldProps extends Omit<CommonProps, "children"> {
+  label?: string;
+  placeholder?: string;
+  value?: string;
+  defaultValue?: string;
+  type?: TextFieldType;
+  size?: TextFieldSize;
+  disabled?: boolean;
+  invalid?: boolean;
+  helperText?: string;
+  errorMessage?: string;
+  name?: string;
+  autoComplete?: string;
+  onChange?: (value: string, event: CustomEvent<{ value: string }>) => void;
+  onInput?: (value: string, event: CustomEvent<{ value: string }>) => void;
+  ref?: Ref<HTMLElement>;
+}
+
+export interface CheckboxProps extends CommonProps {
+  checked?: boolean;
+  defaultChecked?: boolean;
+  disabled?: boolean;
+  name?: string;
+  value?: string;
+  label?: string;
+  onChange?: (
+    checked: boolean,
+    event: CustomEvent<{ checked: boolean; value: string }>,
+  ) => void;
+  ref?: Ref<HTMLElement>;
+}
+
+export interface SwitchProps extends CommonProps {
+  checked?: boolean;
+  defaultChecked?: boolean;
+  disabled?: boolean;
+  name?: string;
+  label?: string;
+  onChange?: (
+    checked: boolean,
+    event: CustomEvent<{ checked: boolean }>,
+  ) => void;
+  ref?: Ref<HTMLElement>;
+}
+
+export interface ListRowProps extends CommonProps {
+  title?: string;
+  description?: string;
+  interactive?: boolean;
+  chevron?: boolean;
+  leading?: ReactNode;
+  trailing?: ReactNode;
+  onClick?: (e: React.MouseEvent<HTMLElement>) => void;
+}
+
+export type SectionGap = "none" | "small" | "medium" | "large";
+
+export interface SectionProps extends CommonProps {
+  title?: string;
+  description?: string;
+  gap?: SectionGap;
+  action?: ReactNode;
+}
+
+export type SpinnerSize = "small" | "medium" | "large";
+export type SpinnerTone = "default" | "primary" | "on-primary";
+
+export interface SpinnerProps extends CommonProps {
+  size?: SpinnerSize;
+  tone?: SpinnerTone;
+  label?: string;
+}
