@@ -19,14 +19,16 @@ const componentGroups = [
       {
         title: "Typography",
         body: `
-          <zm-heading size="3xl">Calm, readable interfaces</zm-heading>
-          <zm-paragraph size="lg" tone="subtle">Zaemoru starts with generous spacing, strong focus states, and mobile-first touch targets.</zm-paragraph>
-          <div class="chip-row">
-            <zm-badge>Neutral</zm-badge>
-            <zm-badge variant="primary">Primary</zm-badge>
-            <zm-badge variant="success">Success</zm-badge>
-            <zm-badge variant="warning">Warning</zm-badge>
-            <zm-badge variant="danger">Danger</zm-badge>
+          <div class="typography-stack">
+            <zm-heading size="3xl">Calm, readable interfaces</zm-heading>
+            <zm-paragraph size="lg" tone="subtle">Zaemoru starts with generous spacing, strong focus states, and mobile-first touch targets.</zm-paragraph>
+            <div class="chip-row">
+              <zm-badge>Neutral</zm-badge>
+              <zm-badge variant="primary">Primary</zm-badge>
+              <zm-badge variant="success">Success</zm-badge>
+              <zm-badge variant="warning">Warning</zm-badge>
+              <zm-badge variant="danger">Danger</zm-badge>
+            </div>
           </div>
         `,
       },
