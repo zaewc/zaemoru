@@ -10,19 +10,22 @@ export class ZmSlider extends ZmElement {
       :host {
         display: block;
         width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
         font-family: var(--zm-font-family-base);
       }
       .wrap {
         position: relative;
-        height: 24px;
+        height: 32px;
         display: flex;
         align-items: center;
+        min-width: 0;
       }
       input[type="range"] {
         appearance: none;
         -webkit-appearance: none;
         width: 100%;
-        height: 6px;
+        height: 32px;
         background: transparent;
         margin: 0;
         outline: none;
@@ -31,7 +34,7 @@ export class ZmSlider extends ZmElement {
         position: absolute;
         left: 0;
         right: 0;
-        height: 6px;
+        height: 8px;
         background: var(--zm-color-background-muted);
         border-radius: var(--zm-radius-pill);
         pointer-events: none;
@@ -39,7 +42,7 @@ export class ZmSlider extends ZmElement {
       .fill {
         position: absolute;
         left: 0;
-        height: 6px;
+        height: 8px;
         background: var(--zm-color-primary);
         border-radius: var(--zm-radius-pill);
         pointer-events: none;
@@ -48,21 +51,25 @@ export class ZmSlider extends ZmElement {
       input[type="range"]::-webkit-slider-thumb {
         appearance: none;
         -webkit-appearance: none;
-        width: 22px;
-        height: 22px;
+        width: 24px;
+        height: 24px;
         border-radius: 50%;
-        background: #fff;
-        border: 2px solid var(--zm-color-primary);
-        box-shadow: var(--zm-shadow-sm);
+        background: var(--zm-color-primary);
+        border: 4px solid var(--zm-color-surface);
+        box-shadow:
+          var(--zm-shadow-sm),
+          0 0 0 1px rgba(49, 130, 246, 0.16);
         cursor: pointer;
       }
       input[type="range"]::-moz-range-thumb {
-        width: 22px;
-        height: 22px;
+        width: 24px;
+        height: 24px;
         border-radius: 50%;
-        background: #fff;
-        border: 2px solid var(--zm-color-primary);
-        box-shadow: var(--zm-shadow-sm);
+        background: var(--zm-color-primary);
+        border: 4px solid var(--zm-color-surface);
+        box-shadow:
+          var(--zm-shadow-sm),
+          0 0 0 1px rgba(49, 130, 246, 0.16);
         cursor: pointer;
       }
       input[type="range"]:focus-visible::-webkit-slider-thumb {

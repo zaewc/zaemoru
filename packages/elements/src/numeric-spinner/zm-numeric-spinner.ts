@@ -10,6 +10,9 @@ export class ZmNumericSpinner extends ZmElement {
       :host {
         display: inline-flex;
         align-items: center;
+        width: max-content;
+        max-width: 100%;
+        box-sizing: border-box;
         overflow: hidden;
         border-radius: var(--zm-radius-md);
         background: var(--zm-color-background-subtle);
