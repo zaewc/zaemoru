@@ -4,7 +4,7 @@
 
 # zaemoru
 
-zaemoru는 여러 프레임워크에서 같은 UI를 쓸 수 있게 돕는 디자인 시스템이에요.
+zaemoru는 여러 프레임워크에서 같은 UI를 쓸 수 있게 돕는 디자인 시스템이에요. zaemoru는 또렷한 텍스트, 충분한 간격, 분명한 상태 표현, 안정적인 인터렉션 영역을 중요하게 봐요.
 
 Web Components를 중심에 두고, React, Vue, Angular, Svelte, Solid, Qwik, Lit, Preact, Astro, Alpine.js, HTMX, Ember에서 자연스럽게 연결해요.
 
@@ -119,24 +119,6 @@ pnpm typecheck    # 타입을 확인해요
 pnpm lint         # 린트를 실행해요
 pnpm format       # 코드를 정리해요
 ```
-
-## 문구 원칙
-
-문서와 예시는 토스 UX 라이팅 가이드를 참고해요.
-
-- 해요체로 써요.
-- 능동형 문장을 먼저 써요.
-- 사용자가 할 수 있는 일을 긍정형으로 알려줘요.
-- 과한 경어보다 자연스러운 경어를 써요.
-- 명사만 이어 붙이기보다 동사로 풀어서 써요.
-
-참고: [앱인토스 개발자센터 UX 라이팅](https://developers-apps-in-toss.toss.im/design/ux-writing.html)
-
-## 디자인 방향
-
-zaemoru는 또렷한 텍스트, 충분한 간격, 분명한 상태 표현, 안정적인 터치 영역을 중요하게 봐요.
-
-Toss의 제품 감각에서 배운 원칙을 참고하지만, Toss의 코드나 브랜드 자산을 복사하지 않아요.
 
 ## 릴리스
 
