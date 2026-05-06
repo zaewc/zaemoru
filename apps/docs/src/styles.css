@@ -119,11 +119,66 @@ main {
   line-height: var(--zm-line-height-relaxed);
 }
 
+.stack-marquee {
+  width: min(780px, 100%);
+  overflow: hidden;
+  margin-top: var(--zm-spacing-6);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.stack-track {
+  display: flex;
+  width: max-content;
+  gap: var(--zm-spacing-3);
+  animation: stack-marquee 28s linear infinite;
+}
+
+.stack-copy {
+  display: contents;
+}
+
+.stack-chip {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--zm-spacing-2);
+  padding: 8px var(--zm-spacing-3) 8px 8px;
+  border: 1px solid rgba(209, 214, 219, 0.72);
+  border-radius: var(--zm-radius-pill);
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--zm-color-text-subtle);
+  font-size: var(--zm-font-size-sm);
+  font-weight: var(--zm-font-weight-semibold);
+  box-shadow: var(--zm-shadow-sm);
+}
+
+.stack-icon {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--stack-color) 16%, white);
+  color: var(--stack-color);
+  font-size: 13px;
+  font-weight: var(--zm-font-weight-bold);
+}
+
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
   gap: var(--zm-spacing-3);
   margin-top: var(--zm-spacing-7);
+}
+
+@keyframes stack-marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - var(--zm-spacing-3) / 2));
+  }
 }
 
 .install-band {

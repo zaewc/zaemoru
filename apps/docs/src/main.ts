@@ -285,6 +285,32 @@ const adapters: Array<[string, string]> = [
   ["Ember", 'import "@zaemoru/ember";\n\n<zm-button>Continue</zm-button>'],
 ];
 
+const techStacks = [
+  ["React", "R", "#61dafb"],
+  ["Vue", "V", "#42b883"],
+  ["Angular", "A", "#dd0031"],
+  ["Svelte", "S", "#ff3e00"],
+  ["Solid", "S", "#2c4f7c"],
+  ["Qwik", "Q", "#18b6f6"],
+  ["Lit", "L", "#324fff"],
+  ["Preact", "P", "#673ab8"],
+  ["Astro", "A", "#ff5d01"],
+  ["Alpine.js", "A", "#77c1d2"],
+  ["HTMX", "H", "#3d72d7"],
+  ["Ember", "E", "#e04e39"],
+];
+
+const stackIcons = techStacks
+  .map(
+    ([name, mark, color]) => `
+      <span class="stack-chip">
+        <span class="stack-icon" style="--stack-color: ${color}">${mark}</span>
+        <span>${name}</span>
+      </span>
+    `,
+  )
+  .join("");
+
 function code(text: string) {
   return text.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
 }
@@ -304,12 +330,16 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
     <main>
       <section class="hero" id="intro">
         <div class="eyebrow">Framework-agnostic UI</div>
-        <h1>Product-quality Web Components, wrapped for every stack.</h1>
+        <h1>Design once, feel native everywhere.</h1>
         <p>
-          Zaemoru keeps behavior, accessibility, and visual polish inside custom elements.
-          Adapters stay thin, so React, Vue, Angular, Svelte, Solid, Qwik, Lit, Preact,
-          Astro, Alpine.js, HTMX, and Ember all get the same UI.
+          Zaemoru places behavior, accessibility, and visual polish at the Web Component core. Thin adapters make that same interface feel natural across...
         </p>
+        <div class="stack-marquee" aria-label="Supported technology stacks">
+          <div class="stack-track">
+            ${stackIcons}
+            <span class="stack-copy" aria-hidden="true">${stackIcons}</span>
+          </div>
+        </div>
         <div class="hero-actions">
           <zm-button id="hero-modal" size="large">Try overlay</zm-button>
           <zm-button variant="secondary" size="large">Read usage</zm-button>
