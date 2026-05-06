@@ -1,47 +1,71 @@
-<img width="431" height="77" alt="Gold Font from Geometry Dash" src="https://github.com/user-attachments/assets/4272f711-2c4f-474e-8aa5-b18d1369b38e" />
+<img width="431" height="77" alt="zaemoru" src="https://github.com/user-attachments/assets/4272f711-2c4f-474e-8aa5-b18d1369b38e" />
 
 ---
 
-A framework-agnostic UI design system inspired by Toss DS.
+# zaemoru
 
-zaemoru is built around three layers so it can be used from React, Vue, Svelte, or plain HTML:
+zaemoru는 여러 프레임워크에서 같은 UI를 쓸 수 있게 돕는 디자인 시스템이에요.
 
-- **`@zaemoru/tokens`** — CSS variables for colors, typography, spacing, radius, shadow, z-index and animation. No framework dependency.
-- **`@zaemoru/elements`** — Lit-based Web Components (`<zm-button>`, `<zm-text-field>`, ...) that consume the tokens.
-- **`@zaemoru/react`** — Thin React adapter on top of `@zaemoru/elements` for better DX in React projects.
+Web Components를 중심에 두고, React, Vue, Angular, Svelte, Solid, Qwik, Lit, Preact, Astro, Alpine.js, HTMX, Ember에서 자연스럽게 연결해요.
 
-## Repository layout
+## 이렇게 쓸 수 있어요
 
-```
-packages/
-  tokens/     # CSS variables
-  elements/   # Lit web components (zm-*)
-  react/      # React adapters
-apps/
-  docs/       # Vite + React documentation app
-```
+- 토큰으로 색상, 글꼴, 간격, 그림자, 모서리 값을 맞춰요.
+- Web Components로 버튼, 입력, 내비게이션, 피드백, 데이터 표시 UI를 만들어요.
+- 각 프레임워크 어댑터로 같은 컴포넌트를 익숙한 방식으로 불러와요.
+- 문서 앱에서 컴포넌트 예시와 사용 코드를 바로 확인해요.
 
-## Quick start
+## 패키지
+
+| 패키지              | 역할                                              |
+| ------------------- | ------------------------------------------------- |
+| `@zaemoru/tokens`   | CSS 변수로 디자인 토큰을 제공해요.                |
+| `@zaemoru/elements` | Lit 기반 `zm-*` Web Components를 제공해요.        |
+| `@zaemoru/react`    | React에서 타입이 있는 컴포넌트로 쓸 수 있게 해요. |
+| `@zaemoru/vue`      | Vue 앱에서 Web Components를 등록해요.             |
+| `@zaemoru/angular`  | Angular 앱에서 `zm-*` 요소를 쓸 수 있게 해요.     |
+| `@zaemoru/svelte`   | Svelte 앱에서 Web Components를 불러와요.          |
+| `@zaemoru/solid`    | Solid 앱에서 Web Components를 불러와요.           |
+| `@zaemoru/qwik`     | Qwik 앱에서 Web Components를 불러와요.            |
+| `@zaemoru/lit`      | Lit 앱에서 같은 요소를 바로 써요.                 |
+| `@zaemoru/preact`   | Preact 앱에서 Web Components를 불러와요.          |
+| `@zaemoru/astro`    | Astro 페이지와 아일랜드에서 쓸 수 있게 해요.      |
+| `@zaemoru/alpine`   | Alpine.js 화면에서 `zm-*` 요소를 쓸 수 있게 해요. |
+| `@zaemoru/htmx`     | HTMX 속성과 함께 쓸 수 있게 해요.                 |
+| `@zaemoru/ember`    | Ember 앱에서 Web Components를 등록해요.           |
+
+## 시작하기
 
 ```bash
 pnpm install
-pnpm build      # build all packages
-pnpm dev        # run docs app
-pnpm typecheck
-pnpm lint
-pnpm format
+pnpm dev
 ```
 
-## Plain HTML usage
+문서 앱은 `http://localhost:5173`에서 열려요.
+
+전체 패키지를 빌드하려면 아래 명령어를 실행해요.
+
+```bash
+pnpm build
+```
+
+## 기본 사용법
+
+먼저 토큰과 Web Components를 불러와요.
+
+```ts
+import "@zaemoru/tokens/index.css";
+import "@zaemoru/elements";
+```
+
+HTML에서는 `zm-*` 요소를 바로 써요.
 
 ```html
-<link rel="stylesheet" href="/node_modules/@zaemoru/tokens/dist/index.css" />
-<script type="module" src="/node_modules/@zaemoru/elements/dist/index.js"></script>
-
-<zm-button variant="primary" size="large" full-width>Continue</zm-button>
+<zm-button size="large">계속하기</zm-button>
+<zm-text-field label="이름" placeholder="이름을 입력해요"></zm-text-field>
 ```
 
-## React usage
+## React에서 쓰기
 
 ```tsx
 import "@zaemoru/tokens/index.css";
@@ -49,44 +73,77 @@ import { Button, TextField } from "@zaemoru/react";
 
 export function App() {
   return (
-    <div>
-      <TextField label="Name" placeholder="Enter your name" />
-      <Button variant="primary" size="large" fullWidth>
-        Continue
-      </Button>
-    </div>
+    <form>
+      <TextField label="이름" placeholder="이름을 입력해요" />
+      <Button size="large">계속하기</Button>
+    </form>
   );
 }
 ```
 
-## Vue usage
+## 다른 프레임워크에서 쓰기
 
-```vue
-<script setup lang="ts">
+어댑터를 한 번 불러온 뒤 `zm-*` 요소를 써요.
+
+```ts
 import "@zaemoru/tokens/index.css";
-import "@zaemoru/elements";
-</script>
-
-<template>
-  <zm-button variant="primary" size="large">Continue</zm-button>
-</template>
+import "@zaemoru/vue";
 ```
 
-## Svelte usage
-
-```svelte
-<script lang="ts">
-  import "@zaemoru/tokens/index.css";
-  import "@zaemoru/elements";
-</script>
-
-<zm-button variant="primary" size="large">Continue</zm-button>
+```html
+<zm-button size="large">계속하기</zm-button>
 ```
 
-## Design direction
+프레임워크에 맞는 패키지를 선택해요.
 
-zaemoru leans on a Toss-like product feel: clean surfaces, generous spacing, large readable typography, soft rounded cards, and a strong primary CTA. It does not copy Toss source code or brand assets.
+```txt
+@zaemoru/vue
+@zaemoru/angular
+@zaemoru/svelte
+@zaemoru/solid
+@zaemoru/qwik
+@zaemoru/lit
+@zaemoru/preact
+@zaemoru/astro
+@zaemoru/alpine
+@zaemoru/htmx
+@zaemoru/ember
+```
 
-## Contributing
+## 개발 명령어
 
-See `.changeset/` for the release flow. Use `pnpm changeset` after a meaningful change to a published package.
+```bash
+pnpm dev          # 문서 앱을 실행해요
+pnpm build        # 모든 패키지를 빌드해요
+pnpm typecheck    # 타입을 확인해요
+pnpm lint         # 린트를 실행해요
+pnpm format       # 코드를 정리해요
+```
+
+## 문구 원칙
+
+문서와 예시는 토스 UX 라이팅 가이드를 참고해요.
+
+- 해요체로 써요.
+- 능동형 문장을 먼저 써요.
+- 사용자가 할 수 있는 일을 긍정형으로 알려줘요.
+- 과한 경어보다 자연스러운 경어를 써요.
+- 명사만 이어 붙이기보다 동사로 풀어서 써요.
+
+참고: [앱인토스 개발자센터 UX 라이팅](https://developers-apps-in-toss.toss.im/design/ux-writing.html)
+
+## 디자인 방향
+
+zaemoru는 또렷한 텍스트, 충분한 간격, 분명한 상태 표현, 안정적인 터치 영역을 중요하게 봐요.
+
+Toss의 제품 감각에서 배운 원칙을 참고하지만, Toss의 코드나 브랜드 자산을 복사하지 않아요.
+
+## 릴리스
+
+패키지 변경 사항을 배포할 때는 Changesets를 써요.
+
+```bash
+pnpm changeset
+```
+
+의미 있는 변경을 만든 뒤 changeset을 추가해요.
