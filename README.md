@@ -13,7 +13,7 @@ Web Components를 중심에 두고, React, Vue, Angular, Svelte, Solid, Qwik, Li
 - 토큰으로 색상, 글꼴, 간격, 그림자, 모서리 값을 맞춰요.
 - Web Components로 버튼, 입력, 내비게이션, 피드백, 데이터 표시 UI를 만들어요.
 - 각 프레임워크 어댑터로 같은 컴포넌트를 익숙한 방식으로 불러와요.
-- 문서 앱에서 컴포넌트 예시와 사용 코드를 바로 확인해요.
+- [docs](https://moru-phi.vercel.app/)에서 컴포넌트 예시와 사용 코드를 바로 확인해요.
 
 ## 패키지
 
@@ -34,20 +34,6 @@ Web Components를 중심에 두고, React, Vue, Angular, Svelte, Solid, Qwik, Li
 | `@zaemoru/htmx`     | HTMX 속성과 함께 쓸 수 있게 해요.                 |
 | `@zaemoru/ember`    | Ember 앱에서 Web Components를 등록해요.           |
 
-## 시작하기
-
-```bash
-pnpm install
-pnpm dev
-```
-
-문서 앱은 `http://localhost:5173`에서 열려요.
-
-전체 패키지를 빌드하려면 아래 명령어를 실행해요.
-
-```bash
-pnpm build
-```
 
 ## 기본 사용법
 
@@ -113,11 +99,11 @@ import "@zaemoru/vue";
 ## 개발 명령어
 
 ```bash
-pnpm dev          # 문서 앱을 실행해요
-pnpm build        # 모든 패키지를 빌드해요
-pnpm typecheck    # 타입을 확인해요
-pnpm lint         # 린트를 실행해요
-pnpm format       # 코드를 정리해요
+pnpm dev          
+pnpm build        
+pnpm typecheck    
+pnpm lint         
+pnpm format       
 ```
 
 ## 릴리스
