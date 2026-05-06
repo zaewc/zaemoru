@@ -103,3 +103,21 @@ export { ZmSecureKeypad } from "./keypad/zm-secure-keypad.js";
 
 export { ZmBorder } from "./border/zm-border.js";
 export type { ZmBorderOrientation, ZmBorderTone } from "./border/zm-border.js";
+
+export {
+  defineZaemoruElements,
+  applyZaemoruProps,
+  getZaemoruComponent,
+  isZaemoruElement,
+  toZaemoruAttributes,
+  zaemoruComponents,
+  zaemoruComponentTags,
+} from "./adapter.js";
+export type {
+  ZaemoruAdapterAttrs,
+  ZaemoruAdapterProps,
+  ZaemoruComponentDefinition,
+  ZaemoruComponentDefinitionFor,
+  ZaemoruComponentName,
+  ZaemoruElementTag,
+} from "./adapter.js";
