@@ -8,6 +8,8 @@ export class ZmSlider extends ZmElement {
     ZmElement.styles,
     css`
       :host {
+        --zm-slider-thumb-size: 24px;
+
         display: block;
         width: 100%;
         min-width: 0;
@@ -16,24 +18,29 @@ export class ZmSlider extends ZmElement {
       }
       .wrap {
         position: relative;
-        height: 32px;
+        height: 36px;
         display: flex;
         align-items: center;
         min-width: 0;
       }
       input[type="range"] {
+        position: absolute;
+        inset: 0;
+        z-index: 3;
         appearance: none;
         -webkit-appearance: none;
         width: 100%;
-        height: 32px;
+        height: 36px;
+        opacity: 0;
         background: transparent;
         margin: 0;
         outline: none;
+        cursor: pointer;
       }
       .track {
         position: absolute;
-        left: 0;
-        right: 0;
+        left: calc(var(--zm-slider-thumb-size) / 2);
+        right: calc(var(--zm-slider-thumb-size) / 2);
         height: 8px;
         background: var(--zm-color-background-muted);
         border-radius: var(--zm-radius-pill);
@@ -41,42 +48,64 @@ export class ZmSlider extends ZmElement {
       }
       .fill {
         position: absolute;
-        left: 0;
+        left: calc(var(--zm-slider-thumb-size) / 2);
+        width: calc((100% - var(--zm-slider-thumb-size)) * var(--slider-ratio));
         height: 8px;
         background: var(--zm-color-primary);
         border-radius: var(--zm-radius-pill);
         pointer-events: none;
         transition: width var(--zm-duration-fast) var(--zm-easing-standard);
       }
+      .thumb {
+        position: absolute;
+        top: 50%;
+        left: calc(
+          var(--zm-slider-thumb-size) / 2 + (100% - var(--zm-slider-thumb-size)) *
+            var(--slider-ratio)
+        );
+        z-index: 2;
+        width: var(--zm-slider-thumb-size);
+        height: var(--zm-slider-thumb-size);
+        border: 4px solid var(--zm-color-surface);
+        border-radius: 50%;
+        background: var(--zm-color-primary);
+        box-shadow:
+          var(--zm-shadow-sm),
+          0 0 0 1px rgba(49, 130, 246, 0.16);
+        pointer-events: none;
+        transform: translate(-50%, -50%);
+        transition:
+          left var(--zm-duration-fast) var(--zm-easing-standard),
+          box-shadow var(--zm-duration-fast) var(--zm-easing-standard);
+      }
       input[type="range"]::-webkit-slider-thumb {
         appearance: none;
         -webkit-appearance: none;
-        width: 24px;
-        height: 24px;
+        width: var(--zm-slider-thumb-size);
+        height: var(--zm-slider-thumb-size);
         border-radius: 50%;
-        background: var(--zm-color-primary);
-        border: 4px solid var(--zm-color-surface);
-        box-shadow:
-          var(--zm-shadow-sm),
-          0 0 0 1px rgba(49, 130, 246, 0.16);
+        background: transparent;
+        border: 0;
         cursor: pointer;
       }
       input[type="range"]::-moz-range-thumb {
-        width: 24px;
-        height: 24px;
+        width: var(--zm-slider-thumb-size);
+        height: var(--zm-slider-thumb-size);
         border-radius: 50%;
-        background: var(--zm-color-primary);
-        border: 4px solid var(--zm-color-surface);
-        box-shadow:
-          var(--zm-shadow-sm),
-          0 0 0 1px rgba(49, 130, 246, 0.16);
+        background: transparent;
+        border: 0;
         cursor: pointer;
       }
-      input[type="range"]:focus-visible::-webkit-slider-thumb {
+      .wrap:focus-within .thumb {
         box-shadow: var(--zm-focus-ring);
       }
-      input[type="range"]:focus-visible::-moz-range-thumb {
-        box-shadow: var(--zm-focus-ring);
+      input[type="range"]::-webkit-slider-runnable-track {
+        background: transparent;
+        border: 0;
+      }
+      input[type="range"]::-moz-range-track {
+        background: transparent;
+        border: 0;
       }
       :host([disabled]) {
         opacity: 0.5;
@@ -96,7 +125,7 @@ export class ZmSlider extends ZmElement {
 
   private _ratio() {
     if (this.max === this.min) return 0;
-    return ((this.value - this.min) / (this.max - this.min)) * 100;
+    return Math.min(1, Math.max(0, (this.value - this.min) / (this.max - this.min)));
   }
 
   private _onInput = (e: Event) => {
@@ -122,11 +151,12 @@ export class ZmSlider extends ZmElement {
   };
 
   override render() {
-    const fill = `${this._ratio()}%`;
+    const ratio = this._ratio();
     return html`
-      <div class="wrap">
+      <div class="wrap" style=${`--slider-ratio:${ratio}`}>
         <div class="track"></div>
-        <div class="fill" style=${`width:${fill}`}></div>
+        <div class="fill"></div>
+        <div class="thumb"></div>
         <input
           type="range"
           min=${this.min}
