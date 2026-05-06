@@ -35,12 +35,14 @@ const componentGroups = [
       {
         title: "Assets",
         body: `
-          <div class="asset-row">
-            <zm-asset shape="circle" alt="A">A</zm-asset>
-            <zm-asset shape="rounded" alt="Z">Z</zm-asset>
-            <zm-asset shape="square" alt="M">M</zm-asset>
+          <div class="asset-stack">
+            <div class="asset-row">
+              <zm-asset shape="circle" alt="A">A</zm-asset>
+              <zm-asset shape="rounded" alt="Z">Z</zm-asset>
+              <zm-asset shape="square" alt="M">M</zm-asset>
+            </div>
+            <zm-bottom-info tone="primary">Assets are intentionally generic. Bring your own product imagery.</zm-bottom-info>
           </div>
-          <zm-bottom-info tone="primary">Assets are intentionally generic. Bring your own product imagery.</zm-bottom-info>
         `,
       },
     ],

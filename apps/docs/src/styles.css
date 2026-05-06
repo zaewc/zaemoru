@@ -330,6 +330,11 @@ main {
   margin-top: var(--zm-spacing-1);
 }
 
+.asset-stack {
+  display: grid;
+  gap: var(--zm-spacing-4);
+}
+
 .numeric-stack {
   align-content: center;
 }
