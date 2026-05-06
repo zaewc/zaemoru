@@ -345,27 +345,6 @@ main {
   justify-self: start;
 }
 
-.slider-field {
-  display: grid;
-  gap: var(--zm-spacing-2);
-  width: 100%;
-}
-
-.field-line {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--zm-spacing-3);
-  color: var(--zm-color-text-subtle);
-  font-size: var(--zm-font-size-sm);
-  font-weight: var(--zm-font-weight-medium);
-}
-
-.field-line strong {
-  color: var(--zm-color-primary);
-  font-variant-numeric: tabular-nums;
-}
-
 .toolbar,
 .chip-row,
 .asset-row {

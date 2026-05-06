@@ -297,13 +297,6 @@ const componentGroups = [
         title: "Numeric",
         body: `
           <div class="form-stack numeric-stack">
-            <div class="slider-field">
-              <div class="field-line">
-                <span>Monthly limit</span>
-                <strong>42%</strong>
-              </div>
-              <zm-slider value="42"></zm-slider>
-            </div>
             <zm-range-slider label="Range" value="40"></zm-range-slider>
             <zm-stepper value="2" min="0" max="8"></zm-stepper>
             <zm-numeric-spinner value="3" min="0" max="10"></zm-numeric-spinner>

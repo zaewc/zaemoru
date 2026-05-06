@@ -8,8 +8,8 @@ export const krdsComponentStyles = css`
 
   .surface {
     display: grid;
-    gap: var(--zm-spacing-4);
-    padding: var(--zm-spacing-5);
+    gap: var(--zm-spacing-3);
+    padding: var(--zm-spacing-4) var(--zm-spacing-6);
     border: 1px solid var(--zm-color-border-subtle);
     border-radius: var(--zm-radius-lg);
     background: var(--zm-color-surface);
@@ -198,18 +198,32 @@ export const krdsComponentStyles = css`
   }
 
   .remove {
-    min-height: 24px;
-    width: 24px;
+    min-height: 20px;
+    height: 20px;
+    width: 20px;
     padding: 0;
+    border: 0;
     border-radius: var(--zm-radius-pill);
+    background: transparent;
+    color: var(--zm-color-text-muted);
+    font-size: 14px;
+    line-height: 1;
+  }
+
+  .remove:hover {
+    color: var(--zm-color-text);
   }
 
   .switch {
-    width: 52px;
+    box-sizing: border-box;
+    width: 44px;
+    height: 26px;
+    min-height: 26px;
     justify-content: flex-start;
     border-radius: var(--zm-radius-pill);
     padding: 3px;
     background: var(--zm-color-background-muted);
+    border: 0;
   }
 
   .switch[aria-checked="true"] {
@@ -218,8 +232,8 @@ export const krdsComponentStyles = css`
   }
 
   .switch span {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     background: var(--zm-color-surface);
     box-shadow: var(--zm-shadow-xs);
