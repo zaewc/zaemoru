@@ -10,169 +10,131 @@ type MenuItem = {
   danger?: boolean;
 };
 
-const krdsNewComponents = new Set([
-  "Masthead",
-  "Identifier",
-  "Header",
-  "Footer",
-  "SkipLink",
-  "MainMenu",
-  "Breadcrumb",
-  "SideNavigation",
-  "InPageNavigation",
-  "Pagination",
-  "StructuredList",
-  "CriticalAlert",
-  "Calendar",
-  "Disclosure",
-  "Accordion",
-  "Image",
-  "Carousel",
-  "Table",
-  "TextList",
-  "Favicon",
-  "Link",
-  "Fab",
-  "RadioButton",
-  "Select",
-  "Tag",
-  "ToggleSwitch",
-  "StepIndicator",
-  "HelpPanel",
-  "TutorialPanel",
-  "ContextualHelp",
-  "CoachMark",
-  "Tts",
-  "DateInput",
-  "TextInput",
-  "FileUpload",
-  "LanguageSwitcher",
-  "Resize",
-  "AccessibleMultimedia",
-  "VisuallyHidden",
-  "RangeSlider",
-  "BackButton",
-  "QuantityToggle",
-  "Snackbar",
-  "TabBars",
-  "SplashScreen",
-]);
-
 const catalogGroups = [
   {
-    title: "KRDS Identity",
-    names: ["Masthead", "Identifier", "Header", "Footer"],
+    title: "Foundation",
+    names: [
+      "Text",
+      "Heading",
+      "Paragraph",
+      "Highlight",
+      "Border",
+      "Asset",
+      "Favicon",
+      "Masthead",
+      "Identifier",
+      "Header",
+      "Footer",
+      "SkipLink",
+    ],
   },
   {
-    title: "KRDS Navigation",
+    title: "Actions",
     names: [
-      "SkipLink",
+      "Button",
+      "TextButton",
+      "IconButton",
+      "Fab",
+      "Link",
+      "Tag",
+      "BackButton",
+      "ToggleSwitch",
+      "BottomCta",
+    ],
+  },
+  {
+    title: "Forms",
+    names: [
+      "TextField",
+      "TextArea",
+      "TextInput",
+      "SearchField",
+      "SplitTextField",
+      "DateInput",
+      "FileUpload",
+      "Checkbox",
+      "RadioButton",
+      "Switch",
+      "Select",
+      "Agreement",
+      "Slider",
+      "RangeSlider",
+      "Stepper",
+      "NumericSpinner",
+      "QuantityToggle",
+      "Rating",
+      "NumberKeypad",
+      "AlphabetKeypad",
+      "SecureKeypad",
+      "LanguageSwitcher",
+      "Resize",
+    ],
+  },
+  {
+    title: "Navigation",
+    names: [
+      "Top",
+      "Tab",
+      "TabBars",
+      "SegmentedControl",
+      "Menu",
       "MainMenu",
       "Breadcrumb",
       "SideNavigation",
       "InPageNavigation",
       "Pagination",
-      "BackButton",
-      "TabBars",
+      "ListRow",
     ],
   },
   {
-    title: "KRDS Layout And Content",
+    title: "Feedback",
     names: [
-      "StructuredList",
-      "CriticalAlert",
-      "Calendar",
-      "Disclosure",
-      "Accordion",
-      "Modal",
-      "Badge",
-      "Image",
-      "Carousel",
-      "Tab",
-      "Table",
-      "TextList",
-      "Favicon",
-      "AccessibleMultimedia",
-      "VisuallyHidden",
-      "SplashScreen",
-    ],
-  },
-  {
-    title: "KRDS Actions And Selection",
-    names: ["Link", "Button", "Fab", "RadioButton", "Checkbox", "Select", "Tag", "ToggleSwitch"],
-  },
-  {
-    title: "KRDS Feedback And Help",
-    names: [
-      "StepIndicator",
       "Spinner",
+      "Loader",
+      "ProgressBar",
+      "ProgressStepper",
+      "StepIndicator",
+      "Skeleton",
+      "Result",
+      "BottomInfo",
+      "Toast",
+      "Snackbar",
+      "Tooltip",
+      "CriticalAlert",
+      "Modal",
+      "Dialog",
+      "BottomSheet",
       "HelpPanel",
       "TutorialPanel",
       "ContextualHelp",
       "CoachMark",
-      "Tooltip",
       "Tts",
-      "Toast",
-      "Snackbar",
+      "SplashScreen",
     ],
   },
   {
-    title: "KRDS Inputs And Mobile",
+    title: "Content And Data",
     names: [
-      "DateInput",
-      "TextArea",
-      "TextInput",
-      "FileUpload",
-      "LanguageSwitcher",
-      "Resize",
-      "RangeSlider",
-      "BottomSheet",
-      "QuantityToggle",
-    ],
-  },
-  {
-    title: "Zaemoru Product UI",
-    names: [
-      "Text",
-      "Heading",
-      "Paragraph",
       "Card",
-      "Asset",
-      "BottomInfo",
-      "TextField",
-      "SearchField",
-      "Switch",
-      "Agreement",
-      "Slider",
-      "Stepper",
-      "NumericSpinner",
-      "Rating",
-      "SegmentedControl",
-      "Top",
-      "Menu",
-      "Dialog",
-      "Loader",
-      "ProgressBar",
-      "ProgressStepper",
-      "Skeleton",
-      "Result",
-      "Bubble",
-      "Post",
-      "BarChart",
-      "TableRow",
-      "GridList",
+      "BoardRow",
       "ListHeader",
-      "ListRow",
       "ListFooter",
-      "BottomCta",
-      "TextButton",
-      "IconButton",
-      "Highlight",
-      "Border",
-      "SplitTextField",
-      "NumberKeypad",
-      "AlphabetKeypad",
-      "SecureKeypad",
+      "Post",
+      "Bubble",
+      "Badge",
+      "TableRow",
+      "Table",
+      "GridList",
+      "StructuredList",
+      "TextList",
+      "Disclosure",
+      "Accordion",
+      "Calendar",
+      "Image",
+      "Carousel",
+      "BarChart",
+      "AccessibleMultimedia",
+      "VisuallyHidden",
     ],
   },
 ];
@@ -226,6 +188,28 @@ const componentGroups = [
           </div>
         `,
       },
+      {
+        title: "Brand identity",
+        body: `
+          <div class="form-stack">
+            <zm-skip-link href="#catalog">Skip to component catalog</zm-skip-link>
+            <zm-masthead label="This service is operated by a public institution."></zm-masthead>
+            <zm-identifier label="Ministry Service" description="Operating organization identifier"></zm-identifier>
+            <zm-header label="Public Portal">
+              <zm-link href="#forms">Apply</zm-link>
+              <zm-link href="#feedback">Help</zm-link>
+            </zm-header>
+            <zm-footer label="Public Portal" description="Helpful links and service information.">
+              <zm-link>Contact</zm-link>
+              <zm-link>Policy</zm-link>
+            </zm-footer>
+            <div class="asset-row">
+              <zm-favicon>Z</zm-favicon>
+              <zm-paragraph size="sm" tone="subtle">A favicon, masthead, and footer set the institutional context before content begins.</zm-paragraph>
+            </div>
+          </div>
+        `,
+      },
     ],
   },
   {
@@ -252,6 +236,11 @@ const componentGroups = [
             <zm-text-button>Resend</zm-text-button>
             <zm-icon-button aria-label="Add">+</zm-icon-button>
             <zm-icon-button variant="solid" aria-label="Confirm">✓</zm-icon-button>
+            <zm-back-button label="Back"></zm-back-button>
+            <zm-link href="#forms">Go to forms</zm-link>
+            <zm-tag label="Selected"></zm-tag>
+            <zm-fab label="Create"></zm-fab>
+            <zm-toggle-switch label="Use notifications"></zm-toggle-switch>
           </div>
         `,
       },
@@ -280,9 +269,12 @@ const componentGroups = [
         body: `
           <div class="form-stack">
             <zm-text-field label="Name" placeholder="Jane Zaemoru"></zm-text-field>
+            <zm-text-input label="Applicant name" description="As shown on your ID"></zm-text-input>
             <zm-search-field placeholder="Search transactions"></zm-search-field>
             <zm-text-area label="Memo" placeholder="Add a private note"></zm-text-area>
             <zm-split-text-field parts="3" placeholder="Code"></zm-split-text-field>
+            <zm-date-input label="Start date"></zm-date-input>
+            <zm-file-upload label="Attach file" description="PDF or image files are accepted."></zm-file-upload>
           </div>
         `,
       },
@@ -291,7 +283,9 @@ const componentGroups = [
         body: `
           <div class="form-stack">
             <zm-checkbox label="Email me receipts"></zm-checkbox>
+            <zm-radio-button label="Receive by email" value="email"></zm-radio-button>
             <zm-switch label="Use biometric login"></zm-switch>
+            <zm-select id="krds-select" label="Service type"></zm-select>
             <zm-agreement label="Agree to all">
               <zm-checkbox label="Terms of service"></zm-checkbox>
               <zm-checkbox label="Privacy policy"></zm-checkbox>
@@ -310,8 +304,10 @@ const componentGroups = [
               </div>
               <zm-slider value="42"></zm-slider>
             </div>
+            <zm-range-slider label="Range" value="40"></zm-range-slider>
             <zm-stepper value="2" min="0" max="8"></zm-stepper>
             <zm-numeric-spinner value="3" min="0" max="10"></zm-numeric-spinner>
+            <zm-quantity-toggle label="Quantity" value="2" min="0" max="5"></zm-quantity-toggle>
             <zm-rating value="4"></zm-rating>
           </div>
         `,
@@ -322,6 +318,15 @@ const componentGroups = [
           <div class="keypad-grid">
             <zm-number-keypad show-submit></zm-number-keypad>
             <zm-secure-keypad show-submit></zm-secure-keypad>
+          </div>
+        `,
+      },
+      {
+        title: "Personalization",
+        body: `
+          <div class="form-stack">
+            <zm-language-switcher id="krds-language" label="Language"></zm-language-switcher>
+            <zm-resize label="Text size" value="medium"></zm-resize>
           </div>
         `,
       },
@@ -354,6 +359,22 @@ const componentGroups = [
         title: "Menu",
         body: `<zm-menu id="demo-menu"></zm-menu>`,
       },
+      {
+        title: "Site navigation",
+        body: `
+          <div class="form-stack">
+            <zm-main-menu id="krds-main-menu" label="Main menu"></zm-main-menu>
+            <zm-breadcrumb id="krds-breadcrumb" label="Breadcrumb"></zm-breadcrumb>
+            <zm-side-navigation id="krds-side-nav" label="Side navigation"></zm-side-navigation>
+            <zm-in-page-navigation id="krds-in-page-nav" label="In-page navigation"></zm-in-page-navigation>
+            <zm-pagination value="2"></zm-pagination>
+          </div>
+        `,
+      },
+      {
+        title: "Mobile bars",
+        body: `<zm-tab-bars id="krds-tab-bars" label="Tab bars"></zm-tab-bars>`,
+      },
     ],
   },
   {
@@ -369,7 +390,9 @@ const componentGroups = [
             <zm-loader label="Loading portfolio"></zm-loader>
             <zm-progress-bar value="64"></zm-progress-bar>
             <zm-progress-stepper value="2" total="5"></zm-progress-stepper>
+            <zm-step-indicator id="krds-step-indicator" current="2"></zm-step-indicator>
             <zm-skeleton height="36px"></zm-skeleton>
+            <zm-splash-screen label="zaemoru" description="Loading public service"></zm-splash-screen>
           </div>
         `,
       },
@@ -386,6 +409,8 @@ const componentGroups = [
         body: `
           <div class="form-stack">
             <zm-toast tone="success">Saved successfully <span slot="action">Undo</span></zm-toast>
+            <zm-snackbar label="Draft saved" description="Undo"></zm-snackbar>
+            <zm-critical-alert label="Important notice" description="Service hours may change during maintenance."></zm-critical-alert>
             <zm-tooltip text="This appears on hover or focus">
               <zm-button variant="secondary">Hover me</zm-button>
             </zm-tooltip>
@@ -399,6 +424,18 @@ const componentGroups = [
             <zm-button id="open-modal">Open modal</zm-button>
             <zm-button id="open-sheet" variant="secondary">Open sheet</zm-button>
             <zm-button id="open-dialog" variant="tertiary">Open dialog</zm-button>
+          </div>
+        `,
+      },
+      {
+        title: "Help patterns",
+        body: `
+          <div class="form-stack">
+            <zm-help-panel label="Help panel" description="Contextual help for the current section."></zm-help-panel>
+            <zm-tutorial-panel label="Tutorial panel" description="Step-by-step support for complex tasks."></zm-tutorial-panel>
+            <zm-contextual-help label="Why is this required?" description="This helps verify eligibility."></zm-contextual-help>
+            <zm-coach-mark label="Coach mark" description="A focused hint for a new feature."></zm-coach-mark>
+            <zm-tts label="Read aloud" description="This text can be spoken by the browser."></zm-tts>
           </div>
         `,
       },
@@ -441,6 +478,7 @@ const componentGroups = [
           <div class="form-stack">
             <zm-table-row label="Principal" value="$12,000"></zm-table-row>
             <zm-table-row label="Interest" value="$420" emphasis></zm-table-row>
+            <zm-table id="krds-table"></zm-table>
             <zm-grid-list columns="3">
               <zm-asset alt="A">A</zm-asset>
               <zm-asset alt="B" shape="circle">B</zm-asset>
@@ -449,109 +487,33 @@ const componentGroups = [
           </div>
         `,
       },
-    ],
-  },
-  {
-    id: "krds",
-    title: "KRDS Coverage",
-    intro:
-      "Public-service components inspired by the KRDS catalog, implemented as zm-* Web Components with the same adapter surface.",
-    demos: [
       {
-        title: "Identity",
-        body: `
-          <div class="form-stack">
-            <zm-skip-link href="#krds">Skip to KRDS examples</zm-skip-link>
-            <zm-masthead label="This service is operated by a public institution."></zm-masthead>
-            <zm-identifier label="Ministry Service" description="Operating organization identifier"></zm-identifier>
-            <zm-header label="Public Portal"><zm-link href="#krds">Services</zm-link><zm-link href="#forms">Apply</zm-link></zm-header>
-            <zm-footer label="Public Portal" description="Helpful links and service information."><zm-link>Contact</zm-link><zm-link>Policy</zm-link></zm-footer>
-          </div>
-        `,
-      },
-      {
-        title: "Navigation",
-        body: `
-          <div class="form-stack">
-            <zm-main-menu id="krds-main-menu" label="Main menu"></zm-main-menu>
-            <zm-breadcrumb id="krds-breadcrumb" label="Breadcrumb"></zm-breadcrumb>
-            <zm-side-navigation id="krds-side-nav" label="Side navigation"></zm-side-navigation>
-            <zm-in-page-navigation id="krds-in-page-nav" label="In-page navigation"></zm-in-page-navigation>
-            <zm-pagination value="2"></zm-pagination>
-          </div>
-        `,
-      },
-      {
-        title: "Layout And Expression",
+        title: "Structured content",
         body: `
           <div class="form-stack">
             <zm-structured-list id="krds-structured-list"></zm-structured-list>
-            <zm-critical-alert label="Important notice" description="Service hours may change during maintenance."></zm-critical-alert>
-            <zm-calendar label="Reservation date"></zm-calendar>
+            <zm-text-list id="krds-text-list"></zm-text-list>
             <zm-disclosure label="Required documents" description="Open to review documents.">Identification and application form.</zm-disclosure>
             <zm-accordion id="krds-accordion"></zm-accordion>
+            <zm-visually-hidden>Screen-reader only status text used for live regions.</zm-visually-hidden>
+          </div>
+        `,
+      },
+      {
+        title: "Media",
+        body: `
+          <div class="form-stack">
             <zm-image href="/favicon.png" label="Service image" description="Inspectable image content."></zm-image>
             <zm-carousel id="krds-carousel"></zm-carousel>
-            <zm-table id="krds-table"></zm-table>
-            <zm-text-list id="krds-text-list"></zm-text-list>
-            <zm-favicon>Z</zm-favicon>
-          </div>
-        `,
-      },
-      {
-        title: "Actions And Selection",
-        body: `
-          <div class="form-stack">
-            <zm-link href="#adapters">Go to adapters</zm-link>
-            <zm-fab label="Create"></zm-fab>
-            <zm-radio-button label="Receive by email" value="email"></zm-radio-button>
-            <zm-select id="krds-select" label="Service type"></zm-select>
-            <zm-tag label="Selected"></zm-tag>
-            <zm-toggle-switch label="Use notifications"></zm-toggle-switch>
-            <zm-step-indicator id="krds-step-indicator" current="2"></zm-step-indicator>
-          </div>
-        `,
-      },
-      {
-        title: "Help",
-        body: `
-          <div class="form-stack">
-            <zm-help-panel label="Help panel" description="Contextual help for the current section."></zm-help-panel>
-            <zm-tutorial-panel label="Tutorial panel" description="Step-by-step support for complex tasks."></zm-tutorial-panel>
-            <zm-contextual-help label="Why is this required?" description="This helps verify eligibility."></zm-contextual-help>
-            <zm-coach-mark label="Coach mark" description="A focused hint for a new feature."></zm-coach-mark>
-            <zm-tts label="Read aloud" description="This text can be spoken by the browser."></zm-tts>
-          </div>
-        `,
-      },
-      {
-        title: "Inputs And Settings",
-        body: `
-          <div class="form-stack">
-            <zm-date-input label="Start date"></zm-date-input>
-            <zm-text-input label="Applicant name" description="Enter your name"></zm-text-input>
-            <zm-file-upload label="Attach file" description="PDF or image files are accepted."></zm-file-upload>
-            <zm-language-switcher id="krds-language" label="Language"></zm-language-switcher>
-            <zm-resize label="Text size" value="medium"></zm-resize>
-          </div>
-        `,
-      },
-      {
-        title: "Mobile And Content",
-        body: `
-          <div class="form-stack">
             <zm-accessible-multimedia label="Accessible media" description="Transcript and alternative description live with media.">
               Transcript: This media explains the application process.
             </zm-accessible-multimedia>
-            <zm-visually-hidden>Screen-reader only status text</zm-visually-hidden>
-            <zm-range-slider label="Range" value="40"></zm-range-slider>
-            <zm-back-button label="Back"></zm-back-button>
-            <zm-quantity-toggle label="Quantity" value="2" min="0" max="5"></zm-quantity-toggle>
-            <zm-snackbar label="Draft saved" description="Undo"></zm-snackbar>
-            <zm-tab-bars id="krds-tab-bars" label="Tab bars"></zm-tab-bars>
-            <zm-splash-screen label="zaemoru" description="Loading public service"></zm-splash-screen>
           </div>
         `,
+      },
+      {
+        title: "Calendar",
+        body: `<zm-calendar label="Reservation date"></zm-calendar>`,
       },
     ],
   },
@@ -630,13 +592,11 @@ const catalogMarkup = catalogGroups
             .map((name) => {
               const component = componentByName.get(name);
               if (!component) return "";
-              const status = krdsNewComponents.has(name) ? "New KRDS" : "Existing";
               const snippet = componentSnippet(name, component.tag);
               return `
                 <div class="catalog-card">
                   <div class="catalog-card-head">
                     <strong>${name}</strong>
-                    <span class="${krdsNewComponents.has(name) ? "catalog-status new" : "catalog-status"}">${status}</span>
                   </div>
                   <code>${component.tag}</code>
                   <pre><code>${code(snippet)}</code></pre>
@@ -721,7 +681,7 @@ import "@zaemoru/elements";</code></pre>
         <header class="section-header">
           <span>${zaemoruComponents.length} components</span>
           <h2>Component Catalog</h2>
-          <p>Every shipped component is listed with its custom element tag and React export. KRDS-based additions are marked so the new coverage is easy to scan.</p>
+          <p>Every shipped component is listed with its custom element tag and React export, grouped by the role it plays in a screen.</p>
         </header>
         <div class="catalog-stack">
           ${catalogMarkup}
@@ -818,23 +778,23 @@ const krdsItems: Record<
 > = {
   "krds-main-menu": [
     { label: "Home", href: "#intro", current: true },
-    { label: "Services", href: "#krds" },
+    { label: "Forms", href: "#forms" },
     { label: "Support", href: "#adapters" },
   ],
   "krds-breadcrumb": [
     { label: "Home", href: "#intro" },
-    { label: "Components", href: "#krds" },
-    { label: "KRDS", href: "#krds", current: true },
+    { label: "Navigation", href: "#navigation" },
+    { label: "Site navigation", href: "#navigation", current: true },
   ],
   "krds-side-nav": [
-    { label: "Identity", href: "#krds", current: true },
+    { label: "Foundation", href: "#foundation", current: true },
     { label: "Navigation", href: "#navigation" },
-    { label: "Inputs", href: "#forms" },
+    { label: "Forms", href: "#forms" },
   ],
   "krds-in-page-nav": [
-    { label: "Layout", href: "#krds" },
-    { label: "Help", href: "#krds" },
-    { label: "Mobile", href: "#krds" },
+    { label: "Content", href: "#content" },
+    { label: "Feedback", href: "#feedback" },
+    { label: "Catalog", href: "#catalog" },
   ],
   "krds-structured-list": [
     { label: "Application number", value: "A-2031" },

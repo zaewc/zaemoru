@@ -487,21 +487,6 @@ code {
   font-size: var(--zm-font-size-sm);
 }
 
-.catalog-status {
-  flex: 0 0 auto;
-  padding: 4px var(--zm-spacing-2);
-  border-radius: var(--zm-radius-pill);
-  background: var(--zm-color-background-muted);
-  color: var(--zm-color-text-subtle);
-  font-size: var(--zm-font-size-xs);
-  font-weight: var(--zm-font-weight-bold);
-}
-
-.catalog-status.new {
-  background: var(--zm-color-primary-subtle);
-  color: var(--zm-color-primary);
-}
-
 .catalog-card pre {
   padding: var(--zm-spacing-3);
   font-size: 12px;
