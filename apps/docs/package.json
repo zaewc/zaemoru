@@ -4,8 +4,16 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "node scripts/serve.mjs",
-    "build": "node scripts/build.mjs",
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "typecheck": "tsc --noEmit",
     "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@zaemoru/elements": "workspace:*",
+    "@zaemoru/tokens": "workspace:*"
+  },
+  "devDependencies": {
+    "vite": "^7.2.7"
   }
 }
