@@ -9,10 +9,15 @@ export class ZmSplitTextField extends ZmElement {
     css`
       :host {
         display: flex;
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+        flex-wrap: wrap;
         gap: var(--zm-spacing-2);
       }
       zm-text-field {
-        flex: 1;
+        flex: 1 1 0;
+        min-width: min(140px, 100%);
       }
     `,
   ];

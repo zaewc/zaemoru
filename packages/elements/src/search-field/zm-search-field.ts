@@ -13,12 +13,17 @@ export class ZmSearchField extends ZmElement {
       :host {
         display: block;
         width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
         font-family: var(--zm-font-family-base);
       }
       .control {
         display: flex;
         align-items: center;
         gap: var(--zm-spacing-2);
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
         background: var(--zm-color-background-subtle);
         border-radius: var(--zm-radius-pill);
         padding: 0 var(--zm-spacing-4);

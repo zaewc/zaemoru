@@ -15,6 +15,8 @@ export class ZmTextArea extends ZmElement {
         flex-direction: column;
         gap: var(--zm-spacing-2);
         width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
         font-family: var(--zm-font-family-base);
       }
       label {
@@ -23,6 +25,9 @@ export class ZmTextArea extends ZmElement {
         color: var(--zm-color-text);
       }
       .control {
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
         background: var(--zm-color-background-subtle);
         border: 1px solid transparent;
         border-radius: var(--zm-radius-md);
@@ -50,6 +55,8 @@ export class ZmTextArea extends ZmElement {
         all: unset;
         display: block;
         width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
         font: inherit;
         font-family: var(--zm-font-family-base);
         font-size: var(--zm-font-size-md);

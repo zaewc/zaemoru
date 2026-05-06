@@ -228,6 +228,8 @@ main {
 .demo-stage {
   display: grid;
   align-content: center;
+  min-width: 0;
+  max-width: 100%;
   min-height: 190px;
 }
 
@@ -235,6 +237,15 @@ main {
 .form-stack {
   display: grid;
   gap: var(--zm-spacing-3);
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.demo-stage > *,
+.form-stack > * {
+  min-width: 0;
+  max-width: 100%;
 }
 
 .toolbar,

@@ -15,10 +15,12 @@ export class ZmTextField extends ZmElement {
     ZmElement.styles,
     css`
       :host {
-        display: inline-flex;
+        display: flex;
         flex-direction: column;
         gap: var(--zm-spacing-2);
         width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
         font-family: var(--zm-font-family-base);
       }
 
@@ -31,6 +33,9 @@ export class ZmTextField extends ZmElement {
       .control {
         display: flex;
         align-items: center;
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
         background: var(--zm-color-background-subtle);
         border: 1px solid transparent;
         border-radius: var(--zm-radius-md);
