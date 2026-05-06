@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "Pusab";
+  src: url("../PUSAB___.otf") format("opentype");
+  font-display: swap;
+}
+
 :root {
   background: #eef2f7;
 }
@@ -47,37 +53,12 @@ select {
 }
 
 .logo {
-  display: flex;
-  align-items: center;
-  gap: var(--zm-spacing-3);
-  color: inherit;
-  text-decoration: none;
-}
-
-.mark {
-  width: 44px;
-  height: 44px;
-  display: grid;
-  place-items: center;
-  border-radius: var(--zm-radius-lg);
-  background: var(--zm-color-text-strong);
-  color: var(--zm-color-on-primary);
-  font-weight: var(--zm-font-weight-bold);
-}
-
-.logo strong,
-.logo small {
   display: block;
-}
-
-.logo strong {
-  color: var(--zm-color-text-strong);
-  font-size: var(--zm-font-size-lg);
-}
-
-.logo small {
-  margin-top: 2px;
-  color: var(--zm-color-text-muted);
+  color: inherit;
+  font-family: "Pusab", var(--zm-font-family-base);
+  font-size: 28px;
+  line-height: 1;
+  text-decoration: none;
 }
 
 nav {

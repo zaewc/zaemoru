@@ -293,8 +293,7 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
   <div class="layout">
     <aside class="sidebar">
       <a class="logo" href="#intro">
-        <span class="mark">Z</span>
-        <span><strong>Zaemoru</strong><small>Design System</small></span>
+        zaemoru
       </a>
       <nav>
         ${componentGroups.map((group) => `<a href="#${group.id}">${group.title}</a>`).join("")}
