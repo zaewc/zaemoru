@@ -23,7 +23,10 @@ export class ZmTextInput extends ZmElement {
       .control {
         display: flex;
         align-items: center;
+        width: 100%;
+        min-width: 0;
         min-height: var(--zm-control-height-md);
+        box-sizing: border-box;
         padding: 0 var(--zm-spacing-5);
         border: 1px solid transparent;
         border-radius: var(--zm-radius-md);
@@ -44,14 +47,29 @@ export class ZmTextInput extends ZmElement {
         box-shadow: var(--zm-focus-ring);
       }
 
-      input {
+      input,
+      input[type="text"] {
         all: unset;
         flex: 1;
         min-width: 0;
+        width: 100%;
+        min-height: auto;
+        box-sizing: border-box;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
         color: var(--zm-color-text);
         font: inherit;
         font-size: var(--zm-font-size-md);
         line-height: var(--zm-line-height-normal);
+      }
+
+      input:focus,
+      input:focus-visible,
+      input[type="text"]:focus,
+      input[type="text"]:focus-visible {
+        outline: none;
+        box-shadow: none;
       }
 
       input::placeholder {
