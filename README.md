@@ -1,4 +1,6 @@
-# zaemoru
+<img width="431" height="77" alt="Gold Font from Geometry Dash" src="https://github.com/user-attachments/assets/4272f711-2c4f-474e-8aa5-b18d1369b38e" />
+
+---
 
 A framework-agnostic UI design system inspired by Toss DS.
 
