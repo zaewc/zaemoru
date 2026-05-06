@@ -38,7 +38,7 @@ export const zaemoruComponents = [
   {
     name: "Badge",
     tag: "zm-badge",
-    attributes: { ...baseAttributes, variant: "variant", size: "size" },
+    attributes: { ...baseAttributes, variant: "variant", size: "size", color: "color" },
   },
   {
     name: "BarChart",

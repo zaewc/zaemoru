@@ -48,12 +48,14 @@ export interface CardProps extends CommonProps {
   padding?: CardPadding;
 }
 
-export type BadgeVariant = "neutral" | "primary" | "success" | "warning" | "danger";
-export type BadgeSize = "small" | "medium";
+export type BadgeVariant = "fill" | "weak";
+export type BadgeSize = "xsmall" | "small" | "medium" | "large";
+export type BadgeColor = "blue" | "teal" | "green" | "red" | "yellow" | "elephant";
 
 export interface BadgeProps extends CommonProps {
-  variant?: BadgeVariant;
-  size?: BadgeSize;
+  variant: BadgeVariant;
+  size: BadgeSize;
+  color: BadgeColor;
 }
 
 export type TextFieldType = "text" | "email" | "password" | "search" | "tel" | "url" | "number";

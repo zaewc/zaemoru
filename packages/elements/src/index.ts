@@ -18,7 +18,7 @@ export { ZmCard } from "./card/zm-card.js";
 export type { ZmCardElevation, ZmCardPadding } from "./card/zm-card.js";
 
 export { ZmBadge } from "./badge/zm-badge.js";
-export type { ZmBadgeVariant, ZmBadgeSize } from "./badge/zm-badge.js";
+export type { ZmBadgeVariant, ZmBadgeSize, ZmBadgeColor } from "./badge/zm-badge.js";
 
 export { ZmTextField } from "./text-field/zm-text-field.js";
 export type { ZmTextFieldType, ZmTextFieldSize } from "./text-field/zm-text-field.js";

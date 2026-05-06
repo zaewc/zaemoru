@@ -34,7 +34,7 @@ import "@zaemoru/elements";
 | `zm-text`       | `size`, `weight`, `tone`                               |
 | `zm-heading`    | `level`, `size`                                        |
 | `zm-card`       | `elevation`, `padding`                                 |
-| `zm-badge`      | `variant`, `size`                                      |
+| `zm-badge`      | `variant`, `size`, `color`                             |
 | `zm-text-field` | `label`, `placeholder`, `value`, `invalid`, ...        |
 | `zm-checkbox`   | `checked`, `disabled`, `label`                         |
 | `zm-switch`     | `checked`, `disabled`, `label`                         |

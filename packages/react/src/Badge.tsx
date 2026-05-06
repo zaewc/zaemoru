@@ -3,15 +3,16 @@ import "./internal/jsx.js";
 import type { BadgeProps } from "./types.js";
 
 export function Badge({
-  variant = "neutral",
-  size = "small",
+  variant,
+  size,
+  color,
   className,
   style,
   id,
   children,
 }: BadgeProps) {
   return (
-    <zm-badge id={id} class={className} style={style} variant={variant} size={size}>
+    <zm-badge id={id} class={className} style={style} variant={variant} size={size} color={color}>
       {children}
     </zm-badge>
   );

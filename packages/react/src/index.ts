@@ -129,6 +129,7 @@ export type {
   BadgeProps,
   BadgeVariant,
   BadgeSize,
+  BadgeColor,
   TextFieldProps,
   TextFieldType,
   TextFieldSize,

@@ -166,11 +166,10 @@ const componentGroups = [
             <zm-heading size="3xl">Calm, readable interfaces</zm-heading>
             <zm-paragraph size="lg" tone="subtle">Zaemoru starts with generous spacing, strong focus states, and mobile-first touch targets.</zm-paragraph>
             <div class="chip-row">
-              <zm-badge>Neutral</zm-badge>
-              <zm-badge variant="primary">Primary</zm-badge>
-              <zm-badge variant="success">Success</zm-badge>
-              <zm-badge variant="warning">Warning</zm-badge>
-              <zm-badge variant="danger">Danger</zm-badge>
+              <zm-badge size="xsmall" color="blue" variant="fill">Blue</zm-badge>
+              <zm-badge size="small" color="teal" variant="fill">Teal</zm-badge>
+              <zm-badge size="medium" color="green" variant="weak">Green</zm-badge>
+              <zm-badge size="large" color="red" variant="weak">Red</zm-badge>
             </div>
           </div>
         `,
