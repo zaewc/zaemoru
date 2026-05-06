@@ -243,14 +243,14 @@ main {
 }
 
 .section {
-  padding: var(--zm-spacing-9) clamp(24px, 8vw, 112px);
+  padding: var(--zm-spacing-10) clamp(24px, 8vw, 112px);
 }
 
 .section-header {
   display: grid;
-  gap: var(--zm-spacing-3);
+  gap: var(--zm-spacing-4);
   max-width: 760px;
-  margin-bottom: var(--zm-spacing-6);
+  margin-bottom: var(--zm-spacing-8);
 }
 
 .section-header h2 {
@@ -271,14 +271,14 @@ main {
 .adapter-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: var(--zm-spacing-5);
+  gap: var(--zm-spacing-6);
   align-items: stretch;
 }
 
 .demo-card,
 .adapter-card {
   min-width: 0;
-  padding: var(--zm-spacing-5);
+  padding: var(--zm-spacing-6);
   border: 1px solid rgba(229, 232, 235, 0.9);
   border-radius: var(--zm-radius-xl);
   background: rgba(255, 255, 255, 0.92);
@@ -288,7 +288,7 @@ main {
 .demo-card {
   display: grid;
   grid-template-rows: auto 1fr;
-  gap: var(--zm-spacing-5);
+  gap: var(--zm-spacing-6);
 }
 
 .demo-card h3,
@@ -303,7 +303,7 @@ main {
   align-content: center;
   min-width: 0;
   max-width: 100%;
-  min-height: 190px;
+  min-height: 220px;
 }
 
 .button-stack,
