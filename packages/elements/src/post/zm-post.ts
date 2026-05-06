@@ -36,7 +36,7 @@ export class ZmPost extends ZmElement {
     `,
   ];
 
-  @property({ type: String }) postTitle = "";
+  @property({ type: String, attribute: "post-title" }) postTitle = "";
   @property({ type: String }) description = "";
   @property({ type: String }) meta = "";
 

@@ -1,5 +1,5 @@
 import { html, css } from "lit";
-import { customElement, state } from "lit/decorators.js";
+import { customElement, property, state } from "lit/decorators.js";
 import { ZmElement } from "../internal/base.js";
 
 @customElement("zm-secure-keypad")
@@ -8,23 +8,50 @@ export class ZmSecureKeypad extends ZmElement {
     ZmElement.styles,
     css`
       :host {
-        display: block;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--zm-spacing-2);
+        font-family: var(--zm-font-family-base);
+      }
+      button {
+        all: unset;
+        cursor: pointer;
+        height: 52px;
+        border-radius: var(--zm-radius-md);
+        background: var(--zm-color-background-subtle);
+        text-align: center;
+        font-size: var(--zm-font-size-xl);
+        font-weight: var(--zm-font-weight-semibold);
+      }
+      button:hover:not(:disabled) {
+        background: var(--zm-color-background-muted);
+      }
+      button:focus-visible {
+        box-shadow: var(--zm-focus-ring);
+      }
+      button:disabled {
+        cursor: default;
+        opacity: 0;
       }
     `,
   ];
 
+  @property({ type: Boolean, attribute: "show-submit" }) showSubmit = false;
   @state() private _keys = this._shuffle();
 
   private _shuffle() {
-    return ["1", "2", "3", "4", "5", "6", "7", "8", "9", "", "0", "⌫"].sort(
-      () => Math.random() - 0.5,
+    const digits = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"].sort(
+      () => crypto.getRandomValues(new Uint32Array(1))[0]! / 2 ** 32 - 0.5,
     );
+    return [...digits.slice(0, 9), this.showSubmit ? "OK" : "", digits[9] ?? "0", "⌫"];
   }
 
-  private _key(e: CustomEvent<{ value: string }>) {
+  private _key(value: string) {
+    if (!value) return;
+    const kind = value === "⌫" ? "delete" : value === "OK" ? "submit" : "digit";
     this.dispatchEvent(
       new CustomEvent("zm-key", {
-        detail: { value: e.detail.value },
+        detail: { value, kind },
         bubbles: true,
         composed: true,
       }),
@@ -33,7 +60,12 @@ export class ZmSecureKeypad extends ZmElement {
   }
 
   override render() {
-    return html`<zm-number-keypad @zm-key=${this._key}></zm-number-keypad>`;
+    return html`${this._keys.map(
+      (key) =>
+        html`<button type="button" @click=${() => this._key(key)} ?disabled=${!key}>
+          ${key}
+        </button>`,
+    )}`;
   }
 }
 

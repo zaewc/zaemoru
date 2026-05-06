@@ -16,30 +16,39 @@ export class ZmDialog extends ZmElement {
   ];
 
   @property({ type: Boolean, reflect: true }) open = false;
-  @property({ type: String }) dialogTitle = "";
+  @property({ type: String, attribute: "dialog-title" }) dialogTitle = "";
   @property({ type: String }) description = "";
   @property({ type: String, reflect: true }) kind: ZmDialogKind = "alert";
 
-  private _emit(name: string) {
-    this.dispatchEvent(new CustomEvent(name, { bubbles: true, composed: true }));
+  private _close(reason: "close" | "cancel" | "confirm") {
+    this.open = false;
+    const eventName =
+      reason === "confirm" ? "zm-confirm" : reason === "cancel" ? "zm-cancel" : "zm-close";
+    this.dispatchEvent(
+      new CustomEvent(eventName, {
+        detail: { reason },
+        bubbles: true,
+        composed: true,
+      }),
+    );
   }
 
   override render() {
     return html`
       <zm-modal
         .open=${this.open}
-        modalTitle=${this.dialogTitle}
+        modal-title=${this.dialogTitle}
         description=${this.description}
-        @zm-close=${() => this._emit("zm-close")}
+        @zm-close=${() => this._close("close")}
       >
         <slot></slot>
         <span slot="actions">
           ${this.kind === "confirm"
-            ? html`<zm-button variant="secondary" @click=${() => this._emit("zm-cancel")}
+            ? html`<zm-button variant="secondary" @click=${() => this._close("cancel")}
                 >Cancel</zm-button
               >`
             : null}
-          <zm-button @click=${() => this._emit("zm-confirm")}>OK</zm-button>
+          <zm-button @click=${() => this._close("confirm")}>OK</zm-button>
         </span>
       </zm-modal>
     `;

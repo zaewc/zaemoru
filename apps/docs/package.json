@@ -1,0 +1,11 @@
+{
+  "name": "@zaemoru/docs",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "build": "node scripts/build.mjs",
+    "clean": "rm -rf dist"
+  }
+}
