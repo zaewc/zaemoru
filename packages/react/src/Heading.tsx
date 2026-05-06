@@ -11,13 +11,7 @@ export function Heading({
   children,
 }: HeadingProps) {
   return (
-    <zm-heading
-      id={id}
-      class={className}
-      style={style}
-      level={level}
-      size={size}
-    >
+    <zm-heading id={id} class={className} style={style} level={level} size={size}>
       {children}
     </zm-heading>
   );

@@ -16,6 +16,7 @@ When implementing Lit components:
 9. Import the component from `packages/elements/src/index.ts`.
 
 Do not:
+
 - use React
 - use Tailwind
 - hardcode design values

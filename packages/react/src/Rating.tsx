@@ -31,12 +31,9 @@ export function Rating({
     if (defaultValue === undefined) return;
     const el = ref.current as RatingElement | null;
     if (el) el.value = defaultValue;
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  useCustomEvent<{ value: number }>(ref, "zm-change", (e) =>
-    onChange?.(e.detail.value, e),
-  );
+  useCustomEvent<{ value: number }>(ref, "zm-change", (e) => onChange?.(e.detail.value, e));
 
   return (
     <zm-rating

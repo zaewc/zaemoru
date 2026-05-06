@@ -2,14 +2,7 @@ import { html, css, nothing } from "lit";
 import { customElement, property, query, state } from "lit/decorators.js";
 import { ZmElement } from "../internal/base.js";
 
-export type ZmTextFieldType =
-  | "text"
-  | "email"
-  | "password"
-  | "search"
-  | "tel"
-  | "url"
-  | "number";
+export type ZmTextFieldType = "text" | "email" | "password" | "search" | "tel" | "url" | "number";
 
 export type ZmTextFieldSize = "small" | "medium" | "large";
 
@@ -188,9 +181,7 @@ export class ZmTextField extends ZmElement {
     }`.trim();
 
     return html`
-      ${this.label
-        ? html`<label for=${this._id}>${this.label}</label>`
-        : nothing}
+      ${this.label ? html`<label for=${this._id}>${this.label}</label>` : nothing}
       <div class=${controlClass}>
         <input
           id=${this._id}
@@ -209,10 +200,7 @@ export class ZmTextField extends ZmElement {
         />
       </div>
       ${helperContent
-        ? html`<div
-            id=${helperId}
-            class=${`helper ${showError ? "error" : ""}`.trim()}
-          >
+        ? html`<div id=${helperId} class=${`helper ${showError ? "error" : ""}`.trim()}>
             ${helperContent}
           </div>`
         : nothing}

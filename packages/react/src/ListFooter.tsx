@@ -11,12 +11,7 @@ export function ListFooter({
   children,
 }: ListFooterProps) {
   return (
-    <zm-list-footer
-      id={id}
-      class={className}
-      style={style}
-      description={description}
-    >
+    <zm-list-footer id={id} class={className} style={style} description={description}>
       {children}
       {action !== undefined ? <span slot="action">{action}</span> : null}
     </zm-list-footer>

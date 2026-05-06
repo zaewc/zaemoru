@@ -4,8 +4,13 @@
   "description": "Framework-independent design tokens (CSS variables) for zaemoru.",
   "license": "MIT",
   "type": "module",
-  "sideEffects": ["**/*.css"],
-  "files": ["dist", "src"],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "files": [
+    "dist",
+    "src"
+  ],
   "exports": {
     ".": {
       "import": "./dist/index.css",

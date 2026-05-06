@@ -61,7 +61,7 @@ export class ZmListRow extends ZmElement {
   ];
 
   @property({ type: String })
-  title = "";
+  override title = "";
 
   @property({ type: String })
   description = "";
@@ -87,9 +87,7 @@ export class ZmListRow extends ZmElement {
       <span class="leading"><slot name="leading"></slot></span>
       <div class="body">
         ${this.title ? html`<span class="title">${this.title}</span>` : nothing}
-        ${this.description
-          ? html`<span class="description">${this.description}</span>`
-          : nothing}
+        ${this.description ? html`<span class="description">${this.description}</span>` : nothing}
         <slot></slot>
       </div>
       <span class="trailing"><slot name="trailing"></slot></span>

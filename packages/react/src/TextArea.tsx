@@ -49,7 +49,6 @@ export const TextArea = forwardRef<HTMLElement, TextAreaProps>(function TextArea
     if (defaultValue === undefined) return;
     const el = innerRef.current as TextAreaElement | null;
     if (el && el.value !== defaultValue) el.value = defaultValue;
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useCustomEvent<{ value: string }>(innerRef, "zm-input", (e) => {

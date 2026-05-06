@@ -17,7 +17,8 @@ export class ZmBoardRow extends ZmElement {
         font-family: var(--zm-font-family-base);
         color: var(--zm-color-text);
         box-shadow: var(--zm-shadow-xs);
-        transition: transform var(--zm-duration-fast) var(--zm-easing-standard),
+        transition:
+          transform var(--zm-duration-fast) var(--zm-easing-standard),
           box-shadow var(--zm-duration-fast) var(--zm-easing-standard);
       }
       :host([interactive]) {
@@ -87,15 +88,9 @@ export class ZmBoardRow extends ZmElement {
     return html`
       <div class="leading"><slot name="leading"></slot></div>
       <div class="body">
-        ${this.eyebrow
-          ? html`<span class="eyebrow">${this.eyebrow}</span>`
-          : nothing}
-        ${this.rowTitle
-          ? html`<span class="title">${this.rowTitle}</span>`
-          : nothing}
-        ${this.description
-          ? html`<span class="description">${this.description}</span>`
-          : nothing}
+        ${this.eyebrow ? html`<span class="eyebrow">${this.eyebrow}</span>` : nothing}
+        ${this.rowTitle ? html`<span class="title">${this.rowTitle}</span>` : nothing}
+        ${this.description ? html`<span class="description">${this.description}</span>` : nothing}
         <slot></slot>
       </div>
       <div class="trailing"><slot name="trailing"></slot></div>

@@ -12,6 +12,7 @@ When designing a component API:
 8. Keep React adapter props idiomatic.
 
 Good:
+
 - variant="primary"
 - size="large"
 - full-width
@@ -19,6 +20,7 @@ Good:
 - loading
 
 Bad:
+
 - colorScheme="blue500"
 - radiusLevel="12"
 - internalState="active"

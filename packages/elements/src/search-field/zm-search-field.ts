@@ -24,7 +24,8 @@ export class ZmSearchField extends ZmElement {
         padding: 0 var(--zm-spacing-4);
         height: var(--zm-control-height-md);
         border: 1px solid transparent;
-        transition: background-color var(--zm-duration-fast) var(--zm-easing-standard),
+        transition:
+          background-color var(--zm-duration-fast) var(--zm-easing-standard),
           border-color var(--zm-duration-fast) var(--zm-easing-standard),
           box-shadow var(--zm-duration-fast) var(--zm-easing-standard);
       }
@@ -124,9 +125,7 @@ export class ZmSearchField extends ZmElement {
         composed: true,
       }),
     );
-    this.dispatchEvent(
-      new CustomEvent("zm-clear", { bubbles: true, composed: true }),
-    );
+    this.dispatchEvent(new CustomEvent("zm-clear", { bubbles: true, composed: true }));
     this._input?.focus();
   };
 
@@ -138,13 +137,7 @@ export class ZmSearchField extends ZmElement {
       <div class=${klass}>
         <span class="icon" aria-hidden="true">
           <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-            <circle
-              cx="8"
-              cy="8"
-              r="5"
-              stroke="currentColor"
-              stroke-width="1.7"
-            />
+            <circle cx="8" cy="8" r="5" stroke="currentColor" stroke-width="1.7" />
             <path
               d="M12 12L15 15"
               stroke="currentColor"

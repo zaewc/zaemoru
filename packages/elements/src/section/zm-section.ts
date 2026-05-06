@@ -68,9 +68,7 @@ export class ZmSection extends ZmElement {
         ? html`
             <header>
               <div>
-                ${this.sectionTitle
-                  ? html`<div class="title">${this.sectionTitle}</div>`
-                  : nothing}
+                ${this.sectionTitle ? html`<div class="title">${this.sectionTitle}</div>` : nothing}
                 ${this.description
                   ? html`<div class="description">${this.description}</div>`
                   : nothing}

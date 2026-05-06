@@ -26,7 +26,8 @@ export class ZmTextButton extends ZmElement {
         line-height: 1;
         padding: var(--zm-spacing-1) var(--zm-spacing-2);
         border-radius: var(--zm-radius-sm);
-        transition: color var(--zm-duration-fast) var(--zm-easing-standard),
+        transition:
+          color var(--zm-duration-fast) var(--zm-easing-standard),
           background-color var(--zm-duration-fast) var(--zm-easing-standard);
       }
       :host([size="medium"]) button {

@@ -11,13 +11,7 @@ export function Paragraph({
   children,
 }: ParagraphProps) {
   return (
-    <zm-paragraph
-      id={id}
-      class={className}
-      style={style}
-      size={size}
-      tone={tone}
-    >
+    <zm-paragraph id={id} class={className} style={style} size={size} tone={tone}>
       {children}
     </zm-paragraph>
   );

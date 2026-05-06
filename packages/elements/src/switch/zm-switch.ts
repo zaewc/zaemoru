@@ -124,9 +124,7 @@ export class ZmSwitch extends ZmElement {
       <span class="track" aria-hidden="true">
         <span class="thumb"></span>
       </span>
-      ${this.label
-        ? html`<label for=${this._id}>${this.label}</label>`
-        : html`<slot></slot>`}
+      ${this.label ? html`<label for=${this._id}>${this.label}</label>` : html`<slot></slot>`}
     `;
   }
 }

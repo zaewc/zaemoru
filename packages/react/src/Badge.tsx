@@ -11,13 +11,7 @@ export function Badge({
   children,
 }: BadgeProps) {
   return (
-    <zm-badge
-      id={id}
-      class={className}
-      style={style}
-      variant={variant}
-      size={size}
-    >
+    <zm-badge id={id} class={className} style={style} variant={variant} size={size}>
       {children}
     </zm-badge>
   );

@@ -2,12 +2,7 @@ import { html, css } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { ZmElement } from "../internal/base.js";
 
-export type ZmBadgeVariant =
-  | "neutral"
-  | "primary"
-  | "success"
-  | "warning"
-  | "danger";
+export type ZmBadgeVariant = "neutral" | "primary" | "success" | "warning" | "danger";
 export type ZmBadgeSize = "small" | "medium";
 
 @customElement("zm-badge")

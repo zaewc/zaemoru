@@ -48,12 +48,7 @@ export interface CardProps extends CommonProps {
   padding?: CardPadding;
 }
 
-export type BadgeVariant =
-  | "neutral"
-  | "primary"
-  | "success"
-  | "warning"
-  | "danger";
+export type BadgeVariant = "neutral" | "primary" | "success" | "warning" | "danger";
 export type BadgeSize = "small" | "medium";
 
 export interface BadgeProps extends CommonProps {
@@ -61,14 +56,7 @@ export interface BadgeProps extends CommonProps {
   size?: BadgeSize;
 }
 
-export type TextFieldType =
-  | "text"
-  | "email"
-  | "password"
-  | "search"
-  | "tel"
-  | "url"
-  | "number";
+export type TextFieldType = "text" | "email" | "password" | "search" | "tel" | "url" | "number";
 
 export type TextFieldSize = "small" | "medium" | "large";
 
@@ -97,10 +85,7 @@ export interface CheckboxProps extends CommonProps {
   name?: string;
   value?: string;
   label?: string;
-  onChange?: (
-    checked: boolean,
-    event: CustomEvent<{ checked: boolean; value: string }>,
-  ) => void;
+  onChange?: (checked: boolean, event: CustomEvent<{ checked: boolean; value: string }>) => void;
   ref?: Ref<HTMLElement>;
 }
 
@@ -110,10 +95,7 @@ export interface SwitchProps extends CommonProps {
   disabled?: boolean;
   name?: string;
   label?: string;
-  onChange?: (
-    checked: boolean,
-    event: CustomEvent<{ checked: boolean }>,
-  ) => void;
+  onChange?: (checked: boolean, event: CustomEvent<{ checked: boolean }>) => void;
   ref?: Ref<HTMLElement>;
 }
 
@@ -214,6 +196,16 @@ export interface SkeletonProps extends Omit<CommonProps, "children"> {
   shape?: SkeletonShape;
   width?: string;
   height?: string;
+}
+
+export type ResultTone = "neutral" | "success" | "warning" | "danger";
+
+export interface ResultProps extends CommonProps {
+  tone?: ResultTone;
+  title?: string;
+  description?: string;
+  icon?: ReactNode;
+  actions?: ReactNode;
 }
 
 export type TopVariant = "default" | "transparent";

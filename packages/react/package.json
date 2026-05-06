@@ -4,11 +4,14 @@
   "description": "React adapter for @zaemoru/elements (Lit Web Components).",
   "license": "MIT",
   "type": "module",
-  "sideEffects": false,
+  "sideEffects": true,
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "files": ["dist", "src"],
+  "files": [
+    "dist",
+    "src"
+  ],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",

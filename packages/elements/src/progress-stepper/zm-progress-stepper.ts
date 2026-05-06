@@ -32,15 +32,12 @@ export class ZmProgressStepper extends ZmElement {
     const total = Math.max(1, this.total);
     const segs = Array.from({ length: total }, (_, i) => i + 1);
     return html`${segs.map(
-      (i) =>
-        html`<div
-          class=${`seg ${i <= this.value ? "on" : ""}`.trim()}
-          aria-hidden="true"
-        ></div>`,
-    )}
-    <span class="sr" aria-live="polite" style="position:absolute;left:-9999px"
-      >Step ${this.value} of ${total}</span
-    >`;
+        (i) =>
+          html`<div class=${`seg ${i <= this.value ? "on" : ""}`.trim()} aria-hidden="true"></div>`,
+      )}
+      <span class="sr" aria-live="polite" style="position:absolute;left:-9999px"
+        >Step ${this.value} of ${total}</span
+      >`;
   }
 }
 

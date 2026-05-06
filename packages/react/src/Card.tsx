@@ -11,13 +11,7 @@ export function Card({
   children,
 }: CardProps) {
   return (
-    <zm-card
-      id={id}
-      class={className}
-      style={style}
-      elevation={elevation}
-      padding={padding}
-    >
+    <zm-card id={id} class={className} style={style} elevation={elevation} padding={padding}>
       {children}
     </zm-card>
   );

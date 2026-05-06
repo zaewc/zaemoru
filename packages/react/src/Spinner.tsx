@@ -11,13 +11,6 @@ export function Spinner({
   id,
 }: SpinnerProps) {
   return (
-    <zm-spinner
-      id={id}
-      class={className}
-      style={style}
-      size={size}
-      tone={tone}
-      label={label}
-    />
+    <zm-spinner id={id} class={className} style={style} size={size} tone={tone} label={label} />
   );
 }

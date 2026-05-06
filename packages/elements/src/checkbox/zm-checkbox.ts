@@ -140,9 +140,7 @@ export class ZmCheckbox extends ZmElement {
           />
         </svg>
       </span>
-      ${this.label
-        ? html`<label for=${this._id}>${this.label}</label>`
-        : html`<slot></slot>`}
+      ${this.label ? html`<label for=${this._id}>${this.label}</label>` : html`<slot></slot>`}
     `;
   }
 }

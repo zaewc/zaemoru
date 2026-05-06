@@ -10,12 +10,6 @@ export function ProgressStepper({
   id,
 }: ProgressStepperProps) {
   return (
-    <zm-progress-stepper
-      id={id}
-      class={className}
-      style={style}
-      value={value}
-      total={total}
-    />
+    <zm-progress-stepper id={id} class={className} style={style} value={value} total={total} />
   );
 }

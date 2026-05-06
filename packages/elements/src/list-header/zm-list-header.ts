@@ -48,12 +48,8 @@ export class ZmListHeader extends ZmElement {
   override render() {
     return html`
       <div class="text">
-        ${this.headerTitle
-          ? html`<span class="title">${this.headerTitle}</span>`
-          : nothing}
-        ${this.description
-          ? html`<span class="description">${this.description}</span>`
-          : nothing}
+        ${this.headerTitle ? html`<span class="title">${this.headerTitle}</span>` : nothing}
+        ${this.description ? html`<span class="description">${this.description}</span>` : nothing}
       </div>
       <div class="action"><slot name="action"></slot></div>
     `;

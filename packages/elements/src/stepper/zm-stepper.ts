@@ -85,21 +85,11 @@ export class ZmStepper extends ZmElement {
     const cantDec = this.disabled || this.value <= this.min;
     const cantInc = this.disabled || this.value >= this.max;
     return html`
-      <button
-        type="button"
-        aria-label="Decrease"
-        ?disabled=${cantDec}
-        @click=${this._dec}
-      >
+      <button type="button" aria-label="Decrease" ?disabled=${cantDec} @click=${this._dec}>
         −
       </button>
       <span class="value" role="status" aria-live="polite">${this.value}</span>
-      <button
-        type="button"
-        aria-label="Increase"
-        ?disabled=${cantInc}
-        @click=${this._inc}
-      >
+      <button type="button" aria-label="Increase" ?disabled=${cantInc} @click=${this._inc}>
         +
       </button>
     `;

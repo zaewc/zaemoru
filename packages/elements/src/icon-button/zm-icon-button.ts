@@ -22,7 +22,8 @@ export class ZmIconButton extends ZmElement {
         color: var(--zm-color-text);
         background: transparent;
         border-radius: var(--zm-radius-pill);
-        transition: background-color var(--zm-duration-fast) var(--zm-easing-standard),
+        transition:
+          background-color var(--zm-duration-fast) var(--zm-easing-standard),
           color var(--zm-duration-fast) var(--zm-easing-standard);
       }
       :host([size="small"]) button {
@@ -75,7 +76,7 @@ export class ZmIconButton extends ZmElement {
   disabled = false;
 
   @property({ type: String, attribute: "aria-label" })
-  ariaLabel: string | null = null;
+  override ariaLabel: string | null = null;
 
   override render() {
     return html`<button

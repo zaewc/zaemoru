@@ -12,14 +12,7 @@ export function Text({
   children,
 }: TextProps) {
   return (
-    <zm-text
-      id={id}
-      class={className}
-      style={style}
-      size={size}
-      weight={weight}
-      tone={tone}
-    >
+    <zm-text id={id} class={className} style={style} size={size} weight={weight} tone={tone}>
       {children}
     </zm-text>
   );

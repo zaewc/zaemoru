@@ -61,10 +61,7 @@ export class ZmProgressBar extends ZmElement {
   @property({ type: String, reflect: true }) size: ZmProgressSize = "medium";
 
   override render() {
-    const pct = Math.max(
-      0,
-      Math.min(100, (this.value / Math.max(1, this.max)) * 100),
-    );
+    const pct = Math.max(0, Math.min(100, (this.value / Math.max(1, this.max)) * 100));
     return html`
       <div
         class="track"

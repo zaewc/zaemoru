@@ -18,20 +18,24 @@ Plain HTML, Vue, and Svelte users must get the same components and styles as Rea
 ## Package boundaries
 
 `tokens`
+
 - Owns: color, typography, spacing, radius, shadow, z-index, duration, easing.
 - Must not depend on: React, Lit, any framework, any DOM code.
 
 `elements`
+
 - Owns: Web Components, semantic DOM, accessibility, attributes, events, styles.
 - Depends on: `lit`, `@zaemoru/tokens`.
 - Must not depend on: React, Vue, Svelte.
 
 `react`
+
 - Owns: typed React wrappers, prop/event mapping.
 - Depends on: `react`, `react-dom`, `@zaemoru/elements`, `@zaemoru/tokens`.
 - Must not: reimplement styles, fork behavior.
 
 `apps/docs`
+
 - Owns: examples, visual testing, written docs.
 - Must include examples for HTML, React, Vue, Svelte.
 

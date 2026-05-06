@@ -16,7 +16,8 @@ export class ZmRating extends ZmElement {
         all: unset;
         cursor: pointer;
         color: var(--zm-color-border-strong);
-        transition: color var(--zm-duration-fast) var(--zm-easing-standard),
+        transition:
+          color var(--zm-duration-fast) var(--zm-easing-standard),
           transform var(--zm-duration-fast) var(--zm-easing-emphasized);
         line-height: 0;
       }
@@ -56,8 +57,7 @@ export class ZmRating extends ZmElement {
   @property({ type: Number }) max = 5;
   @property({ type: Boolean, reflect: true }) readonly = false;
   @property({ type: Boolean, reflect: true }) disabled = false;
-  @property({ type: String, reflect: true }) size: "small" | "medium" | "large" =
-    "medium";
+  @property({ type: String, reflect: true }) size: "small" | "medium" | "large" = "medium";
 
   private _set(v: number) {
     if (this.readonly || this.disabled) return;

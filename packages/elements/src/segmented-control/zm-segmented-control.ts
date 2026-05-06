@@ -35,7 +35,8 @@ export class ZmSegmentedControl extends ZmElement {
         color: var(--zm-color-text-subtle);
         border-radius: var(--zm-radius-pill);
         line-height: 1.2;
-        transition: background-color var(--zm-duration-fast) var(--zm-easing-standard),
+        transition:
+          background-color var(--zm-duration-fast) var(--zm-easing-standard),
           color var(--zm-duration-fast) var(--zm-easing-standard),
           box-shadow var(--zm-duration-fast) var(--zm-easing-standard);
       }

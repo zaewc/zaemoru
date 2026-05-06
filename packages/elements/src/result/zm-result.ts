@@ -31,15 +31,15 @@ export class ZmResult extends ZmElement {
         font-size: 32px;
       }
       :host([tone="success"]) .icon {
-        background: rgba(0, 196, 113, 0.14);
+        background: var(--zm-color-background-subtle);
         color: var(--zm-color-success);
       }
       :host([tone="warning"]) .icon {
-        background: rgba(245, 166, 35, 0.18);
-        color: #b87100;
+        background: var(--zm-color-background-subtle);
+        color: var(--zm-color-warning);
       }
       :host([tone="danger"]) .icon {
-        background: rgba(240, 68, 82, 0.12);
+        background: var(--zm-color-background-subtle);
         color: var(--zm-color-danger);
       }
       .title {
@@ -93,13 +93,7 @@ export class ZmResult extends ZmElement {
                   />
                 </svg>`
               : html`<svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-                  <circle
-                    cx="18"
-                    cy="18"
-                    r="14"
-                    stroke="currentColor"
-                    stroke-width="2.4"
-                  />
+                  <circle cx="18" cy="18" r="14" stroke="currentColor" stroke-width="2.4" />
                   <path
                     d="M18 11v9M18 24h.01"
                     stroke="currentColor"
@@ -109,12 +103,8 @@ export class ZmResult extends ZmElement {
                 </svg>`}
         </slot>
       </div>
-      ${this.resultTitle
-        ? html`<div class="title">${this.resultTitle}</div>`
-        : nothing}
-      ${this.description
-        ? html`<div class="description">${this.description}</div>`
-        : nothing}
+      ${this.resultTitle ? html`<div class="title">${this.resultTitle}</div>` : nothing}
+      ${this.description ? html`<div class="description">${this.description}</div>` : nothing}
       <slot></slot>
       <div class="actions"><slot name="actions"></slot></div>
     `;

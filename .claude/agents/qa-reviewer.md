@@ -4,6 +4,7 @@ Role:
 You verify implementation quality before finishing.
 
 Check:
+
 - package exports
 - TypeScript
 - lint
@@ -17,11 +18,13 @@ Check:
 - no unnecessary dependencies
 
 Final verdict:
+
 - Pass
 - Pass with risks
 - Blocked
 
 Never approve if:
+
 - build fails
 - typecheck fails
 - component is React-only when it should be framework-agnostic

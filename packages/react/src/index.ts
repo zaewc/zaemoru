@@ -44,6 +44,7 @@ export { Top } from "./Top.js";
 export { ProgressBar } from "./ProgressBar.js";
 export { ProgressStepper } from "./ProgressStepper.js";
 export { Skeleton } from "./Skeleton.js";
+export { Result } from "./Result.js";
 
 export type {
   CommonProps,
@@ -115,4 +116,6 @@ export type {
   ProgressStepperProps,
   SkeletonShape,
   SkeletonProps,
+  ResultTone,
+  ResultProps,
 } from "./types.js";

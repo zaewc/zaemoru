@@ -44,16 +44,11 @@ export const Checkbox = forwardRef<HTMLElement, CheckboxProps>(function Checkbox
     if (defaultChecked === undefined) return;
     const el = innerRef.current as CheckboxElement | null;
     if (el) el.checked = defaultChecked;
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  useCustomEvent<{ checked: boolean; value: string }>(
-    innerRef,
-    "zm-change",
-    (e) => {
-      onChange?.(e.detail.checked, e);
-    },
-  );
+  useCustomEvent<{ checked: boolean; value: string }>(innerRef, "zm-change", (e) => {
+    onChange?.(e.detail.checked, e);
+  });
 
   return (
     <zm-checkbox

@@ -6,11 +6,7 @@
  */
 
 export { ZmButton } from "./button/zm-button.js";
-export type {
-  ZmButtonVariant,
-  ZmButtonSize,
-  ZmButtonType,
-} from "./button/zm-button.js";
+export type { ZmButtonVariant, ZmButtonSize, ZmButtonType } from "./button/zm-button.js";
 
 export { ZmText } from "./text/zm-text.js";
 export type { ZmTextSize, ZmTextWeight, ZmTextTone } from "./text/zm-text.js";
@@ -25,10 +21,7 @@ export { ZmBadge } from "./badge/zm-badge.js";
 export type { ZmBadgeVariant, ZmBadgeSize } from "./badge/zm-badge.js";
 
 export { ZmTextField } from "./text-field/zm-text-field.js";
-export type {
-  ZmTextFieldType,
-  ZmTextFieldSize,
-} from "./text-field/zm-text-field.js";
+export type { ZmTextFieldType, ZmTextFieldSize } from "./text-field/zm-text-field.js";
 
 export { ZmCheckbox } from "./checkbox/zm-checkbox.js";
 
@@ -43,22 +36,13 @@ export { ZmSpinner } from "./spinner/zm-spinner.js";
 export type { ZmSpinnerSize, ZmSpinnerTone } from "./spinner/zm-spinner.js";
 
 export { ZmTextButton } from "./text-button/zm-text-button.js";
-export type {
-  ZmTextButtonTone,
-  ZmTextButtonSize,
-} from "./text-button/zm-text-button.js";
+export type { ZmTextButtonTone, ZmTextButtonSize } from "./text-button/zm-text-button.js";
 
 export { ZmIconButton } from "./icon-button/zm-icon-button.js";
-export type {
-  ZmIconButtonVariant,
-  ZmIconButtonSize,
-} from "./icon-button/zm-icon-button.js";
+export type { ZmIconButtonVariant, ZmIconButtonSize } from "./icon-button/zm-icon-button.js";
 
 export { ZmParagraph } from "./paragraph/zm-paragraph.js";
-export type {
-  ZmParagraphSize,
-  ZmParagraphTone,
-} from "./paragraph/zm-paragraph.js";
+export type { ZmParagraphSize, ZmParagraphTone } from "./paragraph/zm-paragraph.js";
 
 export { ZmHighlight } from "./highlight/zm-highlight.js";
 export type { ZmHighlightTone } from "./highlight/zm-highlight.js";
@@ -83,16 +67,12 @@ export type { ZmBottomInfoTone } from "./bottom-info/zm-bottom-info.js";
 export { ZmTop } from "./top/zm-top.js";
 export type { ZmTopVariant } from "./top/zm-top.js";
 export { ZmProgressBar } from "./progress-bar/zm-progress-bar.js";
-export type {
-  ZmProgressTone,
-  ZmProgressSize,
-} from "./progress-bar/zm-progress-bar.js";
+export type { ZmProgressTone, ZmProgressSize } from "./progress-bar/zm-progress-bar.js";
 export { ZmProgressStepper } from "./progress-stepper/zm-progress-stepper.js";
 export { ZmSkeleton } from "./skeleton/zm-skeleton.js";
 export type { ZmSkeletonShape } from "./skeleton/zm-skeleton.js";
+export { ZmResult } from "./result/zm-result.js";
+export type { ZmResultTone } from "./result/zm-result.js";
 
 export { ZmBorder } from "./border/zm-border.js";
-export type {
-  ZmBorderOrientation,
-  ZmBorderTone,
-} from "./border/zm-border.js";
+export type { ZmBorderOrientation, ZmBorderTone } from "./border/zm-border.js";

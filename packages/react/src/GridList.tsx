@@ -11,13 +11,7 @@ export function GridList({
   children,
 }: GridListProps) {
   return (
-    <zm-grid-list
-      id={id}
-      class={className}
-      style={style}
-      columns={columns}
-      gap={gap}
-    >
+    <zm-grid-list id={id} class={className} style={style} columns={columns} gap={gap}>
       {children}
     </zm-grid-list>
   );

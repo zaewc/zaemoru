@@ -52,9 +52,7 @@ export class ZmTableRow extends ZmElement {
   override render() {
     return html`
       <span class="label">${this.label}<slot name="label"></slot></span>
-      ${this.value
-        ? html`<span class="value">${this.value}</span>`
-        : nothing}
+      ${this.value ? html`<span class="value">${this.value}</span>` : nothing}
       <slot></slot>
     `;
   }

@@ -44,7 +44,8 @@ export class ZmTab extends ZmElement {
         display: inline-flex;
         align-items: center;
         gap: var(--zm-spacing-2);
-        transition: color var(--zm-duration-fast) var(--zm-easing-standard),
+        transition:
+          color var(--zm-duration-fast) var(--zm-easing-standard),
           background-color var(--zm-duration-fast) var(--zm-easing-standard);
       }
       :host([full-width]) button {
@@ -160,9 +161,7 @@ export class ZmTab extends ZmElement {
               @click=${() => this._select(it.value)}
             >
               <span>${it.label}</span>
-              ${it.badge
-                ? html`<span class="badge">${it.badge}</span>`
-                : ""}
+              ${it.badge ? html`<span class="badge">${it.badge}</span>` : ""}
             </button>
           `,
         )}

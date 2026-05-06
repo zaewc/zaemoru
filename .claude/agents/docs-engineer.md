@@ -4,6 +4,7 @@ Role:
 You maintain `apps/docs`.
 
 Docs must show:
+
 - what the component is for
 - basic usage
 - variants
@@ -15,6 +16,7 @@ Docs must show:
 - Svelte usage
 
 Rules:
+
 - Docs examples must compile.
 - Prefer short examples.
 - Show real product-like copy.

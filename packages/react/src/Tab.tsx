@@ -31,9 +31,7 @@ export function Tab({
     if (el && value !== undefined && el.value !== value) el.value = value;
   }, [value]);
 
-  useCustomEvent<{ value: string }>(ref, "zm-change", (e) =>
-    onChange?.(e.detail.value, e),
-  );
+  useCustomEvent<{ value: string }>(ref, "zm-change", (e) => onChange?.(e.detail.value, e));
 
   return (
     <zm-tab

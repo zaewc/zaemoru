@@ -62,20 +62,15 @@ export class ZmTop extends ZmElement {
   @property({ type: String, attribute: "top-title" }) topTitle = "";
   @property({ type: String }) subtitle = "";
   @property({ type: String, reflect: true }) variant: ZmTopVariant = "default";
-  @property({ type: String, reflect: true }) align: "start" | "center" =
-    "center";
+  @property({ type: String, reflect: true }) align: "start" | "center" = "center";
   @property({ type: Boolean, reflect: true }) sticky = false;
 
   override render() {
     return html`
       <div class="leading"><slot name="leading"></slot></div>
       <div class="center">
-        ${this.topTitle
-          ? html`<span class="title">${this.topTitle}</span>`
-          : nothing}
-        ${this.subtitle
-          ? html`<span class="subtitle">${this.subtitle}</span>`
-          : nothing}
+        ${this.topTitle ? html`<span class="title">${this.topTitle}</span>` : nothing}
+        ${this.subtitle ? html`<span class="subtitle">${this.subtitle}</span>` : nothing}
         <slot></slot>
       </div>
       <div class="trailing"><slot name="trailing"></slot></div>

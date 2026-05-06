@@ -12,6 +12,7 @@ When wrapping Web Components for React:
 8. Export from `packages/react/src/index.ts`.
 
 Example mapping:
+
 - fullWidth -> full-width
 - helperText -> helper-text
 - errorMessage -> error-message

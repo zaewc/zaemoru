@@ -54,13 +54,7 @@ export class ZmBottomInfo extends ZmElement {
       <span class="icon" aria-hidden="true">
         <slot name="icon">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <circle
-              cx="8"
-              cy="8"
-              r="7"
-              stroke="currentColor"
-              stroke-width="1.4"
-            />
+            <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.4" />
             <path
               d="M8 5V8.5M8 11h.01"
               stroke="currentColor"

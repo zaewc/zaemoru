@@ -7,18 +7,7 @@ import type { SwitchProps } from "./types.js";
 type SwitchElement = HTMLElement & { checked: boolean };
 
 export const Switch = forwardRef<HTMLElement, SwitchProps>(function Switch(
-  {
-    checked,
-    defaultChecked,
-    disabled,
-    name,
-    label,
-    onChange,
-    className,
-    style,
-    id,
-    children,
-  },
+  { checked, defaultChecked, disabled, name, label, onChange, className, style, id, children },
   forwardedRef,
 ) {
   const innerRef = useRef<HTMLElement>(null);
@@ -43,7 +32,6 @@ export const Switch = forwardRef<HTMLElement, SwitchProps>(function Switch(
     if (defaultChecked === undefined) return;
     const el = innerRef.current as SwitchElement | null;
     if (el) el.checked = defaultChecked;
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useCustomEvent<{ checked: boolean }>(innerRef, "zm-change", (e) => {

@@ -32,9 +32,7 @@ export class ZmListFooter extends ZmElement {
 
   override render() {
     return html`
-      ${this.description
-        ? html`<div class="description">${this.description}</div>`
-        : nothing}
+      ${this.description ? html`<div class="description">${this.description}</div>` : nothing}
       <slot></slot>
       <div class="action"><slot name="action"></slot></div>
     `;

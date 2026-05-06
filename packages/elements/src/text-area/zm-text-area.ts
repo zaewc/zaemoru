@@ -27,7 +27,8 @@ export class ZmTextArea extends ZmElement {
         border: 1px solid transparent;
         border-radius: var(--zm-radius-md);
         padding: var(--zm-spacing-3) var(--zm-spacing-4);
-        transition: background-color var(--zm-duration-fast) var(--zm-easing-standard),
+        transition:
+          background-color var(--zm-duration-fast) var(--zm-easing-standard),
           border-color var(--zm-duration-fast) var(--zm-easing-standard),
           box-shadow var(--zm-duration-fast) var(--zm-easing-standard);
       }
@@ -128,9 +129,7 @@ export class ZmTextArea extends ZmElement {
     }`.trim();
     const showCounter = this.maxLength > 0;
     return html`
-      ${this.label
-        ? html`<label for=${this._id}>${this.label}</label>`
-        : nothing}
+      ${this.label ? html`<label for=${this._id}>${this.label}</label>` : nothing}
       <div class=${klass}>
         <textarea
           id=${this._id}
@@ -150,16 +149,11 @@ export class ZmTextArea extends ZmElement {
       </div>
       ${helper || showCounter
         ? html`<div class="meta">
-            <span
-              id=${helperId}
-              class=${`helper ${showError ? "error" : ""}`.trim()}
-            >
+            <span id=${helperId} class=${`helper ${showError ? "error" : ""}`.trim()}>
               ${helper || ""}
             </span>
             ${showCounter
-              ? html`<span class="counter"
-                  >${this.value.length}/${this.maxLength}</span
-                >`
+              ? html`<span class="counter">${this.value.length}/${this.maxLength}</span>`
               : nothing}
           </div>`
         : nothing}
