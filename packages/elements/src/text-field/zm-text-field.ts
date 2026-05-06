@@ -43,7 +43,7 @@ export class ZmTextField extends ZmElement {
           background-color var(--zm-duration-fast) var(--zm-easing-standard),
           border-color var(--zm-duration-fast) var(--zm-easing-standard),
           box-shadow var(--zm-duration-fast) var(--zm-easing-standard);
-        padding: 0 var(--zm-spacing-4);
+        padding: 0 var(--zm-spacing-5);
       }
       :host([size="small"]) .control {
         height: var(--zm-control-height-sm);
