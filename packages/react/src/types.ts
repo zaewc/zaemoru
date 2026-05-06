@@ -208,6 +208,134 @@ export interface ResultProps extends CommonProps {
   actions?: ReactNode;
 }
 
+export interface BottomSheetProps extends CommonProps {
+  open?: boolean;
+  title?: string;
+  closeOnBackdrop?: boolean;
+  onClose?: (event: CustomEvent) => void;
+}
+
+export type BubbleTone = "neutral" | "primary" | "success" | "warning" | "danger";
+export type BubblePlacement = "start" | "end";
+
+export interface BubbleProps extends CommonProps {
+  tone?: BubbleTone;
+  placement?: BubblePlacement;
+}
+
+export type LoaderSize = "small" | "medium" | "large";
+
+export interface LoaderProps extends CommonProps {
+  size?: LoaderSize;
+  label?: string;
+}
+
+export interface MenuItem {
+  value: string;
+  label: string;
+  disabled?: boolean;
+  danger?: boolean;
+}
+
+export interface MenuProps extends CommonProps {
+  items?: MenuItem[];
+  onSelect?: (value: string, event: CustomEvent<{ value: string; item: MenuItem }>) => void;
+}
+
+export interface ModalProps extends CommonProps {
+  open?: boolean;
+  title?: string;
+  description?: string;
+  closeOnBackdrop?: boolean;
+  actions?: ReactNode;
+  onClose?: (event: CustomEvent) => void;
+}
+
+export interface NumericSpinnerProps extends Omit<CommonProps, "children"> {
+  value?: number;
+  defaultValue?: number;
+  min?: number;
+  max?: number;
+  step?: number;
+  disabled?: boolean;
+  onChange?: (value: number, event: CustomEvent<{ value: number }>) => void;
+}
+
+export interface PostProps extends CommonProps {
+  title?: string;
+  description?: string;
+  meta?: string;
+}
+
+export type ToastTone = "default" | "success" | "warning" | "danger";
+
+export interface ToastProps extends CommonProps {
+  tone?: ToastTone;
+  action?: ReactNode;
+}
+
+export type TooltipPlacement = "top" | "bottom";
+
+export interface TooltipProps extends CommonProps {
+  text?: string;
+  placement?: TooltipPlacement;
+  open?: boolean;
+  content?: ReactNode;
+}
+
+export interface AgreementProps extends CommonProps {
+  checked?: boolean;
+  label?: string;
+  onChange?: (checked: boolean, event: CustomEvent<{ checked: boolean }>) => void;
+}
+
+export type AssetShape = "rounded" | "circle" | "square";
+
+export interface AssetProps extends CommonProps {
+  src?: string;
+  alt?: string;
+  shape?: AssetShape;
+}
+
+export type BottomCtaLayout = "single" | "double";
+
+export interface BottomCtaProps extends CommonProps {
+  layout?: BottomCtaLayout;
+  fixed?: boolean;
+}
+
+export interface BarChartDatum {
+  label: string;
+  value: number;
+}
+
+export interface BarChartProps extends CommonProps {
+  data?: BarChartDatum[];
+}
+
+export type DialogKind = "alert" | "confirm";
+
+export interface DialogProps extends CommonProps {
+  open?: boolean;
+  kind?: DialogKind;
+  title?: string;
+  description?: string;
+  onClose?: (event: CustomEvent) => void;
+  onCancel?: (event: CustomEvent) => void;
+  onConfirm?: (event: CustomEvent) => void;
+}
+
+export interface SplitTextFieldProps extends Omit<CommonProps, "children"> {
+  parts?: number;
+  placeholder?: string;
+  onChange?: (value: string, event: CustomEvent<{ values: string[]; value: string }>) => void;
+}
+
+export interface KeypadProps extends Omit<CommonProps, "children"> {
+  showSubmit?: boolean;
+  onKey?: (value: string, event: CustomEvent<{ value: string }>) => void;
+}
+
 export type TopVariant = "default" | "transparent";
 
 export interface TopProps extends CommonProps {

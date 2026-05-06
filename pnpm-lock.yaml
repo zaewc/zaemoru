@@ -1,7 +1,7 @@
 lockfileVersion: '9.0'
 
 settings:
-  autoInstallPeers: true
+  autoInstallPeers: false
   excludeLinksFromLockfile: false
 
 importers:
@@ -36,6 +36,45 @@ importers:
         specifier: ^8.5.0
         version: 8.59.2(eslint@9.39.4)(typescript@5.9.3)
 
+  packages/alpine:
+    dependencies:
+      '@zaemoru/elements':
+        specifier: workspace:*
+        version: link:../elements
+    devDependencies:
+      tsup:
+        specifier: ^8.3.0
+        version: 8.5.1(typescript@5.9.3)
+      typescript:
+        specifier: ^5.5.4
+        version: 5.9.3
+
+  packages/angular:
+    dependencies:
+      '@zaemoru/elements':
+        specifier: workspace:*
+        version: link:../elements
+    devDependencies:
+      tsup:
+        specifier: ^8.3.0
+        version: 8.5.1(typescript@5.9.3)
+      typescript:
+        specifier: ^5.5.4
+        version: 5.9.3
+
+  packages/astro:
+    dependencies:
+      '@zaemoru/elements':
+        specifier: workspace:*
+        version: link:../elements
+    devDependencies:
+      tsup:
+        specifier: ^8.3.0
+        version: 8.5.1(typescript@5.9.3)
+      typescript:
+        specifier: ^5.5.4
+        version: 5.9.3
+
   packages/elements:
     dependencies:
       lit:
@@ -52,14 +91,76 @@ importers:
         specifier: ^5.5.4
         version: 5.9.3
 
+  packages/ember:
+    dependencies:
+      '@zaemoru/elements':
+        specifier: workspace:*
+        version: link:../elements
+    devDependencies:
+      tsup:
+        specifier: ^8.3.0
+        version: 8.5.1(typescript@5.9.3)
+      typescript:
+        specifier: ^5.5.4
+        version: 5.9.3
+
+  packages/htmx:
+    dependencies:
+      '@zaemoru/elements':
+        specifier: workspace:*
+        version: link:../elements
+    devDependencies:
+      tsup:
+        specifier: ^8.3.0
+        version: 8.5.1(typescript@5.9.3)
+      typescript:
+        specifier: ^5.5.4
+        version: 5.9.3
+
+  packages/lit:
+    dependencies:
+      '@zaemoru/elements':
+        specifier: workspace:*
+        version: link:../elements
+    devDependencies:
+      tsup:
+        specifier: ^8.3.0
+        version: 8.5.1(typescript@5.9.3)
+      typescript:
+        specifier: ^5.5.4
+        version: 5.9.3
+
+  packages/preact:
+    dependencies:
+      '@zaemoru/elements':
+        specifier: workspace:*
+        version: link:../elements
+    devDependencies:
+      tsup:
+        specifier: ^8.3.0
+        version: 8.5.1(typescript@5.9.3)
+      typescript:
+        specifier: ^5.5.4
+        version: 5.9.3
+
+  packages/qwik:
+    dependencies:
+      '@zaemoru/elements':
+        specifier: workspace:*
+        version: link:../elements
+    devDependencies:
+      tsup:
+        specifier: ^8.3.0
+        version: 8.5.1(typescript@5.9.3)
+      typescript:
+        specifier: ^5.5.4
+        version: 5.9.3
+
   packages/react:
     dependencies:
       '@zaemoru/elements':
         specifier: workspace:*
         version: link:../elements
-      '@zaemoru/tokens':
-        specifier: workspace:*
-        version: link:../tokens
     devDependencies:
       '@types/react':
         specifier: ^18.3.3
@@ -80,7 +181,46 @@ importers:
         specifier: ^5.5.4
         version: 5.9.3
 
+  packages/solid:
+    dependencies:
+      '@zaemoru/elements':
+        specifier: workspace:*
+        version: link:../elements
+    devDependencies:
+      tsup:
+        specifier: ^8.3.0
+        version: 8.5.1(typescript@5.9.3)
+      typescript:
+        specifier: ^5.5.4
+        version: 5.9.3
+
+  packages/svelte:
+    dependencies:
+      '@zaemoru/elements':
+        specifier: workspace:*
+        version: link:../elements
+    devDependencies:
+      tsup:
+        specifier: ^8.3.0
+        version: 8.5.1(typescript@5.9.3)
+      typescript:
+        specifier: ^5.5.4
+        version: 5.9.3
+
   packages/tokens: {}
+
+  packages/vue:
+    dependencies:
+      '@zaemoru/elements':
+        specifier: workspace:*
+        version: link:../elements
+    devDependencies:
+      tsup:
+        specifier: ^8.3.0
+        version: 8.5.1(typescript@5.9.3)
+      typescript:
+        specifier: ^5.5.4
+        version: 5.9.3
 
 packages:
 

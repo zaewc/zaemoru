@@ -1,0 +1,48 @@
+{
+  "name": "@zaemoru/ember",
+  "version": "0.1.0",
+  "description": "Ember adapter for Zaemoru Web Components.",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": true,
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "peerDependencies": {
+    "@ember/application": ">=4",
+    "@zaemoru/elements": "workspace:*",
+    "@zaemoru/tokens": "workspace:*"
+  },
+  "peerDependenciesMeta": {
+    "@ember/application": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "@zaemoru/elements": "workspace:*"
+  },
+  "devDependencies": {
+    "tsup": "^8.3.0",
+    "typescript": "^5.5.4"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
