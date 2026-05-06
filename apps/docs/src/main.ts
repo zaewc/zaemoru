@@ -363,7 +363,6 @@ import "@zaemoru/elements";</code></pre>
           (group) => `
             <section class="section" id="${group.id}">
               <header class="section-header">
-                <span>${group.id}</span>
                 <h2>${group.title}</h2>
                 <p>${group.intro}</p>
               </header>
@@ -386,7 +385,6 @@ import "@zaemoru/elements";</code></pre>
 
       <section class="section" id="adapters">
         <header class="section-header">
-          <span>ecosystem</span>
           <h2>Adapters</h2>
           <p>Every adapter registers the same Web Components. React adds typed wrappers; the rest provide framework integration helpers and direct zm-* usage.</p>
         </header>
