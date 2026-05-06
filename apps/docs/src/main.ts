@@ -1,5 +1,6 @@
 import "@zaemoru/tokens/index.css";
 import "@zaemoru/elements";
+import { zaemoruComponents } from "@zaemoru/elements";
 import "./styles.css";
 import * as si from "simple-icons";
 
@@ -8,6 +9,186 @@ type MenuItem = {
   label: string;
   danger?: boolean;
 };
+
+const krdsNewComponents = new Set([
+  "Masthead",
+  "Identifier",
+  "Header",
+  "Footer",
+  "SkipLink",
+  "MainMenu",
+  "Breadcrumb",
+  "SideNavigation",
+  "InPageNavigation",
+  "Pagination",
+  "StructuredList",
+  "CriticalAlert",
+  "Calendar",
+  "Disclosure",
+  "Accordion",
+  "Image",
+  "Carousel",
+  "Table",
+  "TextList",
+  "Favicon",
+  "Link",
+  "Fab",
+  "RadioButton",
+  "Select",
+  "Tag",
+  "ToggleSwitch",
+  "StepIndicator",
+  "HelpPanel",
+  "TutorialPanel",
+  "ContextualHelp",
+  "CoachMark",
+  "Tts",
+  "DateInput",
+  "TextInput",
+  "FileUpload",
+  "LanguageSwitcher",
+  "Resize",
+  "AccessibleMultimedia",
+  "VisuallyHidden",
+  "RangeSlider",
+  "BackButton",
+  "QuantityToggle",
+  "Snackbar",
+  "TabBars",
+  "SplashScreen",
+]);
+
+const catalogGroups = [
+  {
+    title: "KRDS Identity",
+    names: ["Masthead", "Identifier", "Header", "Footer"],
+  },
+  {
+    title: "KRDS Navigation",
+    names: [
+      "SkipLink",
+      "MainMenu",
+      "Breadcrumb",
+      "SideNavigation",
+      "InPageNavigation",
+      "Pagination",
+      "BackButton",
+      "TabBars",
+    ],
+  },
+  {
+    title: "KRDS Layout And Content",
+    names: [
+      "StructuredList",
+      "CriticalAlert",
+      "Calendar",
+      "Disclosure",
+      "Accordion",
+      "Modal",
+      "Badge",
+      "Image",
+      "Carousel",
+      "Tab",
+      "Table",
+      "TextList",
+      "Favicon",
+      "AccessibleMultimedia",
+      "VisuallyHidden",
+      "SplashScreen",
+    ],
+  },
+  {
+    title: "KRDS Actions And Selection",
+    names: ["Link", "Button", "Fab", "RadioButton", "Checkbox", "Select", "Tag", "ToggleSwitch"],
+  },
+  {
+    title: "KRDS Feedback And Help",
+    names: [
+      "StepIndicator",
+      "Spinner",
+      "HelpPanel",
+      "TutorialPanel",
+      "ContextualHelp",
+      "CoachMark",
+      "Tooltip",
+      "Tts",
+      "Toast",
+      "Snackbar",
+    ],
+  },
+  {
+    title: "KRDS Inputs And Mobile",
+    names: [
+      "DateInput",
+      "TextArea",
+      "TextInput",
+      "FileUpload",
+      "LanguageSwitcher",
+      "Resize",
+      "RangeSlider",
+      "BottomSheet",
+      "QuantityToggle",
+    ],
+  },
+  {
+    title: "Zaemoru Product UI",
+    names: [
+      "Text",
+      "Heading",
+      "Paragraph",
+      "Card",
+      "Asset",
+      "BottomInfo",
+      "TextField",
+      "SearchField",
+      "Switch",
+      "Agreement",
+      "Slider",
+      "Stepper",
+      "NumericSpinner",
+      "Rating",
+      "SegmentedControl",
+      "Top",
+      "Menu",
+      "Dialog",
+      "Loader",
+      "ProgressBar",
+      "ProgressStepper",
+      "Skeleton",
+      "Result",
+      "Bubble",
+      "Post",
+      "BarChart",
+      "TableRow",
+      "GridList",
+      "ListHeader",
+      "ListRow",
+      "ListFooter",
+      "BottomCta",
+      "TextButton",
+      "IconButton",
+      "Highlight",
+      "Border",
+      "SplitTextField",
+      "NumberKeypad",
+      "AlphabetKeypad",
+      "SecureKeypad",
+    ],
+  },
+];
+
+const componentByName = new Map<string, (typeof zaemoruComponents)[number]>(
+  zaemoruComponents.map((component) => [component.name, component]),
+);
+
+const renderedCatalogNames = new Set(catalogGroups.flatMap((group) => group.names));
+const uncategorizedCatalogNames = zaemoruComponents
+  .map((component) => component.name)
+  .filter((name) => !renderedCatalogNames.has(name));
+
+if (uncategorizedCatalogNames.length > 0) {
+  catalogGroups.push({ title: "Other Components", names: uncategorizedCatalogNames });
+}
 
 const componentGroups = [
   {
@@ -426,6 +607,50 @@ function code(text: string) {
   return text.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
 }
 
+function componentSnippet(name: string, tag: string) {
+  if (name === "Button") return `<${tag}>Continue</${tag}>`;
+  if (name === "TextField") return `<${tag} label="Name"></${tag}>`;
+  if (name === "Select") return `<${tag} label="Service type"></${tag}>`;
+  if (name === "Table") return `<${tag} id="service-table"></${tag}>`;
+  if (name === "Modal") return `<${tag} open modal-title="Confirm"></${tag}>`;
+  if (tag.includes("input") || tag.includes("field")) return `<${tag} label="${name}"></${tag}>`;
+  return `<${tag} label="${name}"></${tag}>`;
+}
+
+const catalogMarkup = catalogGroups
+  .map(
+    (group) => `
+      <article class="catalog-group">
+        <header>
+          <h3>${group.title}</h3>
+          <span>${group.names.length}</span>
+        </header>
+        <div class="catalog-grid">
+          ${group.names
+            .map((name) => {
+              const component = componentByName.get(name);
+              if (!component) return "";
+              const status = krdsNewComponents.has(name) ? "New KRDS" : "Existing";
+              const snippet = componentSnippet(name, component.tag);
+              return `
+                <div class="catalog-card">
+                  <div class="catalog-card-head">
+                    <strong>${name}</strong>
+                    <span class="${krdsNewComponents.has(name) ? "catalog-status new" : "catalog-status"}">${status}</span>
+                  </div>
+                  <code>${component.tag}</code>
+                  <pre><code>${code(snippet)}</code></pre>
+                  <pre><code>${code(`import { ${name} } from "@zaemoru/react";`)}</code></pre>
+                </div>
+              `;
+            })
+            .join("")}
+        </div>
+      </article>
+    `,
+  )
+  .join("");
+
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
   <div class="layout">
     <aside class="sidebar">
@@ -434,6 +659,7 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
       </a>
       <nav>
         ${componentGroups.map((group) => `<a href="#${group.id}">${group.title}</a>`).join("")}
+        <a href="#catalog">Catalog</a>
         <a href="#adapters">Adapters</a>
       </nav>
     </aside>
@@ -490,6 +716,17 @@ import "@zaemoru/elements";</code></pre>
           `,
         )
         .join("")}
+
+      <section class="section" id="catalog">
+        <header class="section-header">
+          <span>${zaemoruComponents.length} components</span>
+          <h2>Component Catalog</h2>
+          <p>Every shipped component is listed with its custom element tag and React export. KRDS-based additions are marked so the new coverage is easy to scan.</p>
+        </header>
+        <div class="catalog-stack">
+          ${catalogMarkup}
+        </div>
+      </section>
 
       <section class="section" id="adapters">
         <header class="section-header">

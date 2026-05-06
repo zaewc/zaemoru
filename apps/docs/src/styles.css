@@ -414,6 +414,99 @@ code {
   gap: var(--zm-spacing-4);
 }
 
+.catalog-stack {
+  display: grid;
+  gap: var(--zm-spacing-7);
+}
+
+.catalog-group {
+  display: grid;
+  gap: var(--zm-spacing-4);
+}
+
+.catalog-group > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--zm-spacing-3);
+}
+
+.catalog-group h3 {
+  margin: 0;
+  color: var(--zm-color-text-strong);
+  font-size: var(--zm-font-size-xl);
+}
+
+.catalog-group > header span {
+  min-width: 36px;
+  padding: 5px var(--zm-spacing-3);
+  border-radius: var(--zm-radius-pill);
+  background: var(--zm-color-background-subtle);
+  color: var(--zm-color-text-subtle);
+  text-align: center;
+  font-size: var(--zm-font-size-sm);
+  font-weight: var(--zm-font-weight-bold);
+}
+
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--zm-spacing-4);
+}
+
+.catalog-card {
+  display: grid;
+  gap: var(--zm-spacing-3);
+  min-width: 0;
+  padding: var(--zm-spacing-4);
+  border: 1px solid rgba(229, 232, 235, 0.9);
+  border-radius: var(--zm-radius-lg);
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: var(--zm-shadow-xs);
+}
+
+.catalog-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--zm-spacing-3);
+}
+
+.catalog-card-head strong {
+  min-width: 0;
+  color: var(--zm-color-text-strong);
+  font-size: var(--zm-font-size-md);
+}
+
+.catalog-card > code {
+  width: fit-content;
+  padding: 4px var(--zm-spacing-2);
+  border-radius: var(--zm-radius-sm);
+  background: var(--zm-color-background-subtle);
+  color: var(--zm-color-text-subtle);
+  font-size: var(--zm-font-size-sm);
+}
+
+.catalog-status {
+  flex: 0 0 auto;
+  padding: 4px var(--zm-spacing-2);
+  border-radius: var(--zm-radius-pill);
+  background: var(--zm-color-background-muted);
+  color: var(--zm-color-text-subtle);
+  font-size: var(--zm-font-size-xs);
+  font-weight: var(--zm-font-weight-bold);
+}
+
+.catalog-status.new {
+  background: var(--zm-color-primary-subtle);
+  color: var(--zm-color-primary);
+}
+
+.catalog-card pre {
+  padding: var(--zm-spacing-3);
+  font-size: 12px;
+}
+
 @media (max-width: 980px) {
   .layout {
     grid-template-columns: 1fr;
