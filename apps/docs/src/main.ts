@@ -270,6 +270,110 @@ const componentGroups = [
       },
     ],
   },
+  {
+    id: "krds",
+    title: "KRDS Coverage",
+    intro:
+      "Public-service components inspired by the KRDS catalog, implemented as zm-* Web Components with the same adapter surface.",
+    demos: [
+      {
+        title: "Identity",
+        body: `
+          <div class="form-stack">
+            <zm-skip-link href="#krds">Skip to KRDS examples</zm-skip-link>
+            <zm-masthead label="This service is operated by a public institution."></zm-masthead>
+            <zm-identifier label="Ministry Service" description="Operating organization identifier"></zm-identifier>
+            <zm-header label="Public Portal"><zm-link href="#krds">Services</zm-link><zm-link href="#forms">Apply</zm-link></zm-header>
+            <zm-footer label="Public Portal" description="Helpful links and service information."><zm-link>Contact</zm-link><zm-link>Policy</zm-link></zm-footer>
+          </div>
+        `,
+      },
+      {
+        title: "Navigation",
+        body: `
+          <div class="form-stack">
+            <zm-main-menu id="krds-main-menu" label="Main menu"></zm-main-menu>
+            <zm-breadcrumb id="krds-breadcrumb" label="Breadcrumb"></zm-breadcrumb>
+            <zm-side-navigation id="krds-side-nav" label="Side navigation"></zm-side-navigation>
+            <zm-in-page-navigation id="krds-in-page-nav" label="In-page navigation"></zm-in-page-navigation>
+            <zm-pagination value="2"></zm-pagination>
+          </div>
+        `,
+      },
+      {
+        title: "Layout And Expression",
+        body: `
+          <div class="form-stack">
+            <zm-structured-list id="krds-structured-list"></zm-structured-list>
+            <zm-critical-alert label="Important notice" description="Service hours may change during maintenance."></zm-critical-alert>
+            <zm-calendar label="Reservation date"></zm-calendar>
+            <zm-disclosure label="Required documents" description="Open to review documents.">Identification and application form.</zm-disclosure>
+            <zm-accordion id="krds-accordion"></zm-accordion>
+            <zm-image href="/favicon.png" label="Service image" description="Inspectable image content."></zm-image>
+            <zm-carousel id="krds-carousel"></zm-carousel>
+            <zm-table id="krds-table"></zm-table>
+            <zm-text-list id="krds-text-list"></zm-text-list>
+            <zm-favicon>Z</zm-favicon>
+          </div>
+        `,
+      },
+      {
+        title: "Actions And Selection",
+        body: `
+          <div class="form-stack">
+            <zm-link href="#adapters">Go to adapters</zm-link>
+            <zm-fab label="Create"></zm-fab>
+            <zm-radio-button label="Receive by email" value="email"></zm-radio-button>
+            <zm-select id="krds-select" label="Service type"></zm-select>
+            <zm-tag label="Selected"></zm-tag>
+            <zm-toggle-switch label="Use notifications"></zm-toggle-switch>
+            <zm-step-indicator id="krds-step-indicator" current="2"></zm-step-indicator>
+          </div>
+        `,
+      },
+      {
+        title: "Help",
+        body: `
+          <div class="form-stack">
+            <zm-help-panel label="Help panel" description="Contextual help for the current section."></zm-help-panel>
+            <zm-tutorial-panel label="Tutorial panel" description="Step-by-step support for complex tasks."></zm-tutorial-panel>
+            <zm-contextual-help label="Why is this required?" description="This helps verify eligibility."></zm-contextual-help>
+            <zm-coach-mark label="Coach mark" description="A focused hint for a new feature."></zm-coach-mark>
+            <zm-tts label="Read aloud" description="This text can be spoken by the browser."></zm-tts>
+          </div>
+        `,
+      },
+      {
+        title: "Inputs And Settings",
+        body: `
+          <div class="form-stack">
+            <zm-date-input label="Start date"></zm-date-input>
+            <zm-text-input label="Applicant name" description="Enter your name"></zm-text-input>
+            <zm-file-upload label="Attach file" description="PDF or image files are accepted."></zm-file-upload>
+            <zm-language-switcher id="krds-language" label="Language"></zm-language-switcher>
+            <zm-resize label="Text size" value="medium"></zm-resize>
+          </div>
+        `,
+      },
+      {
+        title: "Mobile And Content",
+        body: `
+          <div class="form-stack">
+            <zm-accessible-multimedia label="Accessible media" description="Transcript and alternative description live with media.">
+              Transcript: This media explains the application process.
+            </zm-accessible-multimedia>
+            <zm-visually-hidden>Screen-reader only status text</zm-visually-hidden>
+            <zm-range-slider label="Range" value="40"></zm-range-slider>
+            <zm-back-button label="Back"></zm-back-button>
+            <zm-quantity-toggle label="Quantity" value="2" min="0" max="5"></zm-quantity-toggle>
+            <zm-snackbar label="Draft saved" description="Undo"></zm-snackbar>
+            <zm-tab-bars id="krds-tab-bars" label="Tab bars"></zm-tab-bars>
+            <zm-splash-screen label="zaemoru" description="Loading public service"></zm-splash-screen>
+          </div>
+        `,
+      },
+    ],
+  },
 ];
 
 const adapters: Array<[string, string]> = [
@@ -470,6 +574,72 @@ if (chart) {
     { label: "Fri", value: 52 },
   ];
 }
+
+const krdsItems: Record<
+  string,
+  Array<{ label: string; value?: string; href?: string; description?: string; current?: boolean }>
+> = {
+  "krds-main-menu": [
+    { label: "Home", href: "#intro", current: true },
+    { label: "Services", href: "#krds" },
+    { label: "Support", href: "#adapters" },
+  ],
+  "krds-breadcrumb": [
+    { label: "Home", href: "#intro" },
+    { label: "Components", href: "#krds" },
+    { label: "KRDS", href: "#krds", current: true },
+  ],
+  "krds-side-nav": [
+    { label: "Identity", href: "#krds", current: true },
+    { label: "Navigation", href: "#navigation" },
+    { label: "Inputs", href: "#forms" },
+  ],
+  "krds-in-page-nav": [
+    { label: "Layout", href: "#krds" },
+    { label: "Help", href: "#krds" },
+    { label: "Mobile", href: "#krds" },
+  ],
+  "krds-structured-list": [
+    { label: "Application number", value: "A-2031" },
+    { label: "Status", description: "Review in progress" },
+  ],
+  "krds-accordion": [
+    { label: "Eligibility", description: "Citizens and residents may apply." },
+    { label: "Processing time", description: "Most requests are processed within 3 days." },
+  ],
+  "krds-carousel": [
+    { label: "Notice", description: "Review your information before submitting." },
+    { label: "Support", description: "Help is available during every step." },
+  ],
+  "krds-table": [
+    { label: "Fee", value: "Free" },
+    { label: "Channel", value: "Online" },
+  ],
+  "krds-text-list": [
+    { label: "Prepare identification" },
+    { label: "Upload required files" },
+    { label: "Submit application" },
+  ],
+  "krds-select": [
+    { label: "Certificate", value: "certificate" },
+    { label: "Application", value: "application" },
+  ],
+  "krds-step-indicator": [{ label: "Input" }, { label: "Review" }, { label: "Submit" }],
+  "krds-language": [
+    { label: "한국어", value: "ko" },
+    { label: "English", value: "en" },
+  ],
+  "krds-tab-bars": [
+    { label: "Home", href: "#intro", current: true },
+    { label: "Search", href: "#forms" },
+    { label: "My", href: "#content" },
+  ],
+};
+
+Object.entries(krdsItems).forEach(([id, items]) => {
+  const element = document.querySelector<HTMLElement & { items: typeof items }>(`#${id}`);
+  if (element) element.items = items;
+});
 
 const modal = document.querySelector<HTMLElement & { open: boolean }>("#demo-modal")!;
 const sheet = document.querySelector<HTMLElement & { open: boolean }>("#demo-sheet")!;

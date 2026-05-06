@@ -475,3 +475,25 @@ export interface BorderProps extends Omit<CommonProps, "children"> {
   tone?: BorderTone;
   thick?: boolean;
 }
+
+export interface KrdsComponentProps extends CommonProps {
+  label?: string;
+  description?: string;
+  href?: string;
+  value?: string | number;
+  disabled?: boolean;
+  checked?: boolean;
+  open?: boolean;
+  items?: Array<{
+    label: string;
+    value?: string;
+    href?: string;
+    description?: string;
+    current?: boolean;
+    disabled?: boolean;
+  }>;
+  min?: number;
+  max?: number;
+  current?: number;
+  [key: string]: unknown;
+}

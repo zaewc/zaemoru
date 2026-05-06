@@ -34,7 +34,6 @@ Web Components를 중심에 두고, React, Vue, Angular, Svelte, Solid, Qwik, Li
 | `@zaemoru/htmx`     | HTMX 속성과 함께 쓸 수 있게 해요.                 |
 | `@zaemoru/ember`    | Ember 앱에서 Web Components를 등록해요.           |
 
-
 ## 기본 사용법
 
 먼저 토큰과 Web Components를 불러와요.
@@ -99,11 +98,11 @@ import "@zaemoru/vue";
 ## 개발 명령어
 
 ```bash
-pnpm dev          
-pnpm build        
-pnpm typecheck    
-pnpm lint         
-pnpm format       
+pnpm dev
+pnpm build
+pnpm typecheck
+pnpm lint
+pnpm format
 ```
 
 ## 릴리스
