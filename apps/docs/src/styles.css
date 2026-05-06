@@ -162,6 +162,13 @@ main {
   color: var(--stack-color);
   font-size: 13px;
   font-weight: var(--zm-font-weight-bold);
+  flex-shrink: 0;
+}
+
+.stack-icon svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
 }
 
 .hero-actions {

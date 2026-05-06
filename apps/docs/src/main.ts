@@ -1,6 +1,7 @@
 import "@zaemoru/tokens/index.css";
 import "@zaemoru/elements";
 import "./styles.css";
+import * as si from "simple-icons";
 
 type MenuItem = {
   value: string;
@@ -286,25 +287,27 @@ const adapters: Array<[string, string]> = [
 ];
 
 const techStacks = [
-  ["React", "R", "#61dafb"],
-  ["Vue", "V", "#42b883"],
-  ["Angular", "A", "#dd0031"],
-  ["Svelte", "S", "#ff3e00"],
-  ["Solid", "S", "#2c4f7c"],
-  ["Qwik", "Q", "#18b6f6"],
-  ["Lit", "L", "#324fff"],
-  ["Preact", "P", "#673ab8"],
-  ["Astro", "A", "#ff5d01"],
-  ["Alpine.js", "A", "#77c1d2"],
-  ["HTMX", "H", "#3d72d7"],
-  ["Ember", "E", "#e04e39"],
+  { name: "React", icon: si.siReact },
+  { name: "Vue", icon: si.siVuedotjs },
+  { name: "Angular", icon: si.siAngular },
+  { name: "Svelte", icon: si.siSvelte },
+  { name: "Solid", icon: si.siSolid },
+  { name: "Qwik", icon: si.siQwik },
+  { name: "Lit", icon: si.siLit },
+  { name: "Preact", icon: si.siPreact },
+  { name: "Astro", icon: si.siAstro },
+  { name: "Alpine.js", icon: si.siAlpinedotjs },
+  { name: "HTMX", icon: si.siHtmx },
+  { name: "Ember", icon: si.siEmberdotjs },
 ];
 
 const stackIcons = techStacks
   .map(
-    ([name, mark, color]) => `
+    ({ name, icon }) => `
       <span class="stack-chip">
-        <span class="stack-icon" style="--stack-color: ${color}">${mark}</span>
+        <span class="stack-icon" style="--stack-color: #${icon.hex}">
+          ${icon.svg}
+        </span>
         <span>${name}</span>
       </span>
     `,
