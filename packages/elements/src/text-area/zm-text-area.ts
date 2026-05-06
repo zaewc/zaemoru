@@ -31,7 +31,7 @@ export class ZmTextArea extends ZmElement {
         background: var(--zm-color-background-subtle);
         border: 1px solid transparent;
         border-radius: var(--zm-radius-md);
-        padding: var(--zm-spacing-3) var(--zm-spacing-4);
+        padding: var(--zm-spacing-3) var(--zm-spacing-5);
         transition:
           background-color var(--zm-duration-fast) var(--zm-easing-standard),
           border-color var(--zm-duration-fast) var(--zm-easing-standard),

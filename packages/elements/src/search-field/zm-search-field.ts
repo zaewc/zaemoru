@@ -26,7 +26,7 @@ export class ZmSearchField extends ZmElement {
         box-sizing: border-box;
         background: var(--zm-color-background-subtle);
         border-radius: var(--zm-radius-pill);
-        padding: 0 var(--zm-spacing-4);
+        padding: 0 var(--zm-spacing-5);
         height: var(--zm-control-height-md);
         border: 1px solid transparent;
         transition:
