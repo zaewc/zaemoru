@@ -244,6 +244,123 @@ export interface MenuProps extends CommonProps {
   onSelect?: (value: string, event: CustomEvent<{ value: string; item: MenuItem }>) => void;
 }
 
+export interface AspectRatioProps extends CommonProps {
+  ratio?: string;
+}
+
+export type AvatarSize = "small" | "medium" | "large";
+
+export interface AvatarProps extends CommonProps {
+  src?: string;
+  alt?: string;
+  fallback?: string;
+  size?: AvatarSize;
+}
+
+export interface ButtonGroupProps extends CommonProps {
+  orientation?: "horizontal" | "vertical";
+  attached?: boolean;
+  label?: string;
+}
+
+export interface ComboboxOption {
+  label: string;
+  value: string;
+  disabled?: boolean;
+}
+
+export interface ComboboxProps extends Omit<CommonProps, "children"> {
+  label?: string;
+  placeholder?: string;
+  value?: string;
+  options?: ComboboxOption[];
+  onChange?: (value: string, event: CustomEvent<{ value: string; item: ComboboxOption }>) => void;
+}
+
+export interface CommandItem {
+  label: string;
+  value: string;
+  description?: string;
+  disabled?: boolean;
+}
+
+export interface CommandProps extends Omit<CommonProps, "children"> {
+  placeholder?: string;
+  items?: CommandItem[];
+  onSelect?: (value: string, event: CustomEvent<{ value: string; item: CommandItem }>) => void;
+}
+
+export interface ContextMenuProps extends CommonProps {
+  items?: MenuItem[];
+  onSelect?: (value: string, event: CustomEvent<{ value: string; item: MenuItem }>) => void;
+}
+
+export interface DirectionProps extends CommonProps {
+  direction?: "ltr" | "rtl";
+}
+
+export interface EmptyProps extends CommonProps {
+  title?: string;
+  description?: string;
+}
+
+export interface HoverCardProps extends CommonProps {
+  placement?: "top" | "bottom";
+  open?: boolean;
+}
+
+export interface InputGroupProps extends CommonProps {
+  label?: string;
+  description?: string;
+}
+
+export interface InputOtpProps extends Omit<CommonProps, "children"> {
+  parts?: number;
+  value?: string;
+  masked?: boolean;
+  onChange?: (value: string, event: CustomEvent<{ values: string[]; value: string }>) => void;
+}
+
+export interface ItemProps extends CommonProps {
+  title?: string;
+  description?: string;
+  value?: string;
+  selected?: boolean;
+  disabled?: boolean;
+  interactive?: boolean;
+}
+
+export interface LabelProps extends CommonProps {
+  htmlFor?: string;
+  description?: string;
+  required?: boolean;
+}
+
+export interface PopoverProps extends CommonProps {
+  open?: boolean;
+  placement?: "top" | "bottom";
+}
+
+export interface ResizableProps extends CommonProps {
+  direction?: "horizontal" | "vertical";
+  size?: string;
+}
+
+export interface ScrollAreaProps extends CommonProps {
+  height?: string;
+}
+
+export interface SonnerItem {
+  label: string;
+  description?: string;
+  tone?: ToastTone;
+}
+
+export interface SonnerProps extends CommonProps {
+  position?: "top-right" | "bottom-right" | "bottom-center";
+  items?: SonnerItem[];
+}
+
 export interface ModalProps extends CommonProps {
   open?: boolean;
   title?: string;

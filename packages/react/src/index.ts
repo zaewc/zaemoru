@@ -49,6 +49,24 @@ export { BottomSheet } from "./BottomSheet.js";
 export { Bubble } from "./Bubble.js";
 export { Loader } from "./Loader.js";
 export { Menu } from "./Menu.js";
+export { AspectRatio } from "./AspectRatio.js";
+export { Avatar } from "./Avatar.js";
+export { ButtonGroup } from "./ButtonGroup.js";
+export { Combobox } from "./Combobox.js";
+export { Command } from "./Command.js";
+export { ContextMenu } from "./ContextMenu.js";
+export { Direction } from "./Direction.js";
+export { Empty } from "./Empty.js";
+export { HoverCard } from "./HoverCard.js";
+export { InputGroup } from "./InputGroup.js";
+export { InputOtp } from "./InputOtp.js";
+export { Item } from "./Item.js";
+export { Kbd } from "./Kbd.js";
+export { Label } from "./Label.js";
+export { Popover } from "./Popover.js";
+export { Resizable } from "./Resizable.js";
+export { ScrollArea } from "./ScrollArea.js";
+export { Sonner } from "./Sonner.js";
 export { Modal } from "./Modal.js";
 export { NumericSpinner } from "./NumericSpinner.js";
 export { Post } from "./Post.js";
@@ -191,6 +209,27 @@ export type {
   LoaderProps,
   MenuItem,
   MenuProps,
+  AspectRatioProps,
+  AvatarSize,
+  AvatarProps,
+  ButtonGroupProps,
+  ComboboxOption,
+  ComboboxProps,
+  CommandItem,
+  CommandProps,
+  ContextMenuProps,
+  DirectionProps,
+  EmptyProps,
+  HoverCardProps,
+  InputGroupProps,
+  InputOtpProps,
+  ItemProps,
+  LabelProps,
+  PopoverProps,
+  ResizableProps,
+  ScrollAreaProps,
+  SonnerItem,
+  SonnerProps,
   ModalProps,
   NumericSpinnerProps,
   PostProps,
