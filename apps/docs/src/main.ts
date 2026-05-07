@@ -80,6 +80,17 @@ const menuItems = [
   { value: "delete", label: "Delete", danger: true },
 ];
 
+const commandItems = [
+  { value: "profile", label: "Open profile", description: "Go to account settings" },
+  { value: "transfer", label: "Start transfer", description: "Create a new payment" },
+  { value: "support", label: "Contact support", description: "Get help with this service" },
+];
+
+const sonnerItems = [
+  { label: "Saved", description: "Your application draft is up to date.", tone: "success" },
+  { label: "Review required", description: "One attachment needs attention.", tone: "warning" },
+];
+
 const navItems: ItemList = [
   { label: "Home", href: "#/", current: true },
   { label: "Components", href: "#/components/button" },
@@ -328,6 +339,16 @@ const docs: Record<string, DocEntry> = {
     description: "Emphasizes a span of text with a colored highlight background.",
     preview: `<zm-highlight tone="primary">Highlighted phrase</zm-highlight>`,
   },
+  Kbd: {
+    description: "A compact keyboard-key token for command labels and shortcuts.",
+    preview: dedent(`
+      <div class="docs-row">
+        <zm-kbd>⌘</zm-kbd>
+        <zm-kbd>K</zm-kbd>
+        <zm-text tone="subtle">Open command menu</zm-text>
+      </div>
+    `),
+  },
   Border: {
     description: "A horizontal or vertical divider with optional tone and weight.",
     preview: dedent(`
@@ -346,6 +367,25 @@ const docs: Record<string, DocEntry> = {
         <zm-asset shape="circle" alt="A">A</zm-asset>
         <zm-asset shape="rounded" alt="Z">Z</zm-asset>
         <zm-asset shape="square" alt="M">M</zm-asset>
+      </div>
+    `),
+  },
+  AspectRatio: {
+    description:
+      "A fixed-ratio media frame that keeps images, videos, and embedded content from shifting layout.",
+    preview: dedent(`
+      <zm-aspect-ratio ratio="16 / 9">
+        <img src="/favicon.png" alt="Zaemoru mark" />
+      </zm-aspect-ratio>
+    `),
+  },
+  Avatar: {
+    description: "A circular identity image with a fallback label when no image is available.",
+    preview: dedent(`
+      <div class="docs-row">
+        <zm-avatar fallback="ZM"></zm-avatar>
+        <zm-avatar size="small" fallback="A"></zm-avatar>
+        <zm-avatar size="large" alt="Zaemoru" src="/favicon.png"></zm-avatar>
       </div>
     `),
   },
@@ -393,6 +433,37 @@ const docs: Record<string, DocEntry> = {
         <zm-text-field label="Disabled" disabled></zm-text-field>
       </div>
     `),
+  },
+  Label: {
+    description: "A standalone form label with required and helper text states.",
+    preview: dedent(`
+      <div class="docs-stack">
+        <zm-label for="docs-label-input" required description="Use the name on your ID">Applicant name</zm-label>
+        <zm-text-field id="docs-label-input" placeholder="Jane Zaemoru"></zm-text-field>
+      </div>
+    `),
+  },
+  InputGroup: {
+    description: "A grouped input frame with prefix and suffix slots for units or fixed context.",
+    preview: dedent(`
+      <zm-input-group label="Amount" description="Prefix and suffix stay aligned with the input.">
+        <span slot="prefix">$</span>
+        <input value="1200" aria-label="Amount" />
+        <span slot="suffix">USD</span>
+      </zm-input-group>
+    `),
+  },
+  InputOtp: {
+    description:
+      "A one-time-code input with fixed character cells, value aggregation, and optional masking.",
+    preview: `<zm-input-otp parts="6" value="123"></zm-input-otp>`,
+  },
+  Combobox: {
+    description: "A searchable single-select input for picking from a larger option set.",
+    preview: `<zm-combobox id="demo-combobox" label="Service" placeholder="Search services"></zm-combobox>`,
+    setup(root) {
+      applyOptions(root, "#demo-combobox", selectItems);
+    },
   },
   TextInput: {
     description: "A simpler text input variant matching public-service conventions.",
@@ -541,11 +612,39 @@ const docs: Record<string, DocEntry> = {
       applyOptions(root, "#demo-segments", segmentItems);
     },
   },
+  ButtonGroup: {
+    description: "A semantic action group for related buttons, either spaced or visually attached.",
+    preview: dedent(`
+      <zm-button-group label="View mode" attached>
+        <zm-button variant="secondary">List</zm-button>
+        <zm-button variant="secondary">Grid</zm-button>
+        <zm-button variant="secondary">Map</zm-button>
+      </zm-button-group>
+    `),
+  },
   Menu: {
     description: "A dropdown menu of action items, supporting destructive entries.",
     preview: `<zm-menu id="demo-menu"></zm-menu>`,
     setup(root) {
       applyItems(root, "#demo-menu", menuItems);
+    },
+  },
+  Command: {
+    description: "A searchable command list for fast navigation and action selection.",
+    preview: `<zm-command id="demo-command" placeholder="Search actions"></zm-command>`,
+    setup(root) {
+      applyItems(root, "#demo-command", commandItems);
+    },
+  },
+  ContextMenu: {
+    description: "A right-click action menu for contextual actions on a target element.",
+    preview: dedent(`
+      <zm-context-menu id="demo-context-menu">
+        <zm-item title="Right-click this row" description="The context menu opens at the pointer." interactive></zm-item>
+      </zm-context-menu>
+    `),
+    setup(root) {
+      applyItems(root, "#demo-context-menu", menuItems);
     },
   },
   MainMenu: {
@@ -668,6 +767,13 @@ const docs: Record<string, DocEntry> = {
     description: "A high-emphasis alert for service-level information that must not be missed.",
     preview: `<zm-critical-alert label="Important notice" description="Service hours may change during maintenance."></zm-critical-alert>`,
   },
+  Sonner: {
+    description: "A stacked toast region for multiple short status messages.",
+    preview: `<zm-sonner id="demo-sonner"></zm-sonner>`,
+    setup(root) {
+      applyItems(root, "#demo-sonner", sonnerItems);
+    },
+  },
   Modal: {
     description:
       "A focused overlay that interrupts the page. Focus is trapped, scroll locked, and Escape closes it.",
@@ -737,6 +843,31 @@ const docs: Record<string, DocEntry> = {
     description: "An inline trigger that reveals a focused explanation of a single field or term.",
     preview: `<zm-contextual-help label="Why is this required?" description="This helps verify eligibility."></zm-contextual-help>`,
   },
+  HoverCard: {
+    description: "A richer hover/focus preview for people, links, or compact entities.",
+    preview: dedent(`
+      <zm-hover-card>
+        <zm-button slot="trigger" variant="secondary">Hover profile</zm-button>
+        <div class="docs-stack">
+          <zm-avatar fallback="ZM"></zm-avatar>
+          <zm-heading level="3" size="lg">Zaemoru</zm-heading>
+          <zm-paragraph tone="subtle">Framework-agnostic UI components.</zm-paragraph>
+        </div>
+      </zm-hover-card>
+    `),
+  },
+  Popover: {
+    description: "A click-triggered floating panel for compact forms and contextual actions.",
+    preview: dedent(`
+      <zm-popover>
+        <zm-button slot="trigger" variant="secondary">Open popover</zm-button>
+        <div class="docs-stack">
+          <zm-heading level="3" size="lg">Quick note</zm-heading>
+          <zm-text-field label="Memo" placeholder="Add context"></zm-text-field>
+        </div>
+      </zm-popover>
+    `),
+  },
   CoachMark: {
     description: "A spotlight pointer that calls out a new or non-obvious feature.",
     preview: `<zm-coach-mark label="Coach mark" description="A focused hint for a new feature."></zm-coach-mark>`,
@@ -756,6 +887,23 @@ const docs: Record<string, DocEntry> = {
         <zm-heading level="3" size="lg">Recent activity</zm-heading>
         <zm-paragraph tone="subtle">Latest updates from your account.</zm-paragraph>
       </zm-card>
+    `),
+  },
+  Empty: {
+    description: "A centered empty state with icon, title, description, and optional actions.",
+    preview: dedent(`
+      <zm-empty title="No applications yet" description="Start a new application when you're ready.">
+        <zm-button slot="actions">Create application</zm-button>
+      </zm-empty>
+    `),
+  },
+  Item: {
+    description: "A generic selectable item row for lists, menus, and command-like surfaces.",
+    preview: dedent(`
+      <div class="docs-stack">
+        <zm-item title="Passport renewal" description="Updated today" interactive selected></zm-item>
+        <zm-item title="Vehicle registration" description="Requires identity verification" interactive></zm-item>
+      </div>
     `),
   },
   BoardRow: {
@@ -823,6 +971,43 @@ const docs: Record<string, DocEntry> = {
     setup(root) {
       applyItems(root, "#demo-text-list", textListItems);
     },
+  },
+  ScrollArea: {
+    description: "A constrained scrolling viewport for long content without expanding the page.",
+    preview: dedent(`
+      <zm-scroll-area height="160px">
+        <div class="docs-stack">
+          <zm-list-row title="January" description="Statement ready"></zm-list-row>
+          <zm-list-row title="February" description="Statement ready"></zm-list-row>
+          <zm-list-row title="March" description="Statement ready"></zm-list-row>
+          <zm-list-row title="April" description="Statement ready"></zm-list-row>
+          <zm-list-row title="May" description="Statement ready"></zm-list-row>
+        </div>
+      </zm-scroll-area>
+    `),
+  },
+  Resizable: {
+    description: "A two-panel layout with a visible separator and configurable starting size.",
+    preview: dedent(`
+      <zm-resizable size="38%">
+        <zm-list-row slot="start" title="Navigation" description="Left panel"></zm-list-row>
+        <zm-card slot="end">
+          <zm-heading level="3" size="lg">Detail panel</zm-heading>
+          <zm-paragraph tone="subtle">The second panel fills the remaining space.</zm-paragraph>
+        </zm-card>
+      </zm-resizable>
+    `),
+  },
+  Direction: {
+    description: "A layout wrapper that applies left-to-right or right-to-left text direction.",
+    preview: dedent(`
+      <zm-direction direction="rtl">
+        <zm-card>
+          <zm-heading level="3" size="lg">RTL content</zm-heading>
+          <zm-paragraph tone="subtle">Direction is applied to everything inside.</zm-paragraph>
+        </zm-card>
+      </zm-direction>
+    `),
   },
   Disclosure: {
     description: "A single expand/collapse region with label, description, and content.",
