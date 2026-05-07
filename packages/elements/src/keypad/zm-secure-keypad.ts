@@ -9,17 +9,24 @@ export class ZmSecureKeypad extends ZmElement {
     css`
       :host {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        inline-size: var(--zm-keypad-width, 320px);
+        max-inline-size: 100%;
+        grid-template-columns: repeat(3, minmax(var(--zm-keypad-key-min-width, 72px), 1fr));
         gap: var(--zm-spacing-2);
         font-family: var(--zm-font-family-base);
       }
       button {
         all: unset;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        inline-size: 100%;
+        min-inline-size: var(--zm-keypad-key-min-width, 72px);
+        box-sizing: border-box;
         cursor: pointer;
         height: 52px;
         border-radius: var(--zm-radius-md);
         background: var(--zm-color-background-subtle);
-        text-align: center;
         font-size: var(--zm-font-size-xl);
         font-weight: var(--zm-font-weight-semibold);
       }

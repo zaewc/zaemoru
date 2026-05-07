@@ -9,17 +9,24 @@ export class ZmAlphabetKeypad extends ZmElement {
     css`
       :host {
         display: grid;
-        grid-template-columns: repeat(6, 1fr);
+        inline-size: var(--zm-keypad-width, 480px);
+        max-inline-size: 100%;
+        grid-template-columns: repeat(6, minmax(var(--zm-keypad-key-min-width, 52px), 1fr));
         gap: var(--zm-spacing-2);
         font-family: var(--zm-font-family-base);
       }
       button {
         all: unset;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        inline-size: 100%;
+        min-inline-size: var(--zm-keypad-key-min-width, 52px);
+        box-sizing: border-box;
         cursor: pointer;
         height: 44px;
         border-radius: var(--zm-radius-md);
         background: var(--zm-color-background-subtle);
-        text-align: center;
         font-weight: var(--zm-font-weight-semibold);
       }
     `,
