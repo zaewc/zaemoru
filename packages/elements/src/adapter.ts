@@ -24,6 +24,11 @@ export const zaemoruComponents = [
     events: { change: "zm-change" },
   },
   {
+    name: "AspectRatio",
+    tag: "zm-aspect-ratio",
+    attributes: { ...baseAttributes, ratio: "ratio" },
+  },
+  {
     name: "AlphabetKeypad",
     tag: "zm-alphabet-keypad",
     attributes: { ...baseAttributes, showSubmit: "show-submit" },
@@ -34,6 +39,11 @@ export const zaemoruComponents = [
     name: "Asset",
     tag: "zm-asset",
     attributes: { ...baseAttributes, src: "src", alt: "alt", shape: "shape" },
+  },
+  {
+    name: "Avatar",
+    tag: "zm-avatar",
+    attributes: { ...baseAttributes, src: "src", alt: "alt", fallback: "fallback", size: "size" },
   },
   {
     name: "Badge",
@@ -108,6 +118,17 @@ export const zaemoruComponents = [
     booleanAttributes: ["disabled", "fullWidth", "loading"],
   },
   {
+    name: "ButtonGroup",
+    tag: "zm-button-group",
+    attributes: {
+      ...baseAttributes,
+      orientation: "orientation",
+      attached: "attached",
+      label: "label",
+    },
+    booleanAttributes: ["attached"],
+  },
+  {
     name: "Card",
     tag: "zm-card",
     attributes: { ...baseAttributes, elevation: "elevation", padding: "padding" },
@@ -127,6 +148,27 @@ export const zaemoruComponents = [
     events: { change: "zm-change" },
   },
   {
+    name: "Combobox",
+    tag: "zm-combobox",
+    attributes: { ...baseAttributes, label: "label", placeholder: "placeholder", value: "value" },
+    properties: ["options"],
+    events: { change: "zm-change" },
+  },
+  {
+    name: "Command",
+    tag: "zm-command",
+    attributes: { ...baseAttributes, placeholder: "placeholder" },
+    properties: ["items"],
+    events: { select: "zm-select" },
+  },
+  {
+    name: "ContextMenu",
+    tag: "zm-context-menu",
+    attributes: baseAttributes,
+    properties: ["items"],
+    events: { select: "zm-select" },
+  },
+  {
     name: "Dialog",
     tag: "zm-dialog",
     attributes: {
@@ -139,6 +181,16 @@ export const zaemoruComponents = [
     },
     booleanAttributes: ["open"],
     events: { close: "zm-close", cancel: "zm-cancel", confirm: "zm-confirm" },
+  },
+  {
+    name: "Direction",
+    tag: "zm-direction",
+    attributes: { ...baseAttributes, direction: "direction" },
+  },
+  {
+    name: "Empty",
+    tag: "zm-empty",
+    attributes: { ...baseAttributes, title: "title", description: "description" },
   },
   {
     name: "GridList",
@@ -156,6 +208,12 @@ export const zaemoruComponents = [
     attributes: { ...baseAttributes, tone: "tone" },
   },
   {
+    name: "HoverCard",
+    tag: "zm-hover-card",
+    attributes: { ...baseAttributes, placement: "placement", open: "open" },
+    booleanAttributes: ["open"],
+  },
+  {
     name: "IconButton",
     tag: "zm-icon-button",
     attributes: {
@@ -166,6 +224,50 @@ export const zaemoruComponents = [
       ariaLabel: "aria-label",
     },
     booleanAttributes: ["disabled"],
+  },
+  {
+    name: "InputGroup",
+    tag: "zm-input-group",
+    attributes: { ...baseAttributes, label: "label", description: "description" },
+  },
+  {
+    name: "InputOtp",
+    tag: "zm-input-otp",
+    attributes: { ...baseAttributes, parts: "parts", value: "value", masked: "masked" },
+    booleanAttributes: ["masked"],
+    events: { change: "zm-change" },
+  },
+  {
+    name: "Item",
+    tag: "zm-item",
+    attributes: {
+      ...baseAttributes,
+      title: "title",
+      description: "description",
+      value: "value",
+      selected: "selected",
+      disabled: "disabled",
+      interactive: "interactive",
+    },
+    booleanAttributes: ["selected", "disabled", "interactive"],
+    events: { action: "zm-action" },
+  },
+  {
+    name: "Kbd",
+    tag: "zm-kbd",
+    attributes: baseAttributes,
+  },
+  {
+    name: "Label",
+    tag: "zm-label",
+    attributes: {
+      ...baseAttributes,
+      htmlFor: "for",
+      for: "for",
+      description: "description",
+      required: "required",
+    },
+    booleanAttributes: ["required"],
   },
   {
     name: "ListFooter",
@@ -253,6 +355,12 @@ export const zaemoruComponents = [
     },
   },
   {
+    name: "Popover",
+    tag: "zm-popover",
+    attributes: { ...baseAttributes, open: "open", placement: "placement" },
+    booleanAttributes: ["open"],
+  },
+  {
     name: "ProgressBar",
     tag: "zm-progress-bar",
     attributes: {
@@ -285,6 +393,11 @@ export const zaemoruComponents = [
     events: { change: "zm-change" },
   },
   {
+    name: "Resizable",
+    tag: "zm-resizable",
+    attributes: { ...baseAttributes, direction: "direction", size: "size" },
+  },
+  {
     name: "Result",
     tag: "zm-result",
     attributes: { ...baseAttributes, tone: "tone", title: "title", description: "description" },
@@ -301,6 +414,11 @@ export const zaemoruComponents = [
     },
     booleanAttributes: ["disabled"],
     events: { input: "zm-input", change: "zm-change", clear: "zm-clear" },
+  },
+  {
+    name: "ScrollArea",
+    tag: "zm-scroll-area",
+    attributes: { ...baseAttributes, height: "height" },
   },
   {
     name: "Section",
@@ -326,6 +444,12 @@ export const zaemoruComponents = [
     name: "Skeleton",
     tag: "zm-skeleton",
     attributes: { ...baseAttributes, shape: "shape", width: "width", height: "height" },
+  },
+  {
+    name: "Sonner",
+    tag: "zm-sonner",
+    attributes: { ...baseAttributes, position: "position" },
+    properties: ["items"],
   },
   {
     name: "Slider",
