@@ -1063,7 +1063,7 @@ function renderIntro() {
         <div class="eyebrow">Framework-agnostic UI</div>
         <h1 class="intro-title">Design once, feel native everywhere.</h1>
         <p class="intro-lead">
-          Zaemoru places behavior, accessibility, and visual polish at the Web Component core. Thin adapters make that same interface feel natural across every modern framework.
+          Zaemoru places behavior, accessibility, and visual polish at the Web Component core. Thin adapters make that same interface feel natural across 12 frameworks.
         </p>
         <div class="stack-marquee" aria-label="Supported technology stacks">
           <div class="stack-track">
