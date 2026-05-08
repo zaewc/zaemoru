@@ -1234,11 +1234,11 @@ function renderIntro() {
   contentEl.innerHTML = `
     <div class="intro-page">
       <section class="intro-hero" id="intro">
-        <div class="eyebrow">Framework-agnostic UI</div>
-        <h1 class="intro-title">Design once, feel native everywhere.</h1>
-        <p class="intro-lead">
+        <zm-badge class="intro-eyebrow" size="large" variant="weak" color="elephant">Framework-agnostic UI</zm-badge>
+        <zm-heading class="intro-title" level="1" size="4xl">Design once, feel native everywhere.</zm-heading>
+        <zm-paragraph class="intro-lead" size="lg" tone="subtle">
           Zaemoru places behavior, accessibility, and visual polish at the Web Component core. Thin adapters make that same interface feel natural across 12 frameworks.
-        </p>
+        </zm-paragraph>
         <div class="stack-marquee" aria-label="Supported technology stacks">
           <div class="stack-track">
             ${stackIcons}

@@ -244,32 +244,18 @@ a {
   padding: 0 0 8px;
 }
 
-.eyebrow {
+.intro-eyebrow {
   width: fit-content;
-  padding: 6px 14px;
-  border-radius: 999px;
-  background: var(--docs-subtle);
-  color: var(--docs-muted-fg);
-  font-size: 13px;
-  font-weight: 700;
-  line-height: 1.25;
 }
 
 .intro-title {
   margin: 28px 0 20px;
-  color: var(--docs-fg);
-  font-size: clamp(48px, 7vw, 82px);
-  font-weight: 800;
-  letter-spacing: 0;
-  line-height: 1.02;
 }
 
 .intro-lead {
+  display: block;
   max-width: 760px;
   margin: 0;
-  color: var(--docs-muted-fg);
-  font-size: 19px;
-  line-height: 1.55;
 }
 
 .stack-marquee {
@@ -657,11 +643,6 @@ a {
 
   .intro-title {
     margin: 24px 0 16px;
-    font-size: clamp(38px, 12vw, 56px);
-  }
-
-  .intro-lead {
-    font-size: 17px;
   }
 
   .stack-marquee {
