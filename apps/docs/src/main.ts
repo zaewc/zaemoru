@@ -1165,6 +1165,7 @@ function renderApiReference(definition: ComponentDefinition): string {
 
 const root = document.querySelector<HTMLDivElement>("#app")!;
 root.innerHTML = `
+  <zm-skip-link href="#main">Skip to content</zm-skip-link>
   <header class="topnav">
     <a class="logo" href="#/">zaemoru</a>
     <nav class="topnav-links">
@@ -1179,7 +1180,7 @@ root.innerHTML = `
   </header>
   <div class="layout">
     <aside class="sidebar"></aside>
-    <main class="content"></main>
+    <main class="content" id="main"></main>
   </div>
 `;
 
