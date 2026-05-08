@@ -52,6 +52,11 @@ function escapeHtml(value: string): string {
   return value.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
 }
 
+function codeBlock(code: string, language?: string): string {
+  const langAttr = language ? ` language="${language}"` : "";
+  return `<zm-code-block${langAttr}>${escapeHtml(code)}</zm-code-block>`;
+}
+
 function dedent(value: string): string {
   const trimmed = value.replace(/^\n+/, "").replace(/\s+$/, "");
   const lines = trimmed.split("\n");
@@ -1205,22 +1210,6 @@ function setTopnavActive(key: "intro" | "components" | "installation") {
     .forEach((anchor) => anchor.classList.toggle("active", anchor.dataset.nav === key));
 }
 
-function wireCopyButtons(scope: HTMLElement) {
-  scope.querySelectorAll<HTMLButtonElement>(".copy-btn").forEach((button) => {
-    button.addEventListener("click", () => {
-      const codeElement = button.parentElement?.querySelector("code");
-      const text = codeElement?.textContent ?? "";
-      navigator.clipboard?.writeText(text).catch(() => {});
-      button.classList.add("copied");
-      button.textContent = "Copied";
-      window.setTimeout(() => {
-        button.classList.remove("copied");
-        button.textContent = "Copy";
-      }, 1500);
-    });
-  });
-}
-
 function wirePreviewTabs(scope: HTMLElement) {
   scope.querySelectorAll<HTMLElement>("[data-tabs]").forEach((tabsRoot) => {
     const tabs = tabsRoot.querySelectorAll<HTMLButtonElement>(".tab");
@@ -1326,10 +1315,7 @@ function renderInstallation() {
         .map(
           (block) => `
             <h2>${block.title}</h2>
-            <div class="code-block">
-              <button class="copy-btn">Copy</button>
-              <pre><code>${escapeHtml(block.lines.join("\n"))}</code></pre>
-            </div>
+            ${codeBlock(block.lines.join("\n"))}
           `,
         )
         .join("")}
@@ -1351,8 +1337,6 @@ function renderInstallation() {
       </div>
     </div>
   `;
-
-  wireCopyButtons(contentEl);
 }
 
 function getNeighbors(definition: ComponentDefinition) {
@@ -1388,25 +1372,16 @@ function renderComponentPage(definition: ComponentDefinition) {
         <div class="preview-stage">${previewMarkup}</div>
       </div>
       <div class="preview-panel hidden" data-panel="code">
-        <div class="code-block">
-          <button class="copy-btn" type="button">Copy</button>
-          <pre><code>${escapeHtml(codeText)}</code></pre>
-        </div>
+        ${codeBlock(codeText, "html")}
       </div>
 
       <h2>Usage</h2>
       <p>Import the elements package once at your app entry to register <code>${definition.tag}</code>.</p>
-      <div class="code-block">
-        <button class="copy-btn" type="button">Copy</button>
-        <pre><code>${escapeHtml(`import "@zaemoru/elements";`)}</code></pre>
-      </div>
+      ${codeBlock(`import "@zaemoru/elements";`, "ts")}
 
       <h3>React</h3>
       <p>The React adapter exports a typed <code>${definition.name}</code> wrapper with camelCase props and React-style event callbacks.</p>
-      <div class="code-block">
-        <button class="copy-btn" type="button">Copy</button>
-        <pre><code>${escapeHtml(reactImport)}</code></pre>
-      </div>
+      ${codeBlock(reactImport, "ts")}
 
       <h2>API Reference</h2>
       ${renderApiReference(definition)}
@@ -1427,7 +1402,6 @@ function renderComponentPage(definition: ComponentDefinition) {
   `;
 
   wirePreviewTabs(contentEl);
-  wireCopyButtons(contentEl);
   if (entry.setup) entry.setup(contentEl);
 }
 
