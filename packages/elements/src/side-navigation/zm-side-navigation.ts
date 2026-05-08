@@ -76,9 +76,7 @@ export class ZmSideNavigation extends ZmElement {
         ${this.items.map(
           (item) =>
             html`<li>
-              <a
-                href=${item.href ?? "#"}
-                aria-current=${item.current ? "page" : undefined}
+              <a href=${item.href ?? "#"} aria-current=${item.current ? "page" : undefined}
                 >${item.label}</a
               >
             </li>`,
