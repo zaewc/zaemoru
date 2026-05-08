@@ -1332,12 +1332,10 @@ function renderInstallation() {
 
       <div class="page-nav">
         <a href="#/" class="prev">
-          <span>Previous</span>
-          <strong>Introduction</strong>
+          <zm-board-row eyebrow="Previous" row-title="Introduction"></zm-board-row>
         </a>
         <a href="#/components/${slugify(firstDefinition.name)}" class="next">
-          <span>Next</span>
-          <strong>${humanize(firstDefinition.name)}</strong>
+          <zm-board-row eyebrow="Next" row-title="${humanize(firstDefinition.name)}"></zm-board-row>
         </a>
       </div>
     </div>
@@ -1396,12 +1394,12 @@ function renderComponentPage(definition: ComponentDefinition) {
       <div class="page-nav">
         ${
           previous
-            ? `<a href="#/components/${slugify(previous.name)}" class="prev"><span>Previous</span><strong>${humanize(previous.name)}</strong></a>`
+            ? `<a href="#/components/${slugify(previous.name)}" class="prev"><zm-board-row eyebrow="Previous" row-title="${humanize(previous.name)}"></zm-board-row></a>`
             : `<span></span>`
         }
         ${
           next
-            ? `<a href="#/components/${slugify(next.name)}" class="next"><span>Next</span><strong>${humanize(next.name)}</strong></a>`
+            ? `<a href="#/components/${slugify(next.name)}" class="next"><zm-board-row eyebrow="Next" row-title="${humanize(next.name)}"></zm-board-row></a>`
             : `<span></span>`
         }
       </div>
