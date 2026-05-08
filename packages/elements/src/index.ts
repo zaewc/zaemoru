@@ -121,8 +121,6 @@ export { ZmPopover } from "./popover/zm-popover.js";
 export { ZmResizable } from "./resizable/zm-resizable.js";
 export type { ZmResizableDirection } from "./resizable/zm-resizable.js";
 export { ZmScrollArea } from "./scroll-area/zm-scroll-area.js";
-export { ZmSonner } from "./sonner/zm-sonner.js";
-export type { ZmSonnerItem, ZmSonnerPosition } from "./sonner/zm-sonner.js";
 export { ZmSplitTextField } from "./split-text-field/zm-split-text-field.js";
 export { ZmNumberKeypad } from "./keypad/zm-number-keypad.js";
 export { ZmAlphabetKeypad } from "./keypad/zm-alphabet-keypad.js";

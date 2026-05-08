@@ -95,11 +95,6 @@ const commandItems = [
   { value: "support", label: "Contact support", description: "Get help with this service" },
 ];
 
-const sonnerItems = [
-  { label: "Saved", description: "Your application draft is up to date.", tone: "success" },
-  { label: "Review required", description: "One attachment needs attention.", tone: "warning" },
-];
-
 const navItems: ItemList = [
   { label: "Home", href: "#/", current: true },
   { label: "Components", href: "#/components/button" },
@@ -775,13 +770,6 @@ const docs: Record<string, DocEntry> = {
   CriticalAlert: {
     description: "A high-emphasis alert for service-level information that must not be missed.",
     preview: `<zm-critical-alert label="Important notice" description="Service hours may change during maintenance."></zm-critical-alert>`,
-  },
-  Sonner: {
-    description: "A stacked toast region for multiple short status messages.",
-    preview: `<zm-sonner id="demo-sonner"></zm-sonner>`,
-    setup(root) {
-      applyItems(root, "#demo-sonner", sonnerItems);
-    },
   },
   Modal: {
     description:

@@ -67,7 +67,6 @@ declare global {
       "zm-segmented-control": ZmIntrinsic;
       "zm-secure-keypad": ZmIntrinsic;
       "zm-skeleton": ZmIntrinsic;
-      "zm-sonner": ZmIntrinsic;
       "zm-slider": ZmIntrinsic;
       "zm-spinner": ZmIntrinsic;
       "zm-split-text-field": ZmIntrinsic;

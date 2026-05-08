@@ -461,12 +461,6 @@ export const zaemoruComponents = [
     attributes: { ...baseAttributes, shape: "shape", width: "width", height: "height" },
   },
   {
-    name: "Sonner",
-    tag: "zm-sonner",
-    attributes: { ...baseAttributes, position: "position" },
-    properties: ["items"],
-  },
-  {
     name: "Slider",
     tag: "zm-slider",
     attributes: {

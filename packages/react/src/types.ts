@@ -360,17 +360,6 @@ export interface ScrollAreaProps extends CommonProps {
   height?: string;
 }
 
-export interface SonnerItem {
-  label: string;
-  description?: string;
-  tone?: ToastTone;
-}
-
-export interface SonnerProps extends CommonProps {
-  position?: "top-right" | "bottom-right" | "bottom-center";
-  items?: SonnerItem[];
-}
-
 export interface ModalProps extends CommonProps {
   open?: boolean;
   title?: string;

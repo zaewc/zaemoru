@@ -67,7 +67,6 @@ export { Label } from "./Label.js";
 export { Popover } from "./Popover.js";
 export { Resizable } from "./Resizable.js";
 export { ScrollArea } from "./ScrollArea.js";
-export { Sonner } from "./Sonner.js";
 export { Modal } from "./Modal.js";
 export { NumericSpinner } from "./NumericSpinner.js";
 export { Post } from "./Post.js";
@@ -230,8 +229,6 @@ export type {
   PopoverProps,
   ResizableProps,
   ScrollAreaProps,
-  SonnerItem,
-  SonnerProps,
   ModalProps,
   NumericSpinnerProps,
   PostProps,
