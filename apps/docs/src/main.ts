@@ -1376,7 +1376,7 @@ function renderComponentPage(definition: ComponentDefinition) {
       <zm-heading level="1" size="3xl">${humanize(definition.name)}</zm-heading>
       <zm-paragraph class="lead" size="lg" tone="subtle">${entry.description}</zm-paragraph>
 
-      <zm-segmented-control id="preview-mode" value="preview" full-width></zm-segmented-control>
+      <zm-tab id="preview-mode" value="preview" variant="underline"></zm-tab>
       <div class="preview-panel" data-panel="preview">
         <div class="preview-stage">${previewMarkup}</div>
       </div>
@@ -1410,7 +1410,7 @@ function renderComponentPage(definition: ComponentDefinition) {
     </div>
   `;
 
-  applyOptions(contentEl, "#preview-mode", [
+  applyItems(contentEl, "#preview-mode", [
     { value: "preview", label: "Preview" },
     { value: "code", label: "Code" },
   ]);
