@@ -17,6 +17,8 @@ export type { ZmHeadingLevel, ZmHeadingSize } from "./heading/zm-heading.js";
 export { ZmCard } from "./card/zm-card.js";
 export type { ZmCardElevation, ZmCardPadding } from "./card/zm-card.js";
 
+export { ZmCodeBlock } from "./code-block/zm-code-block.js";
+
 export { ZmBadge } from "./badge/zm-badge.js";
 export type { ZmBadgeVariant, ZmBadgeSize, ZmBadgeColor } from "./badge/zm-badge.js";
 

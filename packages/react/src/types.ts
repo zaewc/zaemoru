@@ -48,6 +48,16 @@ export interface CardProps extends CommonProps {
   padding?: CardPadding;
 }
 
+export interface CodeBlockProps extends Omit<CommonProps, "children"> {
+  code?: string;
+  language?: string;
+  copyLabel?: string;
+  copiedLabel?: string;
+  maxHeight?: string;
+  noCopy?: boolean;
+  onCopy?: (e: CustomEvent<{ text: string }>) => void;
+}
+
 export type BadgeVariant = "fill" | "weak";
 export type BadgeSize = "xsmall" | "small" | "medium" | "large";
 export type BadgeColor = "blue" | "teal" | "green" | "red" | "yellow" | "elephant";

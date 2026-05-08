@@ -27,6 +27,7 @@ declare global {
       "zm-button": ZmIntrinsic;
       "zm-button-group": ZmIntrinsic;
       "zm-card": ZmIntrinsic;
+      "zm-code-block": ZmIntrinsic;
       "zm-checkbox": ZmIntrinsic;
       "zm-combobox": ZmIntrinsic;
       "zm-command": ZmIntrinsic;

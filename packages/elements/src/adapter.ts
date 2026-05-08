@@ -148,6 +148,21 @@ export const zaemoruComponents = [
     events: { change: "zm-change" },
   },
   {
+    name: "CodeBlock",
+    tag: "zm-code-block",
+    attributes: {
+      ...baseAttributes,
+      code: "code",
+      language: "language",
+      copyLabel: "copy-label",
+      copiedLabel: "copied-label",
+      maxHeight: "max-height",
+      noCopy: "no-copy",
+    },
+    booleanAttributes: ["noCopy"],
+    events: { copy: "zm-copy" },
+  },
+  {
     name: "Combobox",
     tag: "zm-combobox",
     attributes: { ...baseAttributes, label: "label", placeholder: "placeholder", value: "value" },

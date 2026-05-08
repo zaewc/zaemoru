@@ -15,6 +15,7 @@ export { Button } from "./Button.js";
 export { Text } from "./Text.js";
 export { Heading } from "./Heading.js";
 export { Card } from "./Card.js";
+export { CodeBlock } from "./CodeBlock.js";
 export { Badge } from "./Badge.js";
 export { TextField } from "./TextField.js";
 export { Checkbox } from "./Checkbox.js";
@@ -144,6 +145,7 @@ export type {
   CardProps,
   CardElevation,
   CardPadding,
+  CodeBlockProps,
   BadgeProps,
   BadgeVariant,
   BadgeSize,
