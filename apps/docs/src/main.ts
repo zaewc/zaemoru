@@ -1183,25 +1183,33 @@ const sidebarEl = root.querySelector<HTMLElement>(".sidebar")!;
 const contentEl = root.querySelector<HTMLElement>(".content")!;
 
 function renderSidebar(activeKey: string) {
-  const link = (href: string, label: string, key: string) =>
-    `<a href="${href}" class="${key === activeKey ? "active" : ""}">${label}</a>`;
-
   sidebarEl.innerHTML = `
     <div class="side-section">
       <h4>Getting Started</h4>
-      ${link("#/", "Introduction", "intro")}
-      ${link("#/installation", "Installation", "installation")}
+      <zm-side-navigation id="sidebar-getting-started" label="Getting Started"></zm-side-navigation>
     </div>
     <div class="side-section">
       <h4>Components</h4>
-      ${definitions
-        .map((definition) => {
-          const slug = slugify(definition.name);
-          return link(`#/components/${slug}`, humanize(definition.name), slug);
-        })
-        .join("")}
+      <zm-side-navigation id="sidebar-components" label="Components"></zm-side-navigation>
     </div>
   `;
+
+  applyItems(sidebarEl, "#sidebar-getting-started", [
+    { label: "Introduction", href: "#/", current: activeKey === "intro" },
+    { label: "Installation", href: "#/installation", current: activeKey === "installation" },
+  ]);
+  applyItems(
+    sidebarEl,
+    "#sidebar-components",
+    definitions.map((definition) => {
+      const slug = slugify(definition.name);
+      return {
+        label: humanize(definition.name),
+        href: `#/components/${slug}`,
+        current: slug === activeKey,
+      };
+    }),
+  );
 }
 
 function setTopnavActive(key: "intro" | "components" | "installation") {

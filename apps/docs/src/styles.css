@@ -148,38 +148,16 @@ a {
 
 .side-section {
   display: grid;
-  gap: 1px;
+  gap: 8px;
   margin-bottom: 24px;
 }
 
 .side-section h4 {
-  margin: 0 8px 8px;
+  margin: 0 8px 0;
   color: var(--docs-fg);
   font-size: 13px;
   font-weight: 600;
   letter-spacing: -0.01em;
-}
-
-.side-section a {
-  display: block;
-  padding: 6px 8px;
-  border-radius: var(--docs-radius-sm);
-  color: var(--docs-muted-fg);
-  font-size: 13.5px;
-  font-weight: 500;
-  line-height: 1.4;
-  text-decoration: none;
-}
-
-.side-section a:hover {
-  background: var(--docs-subtle);
-  color: var(--docs-fg);
-}
-
-.side-section a.active {
-  background: var(--docs-subtle);
-  color: var(--docs-fg);
-  font-weight: 600;
 }
 
 .content {
