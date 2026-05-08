@@ -1253,20 +1253,24 @@ function renderIntro() {
 
       <section class="intro-continuation" aria-label="Documentation overview">
         <a class="intro-link-card" href="#/installation">
-          <span>Start</span>
-          <strong>Install once</strong>
-          <p>Register tokens and elements at the app boundary.</p>
+          <zm-board-row
+            eyebrow="Start"
+            row-title="Install once"
+            description="Register tokens and elements at the app boundary."
+          ></zm-board-row>
         </a>
         <a class="intro-link-card" href="#/components/${slugify(firstDefinition.name)}">
-          <span>Explore</span>
-          <strong>${definitions.length} components</strong>
-          <p>Preview behavior, props, events, and framework usage.</p>
+          <zm-board-row
+            eyebrow="Explore"
+            row-title="${definitions.length} components"
+            description="Preview behavior, props, events, and framework usage."
+          ></zm-board-row>
         </a>
-        <div class="intro-link-card">
-          <span>Adapters</span>
-          <strong>One core, many frameworks</strong>
-          <p>React gets typed wrappers; every other stack uses the same custom elements.</p>
-        </div>
+        <zm-board-row
+          eyebrow="Adapters"
+          row-title="One core, many frameworks"
+          description="React gets typed wrappers; every other stack uses the same custom elements."
+        ></zm-board-row>
       </section>
 
     </div>

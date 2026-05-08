@@ -325,36 +325,22 @@ a {
 }
 
 .intro-link-card {
-  display: grid;
-  gap: 8px;
+  display: block;
   min-width: 0;
-  padding: 16px;
-  border: 1px solid var(--docs-border);
-  border-radius: var(--docs-radius);
-  background: var(--docs-bg);
+  border-radius: var(--zm-radius-lg);
   color: inherit;
   text-decoration: none;
+  transition: transform 120ms ease;
 }
 
-.intro-link-card:hover {
-  border-color: var(--docs-border-strong);
+.intro-link-card:hover zm-board-row {
+  transform: translateY(-1px);
+  box-shadow: var(--zm-shadow-sm);
 }
 
-.intro-link-card span {
-  color: var(--docs-muted);
-  font-size: 13px;
-  font-weight: 700;
-}
-
-.intro-link-card strong {
-  color: var(--docs-fg);
-  font-size: 16px;
-}
-
-.intro-link-card p {
-  margin: 0;
-  color: var(--docs-muted-fg);
-  line-height: 1.55;
+.intro-link-card:focus-visible {
+  outline: var(--zm-focus-ring, 2px solid #3182f6);
+  outline-offset: 2px;
 }
 
 @keyframes stack-marquee {
