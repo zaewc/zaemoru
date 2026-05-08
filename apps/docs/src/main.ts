@@ -52,6 +52,10 @@ function escapeHtml(value: string): string {
   return value.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
 }
 
+function escapeAttr(value: string): string {
+  return escapeHtml(value).replaceAll('"', "&quot;").replaceAll("'", "&#39;");
+}
+
 function codeBlock(code: string, language?: string): string {
   const langAttr = language ? ` language="${language}"` : "";
   return `<zm-code-block${langAttr}>${escapeHtml(code)}</zm-code-block>`;
@@ -1424,13 +1428,18 @@ function renderNotFound(slug: string) {
   contentEl.innerHTML = `
     <div class="page">
       <zm-breadcrumb id="page-breadcrumb" label="Breadcrumb"></zm-breadcrumb>
-      <zm-heading level="1" size="3xl">Component not found</zm-heading>
-      <zm-paragraph class="lead" size="lg" tone="subtle">No component matched the URL "${escapeHtml(slug)}". Pick one from the sidebar to continue.</zm-paragraph>
-      <div class="intro-cta">
-        <a href="#/" class="primary">Back to Introduction</a>
-      </div>
+      <zm-empty
+        title="Component not found"
+        description="${escapeAttr(`No component matched the URL "${slug}". Pick one from the sidebar to continue.`)}"
+      >
+        <zm-button slot="actions" id="not-found-back">Back to introduction</zm-button>
+      </zm-empty>
     </div>
   `;
+
+  contentEl.querySelector("#not-found-back")?.addEventListener("click", () => {
+    location.hash = "#/";
+  });
 
   applyItems(contentEl, "#page-breadcrumb", [
     { label: "Components", href: `#/components/${slugify(definitions[0]?.name ?? "")}` },
