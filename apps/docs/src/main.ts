@@ -1303,7 +1303,6 @@ function renderInstallation() {
 
   contentEl.innerHTML = `
     <div class="page">
-      <zm-breadcrumb id="page-breadcrumb" label="Breadcrumb"></zm-breadcrumb>
       <zm-heading level="1" size="3xl">Installation</zm-heading>
       <zm-paragraph class="lead" size="lg" tone="subtle">
         Zaemoru ships as Web Components plus tokens. Install the two core packages and import them once at the entry of your app.
@@ -1333,11 +1332,6 @@ function renderInstallation() {
       </div>
     </div>
   `;
-
-  applyItems(contentEl, "#page-breadcrumb", [
-    { label: "Docs", href: "#/" },
-    { label: "Installation", current: true },
-  ]);
 }
 
 function getNeighbors(definition: ComponentDefinition) {
@@ -1361,7 +1355,6 @@ function renderComponentPage(definition: ComponentDefinition) {
 
   contentEl.innerHTML = `
     <div class="page">
-      <zm-breadcrumb id="page-breadcrumb" label="Breadcrumb"></zm-breadcrumb>
       <zm-heading level="1" size="3xl">${humanize(definition.name)}</zm-heading>
       <zm-paragraph class="lead" size="lg" tone="subtle">${entry.description}</zm-paragraph>
 
@@ -1404,10 +1397,6 @@ function renderComponentPage(definition: ComponentDefinition) {
     { value: "code", label: "Code" },
   ]);
   wirePreviewMode(contentEl);
-  applyItems(contentEl, "#page-breadcrumb", [
-    { label: "Components", href: `#/components/${slugify(definitions[0]?.name ?? "")}` },
-    { label: humanize(definition.name), current: true },
-  ]);
   if (entry.setup) entry.setup(contentEl);
 }
 
@@ -1416,7 +1405,6 @@ function renderNotFound(slug: string) {
   renderSidebar("intro");
   contentEl.innerHTML = `
     <div class="page">
-      <zm-breadcrumb id="page-breadcrumb" label="Breadcrumb"></zm-breadcrumb>
       <zm-empty
         title="Component not found"
         description="${escapeAttr(`No component matched the URL "${slug}". Pick one from the sidebar to continue.`)}"
@@ -1429,11 +1417,6 @@ function renderNotFound(slug: string) {
   contentEl.querySelector("#not-found-back")?.addEventListener("click", () => {
     location.hash = "#/";
   });
-
-  applyItems(contentEl, "#page-breadcrumb", [
-    { label: "Components", href: `#/components/${slugify(definitions[0]?.name ?? "")}` },
-    { label: slug, current: true },
-  ]);
 }
 
 function route() {
