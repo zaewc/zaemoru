@@ -1186,18 +1186,18 @@ root.innerHTML = `
 const sidebarEl = root.querySelector<HTMLElement>(".sidebar")!;
 const contentEl = root.querySelector<HTMLElement>(".content")!;
 
-function renderSidebar(activeKey: string) {
-  sidebarEl.innerHTML = `
-    <div class="side-section">
-      <h4>Getting Started</h4>
-      <zm-side-navigation id="sidebar-getting-started" label="Getting Started"></zm-side-navigation>
-    </div>
-    <div class="side-section">
-      <h4>Components</h4>
-      <zm-side-navigation id="sidebar-components" label="Components"></zm-side-navigation>
-    </div>
-  `;
+sidebarEl.innerHTML = `
+  <div class="side-section">
+    <h4>Getting Started</h4>
+    <zm-side-navigation id="sidebar-getting-started" label="Getting Started"></zm-side-navigation>
+  </div>
+  <div class="side-section">
+    <h4>Components</h4>
+    <zm-side-navigation id="sidebar-components" label="Components"></zm-side-navigation>
+  </div>
+`;
 
+function renderSidebar(activeKey: string) {
   applyItems(sidebarEl, "#sidebar-getting-started", [
     { label: "Introduction", href: "#/", current: activeKey === "intro" },
     { label: "Installation", href: "#/installation", current: activeKey === "installation" },
