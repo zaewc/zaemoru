@@ -1218,21 +1218,14 @@ function setTopnavActive(key: "intro" | "components" | "installation") {
     .forEach((anchor) => anchor.classList.toggle("active", anchor.dataset.nav === key));
 }
 
-function wirePreviewTabs(scope: HTMLElement) {
-  scope.querySelectorAll<HTMLElement>("[data-tabs]").forEach((tabsRoot) => {
-    const tabs = tabsRoot.querySelectorAll<HTMLButtonElement>(".tab");
-    const panelContainer = tabsRoot.parentElement;
-    if (!panelContainer) return;
-    tabs.forEach((tab) => {
-      tab.addEventListener("click", () => {
-        const target = tab.dataset.tab;
-        if (!target) return;
-        tabs.forEach((other) => other.classList.toggle("active", other === tab));
-        panelContainer
-          .querySelectorAll<HTMLElement>(".preview-panel")
-          .forEach((panel) => panel.classList.toggle("hidden", panel.dataset.panel !== target));
-      });
-    });
+function wirePreviewMode(scope: HTMLElement) {
+  const control = scope.querySelector<HTMLElement>("#preview-mode");
+  if (!control) return;
+  control.addEventListener("zm-change", (event) => {
+    const value = (event as CustomEvent<{ value: string }>).detail.value;
+    scope
+      .querySelectorAll<HTMLElement>(".preview-panel")
+      .forEach((panel) => panel.classList.toggle("hidden", panel.dataset.panel !== value));
   });
 }
 
@@ -1381,10 +1374,7 @@ function renderComponentPage(definition: ComponentDefinition) {
       <h1>${humanize(definition.name)}</h1>
       <p class="lead">${entry.description}</p>
 
-      <div class="preview-tabs" data-tabs>
-        <button class="tab active" data-tab="preview" type="button">Preview</button>
-        <button class="tab" data-tab="code" type="button">Code</button>
-      </div>
+      <zm-segmented-control id="preview-mode" value="preview" full-width></zm-segmented-control>
       <div class="preview-panel" data-panel="preview">
         <div class="preview-stage">${previewMarkup}</div>
       </div>
@@ -1418,7 +1408,11 @@ function renderComponentPage(definition: ComponentDefinition) {
     </div>
   `;
 
-  wirePreviewTabs(contentEl);
+  applyOptions(contentEl, "#preview-mode", [
+    { value: "preview", label: "Preview" },
+    { value: "code", label: "Code" },
+  ]);
+  wirePreviewMode(contentEl);
   applyItems(contentEl, "#page-breadcrumb", [
     { label: "Components", href: `#/components/${slugify(definitions[0]?.name ?? "")}` },
     { label: humanize(definition.name), current: true },

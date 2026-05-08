@@ -338,32 +338,8 @@ a {
   line-height: 1.7;
 }
 
-.preview-tabs {
-  display: flex;
-  gap: 4px;
+#preview-mode {
   margin-top: 8px;
-  border-bottom: 1px solid var(--docs-border);
-}
-
-.preview-tabs .tab {
-  margin-bottom: -1px;
-  padding: 8px 16px;
-  border: none;
-  border-bottom: 2px solid transparent;
-  background: transparent;
-  color: var(--docs-muted);
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-}
-
-.preview-tabs .tab:hover {
-  color: var(--docs-fg);
-}
-
-.preview-tabs .tab.active {
-  border-bottom-color: var(--docs-fg);
-  color: var(--docs-fg);
 }
 
 .preview-panel.hidden {
@@ -377,8 +353,7 @@ a {
   min-height: 360px;
   padding: 40px;
   border: 1px solid var(--docs-border);
-  border-radius: 0 0 var(--docs-radius) var(--docs-radius);
-  border-top: 0;
+  border-radius: var(--docs-radius);
   background: var(--docs-bg);
 }
 
