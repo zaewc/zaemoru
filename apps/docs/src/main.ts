@@ -1311,24 +1311,24 @@ function renderInstallation() {
   contentEl.innerHTML = `
     <div class="page">
       <zm-breadcrumb id="page-breadcrumb" label="Breadcrumb"></zm-breadcrumb>
-      <h1>Installation</h1>
-      <p class="lead">
+      <zm-heading level="1" size="3xl">Installation</zm-heading>
+      <zm-paragraph class="lead" size="lg" tone="subtle">
         Zaemoru ships as Web Components plus tokens. Install the two core packages and import them once at the entry of your app.
-      </p>
+      </zm-paragraph>
 
       ${blocks
         .map(
           (block) => `
-            <h2>${block.title}</h2>
+            <zm-heading class="page-section" level="2" size="xl">${block.title}</zm-heading>
             ${codeBlock(block.lines.join("\n"))}
           `,
         )
         .join("")}
 
-      <h2>Frameworks</h2>
-      <p>
+      <zm-heading class="page-section" level="2" size="xl">Frameworks</zm-heading>
+      <zm-paragraph tone="subtle">
         React users install <code>@zaemoru/react</code> for typed wrappers. Vue, Svelte, Angular, Solid, Qwik, and every other framework consume the Web Components directly &mdash; no extra runtime.
-      </p>
+      </zm-paragraph>
 
       <div class="page-nav">
         <a href="#/" class="prev">
@@ -1371,8 +1371,8 @@ function renderComponentPage(definition: ComponentDefinition) {
   contentEl.innerHTML = `
     <div class="page">
       <zm-breadcrumb id="page-breadcrumb" label="Breadcrumb"></zm-breadcrumb>
-      <h1>${humanize(definition.name)}</h1>
-      <p class="lead">${entry.description}</p>
+      <zm-heading level="1" size="3xl">${humanize(definition.name)}</zm-heading>
+      <zm-paragraph class="lead" size="lg" tone="subtle">${entry.description}</zm-paragraph>
 
       <zm-segmented-control id="preview-mode" value="preview" full-width></zm-segmented-control>
       <div class="preview-panel" data-panel="preview">
@@ -1382,15 +1382,15 @@ function renderComponentPage(definition: ComponentDefinition) {
         ${codeBlock(codeText, "html")}
       </div>
 
-      <h2>Usage</h2>
-      <p>Import the elements package once at your app entry to register <code>${definition.tag}</code>.</p>
+      <zm-heading class="page-section" level="2" size="xl">Usage</zm-heading>
+      <zm-paragraph tone="subtle">Import the elements package once at your app entry to register <code>${definition.tag}</code>.</zm-paragraph>
       ${codeBlock(`import "@zaemoru/elements";`, "ts")}
 
-      <h3>React</h3>
-      <p>The React adapter exports a typed <code>${definition.name}</code> wrapper with camelCase props and React-style event callbacks.</p>
+      <zm-heading level="3" size="sm">React</zm-heading>
+      <zm-paragraph tone="subtle">The React adapter exports a typed <code>${definition.name}</code> wrapper with camelCase props and React-style event callbacks.</zm-paragraph>
       ${codeBlock(reactImport, "ts")}
 
-      <h2>API Reference</h2>
+      <zm-heading class="page-section" level="2" size="xl">API Reference</zm-heading>
       ${renderApiReference(definition)}
 
       <div class="page-nav">
@@ -1426,8 +1426,8 @@ function renderNotFound(slug: string) {
   contentEl.innerHTML = `
     <div class="page">
       <zm-breadcrumb id="page-breadcrumb" label="Breadcrumb"></zm-breadcrumb>
-      <h1>Component not found</h1>
-      <p class="lead">No component matched the URL "${escapeHtml(slug)}". Pick one from the sidebar to continue.</p>
+      <zm-heading level="1" size="3xl">Component not found</zm-heading>
+      <zm-paragraph class="lead" size="lg" tone="subtle">No component matched the URL "${escapeHtml(slug)}". Pick one from the sidebar to continue.</zm-paragraph>
       <div class="intro-cta">
         <a href="#/" class="primary">Back to Introduction</a>
       </div>
