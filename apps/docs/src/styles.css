@@ -194,15 +194,6 @@ a {
   gap: 16px;
 }
 
-.breadcrumb {
-  color: var(--docs-muted);
-  font-size: 13px;
-}
-
-.breadcrumb span {
-  color: var(--docs-fg);
-}
-
 .page h1 {
   margin: 0;
   color: var(--docs-fg);

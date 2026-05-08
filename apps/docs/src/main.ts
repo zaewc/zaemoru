@@ -1305,7 +1305,7 @@ function renderInstallation() {
 
   contentEl.innerHTML = `
     <div class="page">
-      <div class="breadcrumb">Docs / <span>Installation</span></div>
+      <zm-breadcrumb id="page-breadcrumb" label="Breadcrumb"></zm-breadcrumb>
       <h1>Installation</h1>
       <p class="lead">
         Zaemoru ships as Web Components plus tokens. Install the two core packages and import them once at the entry of your app.
@@ -1337,6 +1337,11 @@ function renderInstallation() {
       </div>
     </div>
   `;
+
+  applyItems(contentEl, "#page-breadcrumb", [
+    { label: "Docs", href: "#/" },
+    { label: "Installation", current: true },
+  ]);
 }
 
 function getNeighbors(definition: ComponentDefinition) {
@@ -1360,7 +1365,7 @@ function renderComponentPage(definition: ComponentDefinition) {
 
   contentEl.innerHTML = `
     <div class="page">
-      <div class="breadcrumb">Components / <span>${humanize(definition.name)}</span></div>
+      <zm-breadcrumb id="page-breadcrumb" label="Breadcrumb"></zm-breadcrumb>
       <h1>${humanize(definition.name)}</h1>
       <p class="lead">${entry.description}</p>
 
@@ -1402,6 +1407,10 @@ function renderComponentPage(definition: ComponentDefinition) {
   `;
 
   wirePreviewTabs(contentEl);
+  applyItems(contentEl, "#page-breadcrumb", [
+    { label: "Components", href: `#/components/${slugify(definitions[0]?.name ?? "")}` },
+    { label: humanize(definition.name), current: true },
+  ]);
   if (entry.setup) entry.setup(contentEl);
 }
 
@@ -1410,7 +1419,7 @@ function renderNotFound(slug: string) {
   renderSidebar("intro");
   contentEl.innerHTML = `
     <div class="page">
-      <div class="breadcrumb">Components / <span>${escapeHtml(slug)}</span></div>
+      <zm-breadcrumb id="page-breadcrumb" label="Breadcrumb"></zm-breadcrumb>
       <h1>Component not found</h1>
       <p class="lead">No component matched the URL "${escapeHtml(slug)}". Pick one from the sidebar to continue.</p>
       <div class="intro-cta">
@@ -1418,6 +1427,11 @@ function renderNotFound(slug: string) {
       </div>
     </div>
   `;
+
+  applyItems(contentEl, "#page-breadcrumb", [
+    { label: "Components", href: `#/components/${slugify(definitions[0]?.name ?? "")}` },
+    { label: slug, current: true },
+  ]);
 }
 
 function route() {
