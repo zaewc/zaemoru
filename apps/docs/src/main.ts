@@ -199,6 +199,287 @@ const stackIcons = techStacks
   )
   .join("");
 
+type FrameworkGuide = {
+  value: string;
+  label: string;
+  install: string;
+  note: string;
+  setup: string;
+  example: string;
+  language: string;
+  api?: string;
+};
+
+const frameworkGuides: FrameworkGuide[] = [
+  {
+    value: "web-components",
+    label: "HTML",
+    install: "pnpm add @zaemoru/elements @zaemoru/tokens",
+    note: "Use the core Web Components directly in plain HTML, vanilla JS, or any framework that renders custom elements.",
+    setup: dedent(`
+      import "@zaemoru/tokens/index.css";
+      import "@zaemoru/elements";
+    `),
+    example: dedent(`
+      <zm-button size="large">Continue</zm-button>
+      <zm-badge size="small" color="blue" variant="fill">New</zm-badge>
+      <zm-text-field label="Name" placeholder="Enter your name"></zm-text-field>
+    `),
+    language: "html",
+    api: "Every component is registered as a standard custom element with the zm-* prefix.",
+  },
+  {
+    value: "react",
+    label: "React",
+    install: "pnpm add @zaemoru/react @zaemoru/elements @zaemoru/tokens react react-dom",
+    note: "React gets typed wrappers with camelCase props and React-style callbacks while the visuals still come from the core elements.",
+    setup: dedent(`
+      import "@zaemoru/tokens/index.css";
+      import { Badge, Button, TextField } from "@zaemoru/react";
+    `),
+    example: dedent(`
+      export function App() {
+        return (
+          <form>
+            <Badge size="small" color="blue" variant="fill">
+              New
+            </Badge>
+            <TextField label="Name" placeholder="Enter your name" />
+            <Button size="large">Continue</Button>
+          </form>
+        );
+      }
+    `),
+    language: "tsx",
+    api: "Importing @zaemoru/react also registers the underlying zm-* custom elements.",
+  },
+  {
+    value: "vue",
+    label: "Vue",
+    install: "pnpm add @zaemoru/vue @zaemoru/elements @zaemoru/tokens vue",
+    note: "Vue consumes the same custom elements after the adapter registers them at your app boundary.",
+    setup: dedent(`
+      import "@zaemoru/tokens/index.css";
+      import "@zaemoru/vue";
+    `),
+    example: dedent(`
+      <template>
+        <zm-button size="large">Continue</zm-button>
+        <zm-badge size="small" color="green" variant="weak">Done</zm-badge>
+      </template>
+    `),
+    language: "vue",
+    api: `import { Button, Badge, zaemoruComponents, zaemoruComponentTags } from "@zaemoru/vue";`,
+  },
+  {
+    value: "angular",
+    label: "Angular",
+    install: "pnpm add @zaemoru/angular @zaemoru/elements @zaemoru/tokens @angular/core",
+    note: "Angular needs the adapter import plus CUSTOM_ELEMENTS_SCHEMA so Angular accepts zm-* tags in templates.",
+    setup: dedent(`
+      import "@zaemoru/tokens/index.css";
+      import "@zaemoru/angular";
+      import { CUSTOM_ELEMENTS_SCHEMA, Component } from "@angular/core";
+    `),
+    example: dedent(`
+      @Component({
+        selector: "app-root",
+        standalone: true,
+        schemas: [CUSTOM_ELEMENTS_SCHEMA],
+        template: \`
+          <zm-button size="large">Continue</zm-button>
+          <zm-badge size="small" color="teal" variant="fill">In progress</zm-badge>
+        \`,
+      })
+      export class AppComponent {}
+    `),
+    language: "ts",
+    api: `import { Button, Badge, zaemoruComponents } from "@zaemoru/angular";`,
+  },
+  {
+    value: "svelte",
+    label: "Svelte",
+    install: "pnpm add @zaemoru/svelte @zaemoru/elements @zaemoru/tokens svelte",
+    note: "Import the adapter once in the component or layout where your app starts rendering custom elements.",
+    setup: dedent(`
+      <script lang="ts">
+        import "@zaemoru/tokens/index.css";
+        import "@zaemoru/svelte";
+      </script>
+    `),
+    example: dedent(`
+      <zm-button size="large">Continue</zm-button>
+      <zm-badge size="small" color="red" variant="weak">Caution</zm-badge>
+    `),
+    language: "svelte",
+    api: `import { Button, Badge, zaemoruComponentTags } from "@zaemoru/svelte";`,
+  },
+  {
+    value: "solid",
+    label: "Solid",
+    install: "pnpm add @zaemoru/solid @zaemoru/elements @zaemoru/tokens solid-js",
+    note: "Solid renders the Web Components directly; the adapter registers the element definitions and exports tag helpers.",
+    setup: dedent(`
+      import "@zaemoru/tokens/index.css";
+      import "@zaemoru/solid";
+    `),
+    example: dedent(`
+      export function App() {
+        return (
+          <>
+            <zm-button size="large">Continue</zm-button>
+            <zm-badge size="small" color="yellow" variant="fill">
+              Notice
+            </zm-badge>
+          </>
+        );
+      }
+    `),
+    language: "tsx",
+    api: `import { Button, Badge, zaemoruComponents } from "@zaemoru/solid";`,
+  },
+  {
+    value: "qwik",
+    label: "Qwik",
+    install: "pnpm add @zaemoru/qwik @zaemoru/elements @zaemoru/tokens @builder.io/qwik",
+    note: "Qwik can use the custom elements in JSX once the adapter and token stylesheet are imported.",
+    setup: dedent(`
+      import "@zaemoru/tokens/index.css";
+      import "@zaemoru/qwik";
+      import { component$ } from "@builder.io/qwik";
+    `),
+    example: dedent(`
+      export default component$(() => (
+        <>
+          <zm-button size="large">Continue</zm-button>
+          <zm-badge size="small" color="elephant" variant="weak">
+            Info
+          </zm-badge>
+        </>
+      ));
+    `),
+    language: "tsx",
+    api: `import { Button, Badge, zaemoruComponentTags } from "@zaemoru/qwik";`,
+  },
+  {
+    value: "lit",
+    label: "Lit",
+    install: "pnpm add @zaemoru/lit @zaemoru/elements @zaemoru/tokens lit",
+    note: "The Lit adapter re-exports the elements package and adds a small helper for building attribute objects.",
+    setup: dedent(`
+      import "@zaemoru/tokens/index.css";
+      import { html } from "lit";
+      import "@zaemoru/lit";
+    `),
+    example: dedent(`
+      export const view = html\`
+        <zm-button size="large">Continue</zm-button>
+        <zm-badge size="small" color="blue" variant="fill">New</zm-badge>
+      \`;
+    `),
+    language: "ts",
+    api: `import { createZaemoruLitAttrs, Button, Badge } from "@zaemoru/lit";`,
+  },
+  {
+    value: "preact",
+    label: "Preact",
+    install: "pnpm add @zaemoru/preact @zaemoru/elements @zaemoru/tokens preact",
+    note: "Preact renders the registered custom elements directly with the same zm-* tags.",
+    setup: dedent(`
+      import "@zaemoru/tokens/index.css";
+      import "@zaemoru/preact";
+    `),
+    example: dedent(`
+      export function App() {
+        return (
+          <>
+            <zm-button size="large">Continue</zm-button>
+            <zm-badge size="small" color="green" variant="weak">
+              Done
+            </zm-badge>
+          </>
+        );
+      }
+    `),
+    language: "tsx",
+    api: `import { Button, Badge, zaemoruComponents } from "@zaemoru/preact";`,
+  },
+  {
+    value: "astro",
+    label: "Astro",
+    install: "pnpm add @zaemoru/astro @zaemoru/elements @zaemoru/tokens astro",
+    note: "Astro pages and islands can use the same custom elements after importing the adapter in frontmatter.",
+    setup: dedent(`
+      ---
+      import "@zaemoru/tokens/index.css";
+      import "@zaemoru/astro";
+      ---
+    `),
+    example: dedent(`
+      <zm-button size="large">Continue</zm-button>
+      <zm-badge size="small" color="blue" variant="fill">New</zm-badge>
+    `),
+    language: "astro",
+    api: `import { Button, Badge, zaemoruComponentTags } from "@zaemoru/astro";`,
+  },
+  {
+    value: "alpine",
+    label: "Alpine",
+    install: "pnpm add @zaemoru/alpine @zaemoru/elements @zaemoru/tokens alpinejs",
+    note: "Alpine can bind state and directives to zm-* elements after the adapter registers them.",
+    setup: dedent(`
+      <script type="module">
+        import "@zaemoru/tokens/index.css";
+        import "@zaemoru/alpine";
+      </script>
+    `),
+    example: dedent(`
+      <div x-data="{ label: 'Continue' }">
+        <zm-button size="large" x-text="label"></zm-button>
+        <zm-badge size="small" color="teal" variant="fill">In progress</zm-badge>
+      </div>
+    `),
+    language: "html",
+    api: `import { Button, Badge, zaemoruComponents } from "@zaemoru/alpine";`,
+  },
+  {
+    value: "htmx",
+    label: "HTMX",
+    install: "pnpm add @zaemoru/htmx @zaemoru/elements @zaemoru/tokens htmx.org",
+    note: "HTMX attributes can live on zm-* elements once the adapter and token stylesheet are loaded.",
+    setup: dedent(`
+      <script type="module">
+        import "@zaemoru/tokens/index.css";
+        import "@zaemoru/htmx";
+      </script>
+    `),
+    example: dedent(`
+      <zm-button hx-post="/submit" hx-target="#result" size="large">
+        Submit
+      </zm-button>
+      <div id="result"></div>
+    `),
+    language: "html",
+    api: `import { Button, Badge, zaemoruComponentTags } from "@zaemoru/htmx";`,
+  },
+  {
+    value: "ember",
+    label: "Ember",
+    install: "pnpm add @zaemoru/ember @zaemoru/elements @zaemoru/tokens ember-source",
+    note: "Import the adapter near your app entry, then use zm-* tags from Ember templates.",
+    setup: dedent(`
+      import "@zaemoru/tokens/index.css";
+      import "@zaemoru/ember";
+    `),
+    example: dedent(`
+      <zm-button size="large">Continue</zm-button>
+      <zm-badge size="small" color="red" variant="weak">Caution</zm-badge>
+    `),
+    language: "hbs",
+    api: `import { Button, Badge, zaemoruComponents } from "@zaemoru/ember";`,
+  },
+];
+
 function applyItems(root: HTMLElement, selector: string, items: unknown) {
   const element = root.querySelector(selector) as
     | (HTMLElement & { items?: unknown; options?: unknown; data?: unknown })
@@ -1222,6 +1503,54 @@ function wirePreviewMode(scope: HTMLElement) {
   });
 }
 
+function wireFrameworkTabs(scope: HTMLElement) {
+  const control = scope.querySelector<HTMLElement>("#framework-tabs");
+  if (!control) return;
+  control.addEventListener("zm-change", (event) => {
+    const value = (event as CustomEvent<{ value: string }>).detail.value;
+    scope
+      .querySelectorAll<HTMLElement>(".framework-panel")
+      .forEach((panel) => panel.classList.toggle("hidden", panel.dataset.framework !== value));
+  });
+}
+
+function renderFrameworkPanel(guide: FrameworkGuide) {
+  return `
+    <section class="framework-panel${guide.value === "web-components" ? "" : " hidden"}" data-framework="${guide.value}">
+      <div class="framework-panel-header">
+        <div>
+          <zm-heading level="3" size="lg">${guide.label}</zm-heading>
+          <zm-paragraph tone="subtle">${guide.note}</zm-paragraph>
+        </div>
+        <zm-badge variant="weak" color="blue">${guide.value === "web-components" ? "Core" : "Adapter"}</zm-badge>
+      </div>
+
+      <div class="framework-grid">
+        <section class="framework-section">
+          <span class="framework-step">Install</span>
+          ${codeBlock(guide.install, "bash")}
+        </section>
+        <section class="framework-section">
+          <span class="framework-step">App entry</span>
+          ${codeBlock(guide.setup, guide.language)}
+        </section>
+        <section class="framework-section framework-example">
+          <span class="framework-step">Example</span>
+          ${codeBlock(guide.example, guide.language)}
+        </section>
+        ${
+          guide.api
+            ? `<section class="framework-section">
+                <span class="framework-step">Adapter API</span>
+                <zm-paragraph tone="subtle">${escapeHtml(guide.api)}</zm-paragraph>
+              </section>`
+            : ""
+        }
+      </div>
+    </section>
+  `;
+}
+
 function renderIntro() {
   setTopnavActive("intro");
   renderSidebar("intro");
@@ -1282,45 +1611,50 @@ function renderInstallation() {
   setTopnavActive("installation");
   renderSidebar("installation");
 
-  const blocks: Array<{ title: string; lines: string[] }> = [
-    { title: "Install", lines: ["pnpm add @zaemoru/elements @zaemoru/tokens"] },
-    { title: "Add tokens", lines: [`import "@zaemoru/tokens/index.css";`] },
-    { title: "Register elements", lines: [`import "@zaemoru/elements";`] },
-    {
-      title: "Use anywhere",
-      lines: [`<zm-button>Continue</zm-button>`, `<zm-text-field label="Name"></zm-text-field>`],
-    },
-    {
-      title: "React",
-      lines: [
-        `import { Button, TextField } from "@zaemoru/react";`,
-        ``,
-        `<Button>Continue</Button>`,
-        `<TextField label="Name" />`,
-      ],
-    },
-  ];
-
   contentEl.innerHTML = `
     <div class="page">
       <zm-heading level="1" size="3xl">Installation</zm-heading>
       <zm-paragraph class="lead" size="lg" tone="subtle">
-        Zaemoru ships as Web Components plus tokens. Install the two core packages and import them once at the entry of your app.
+        Zaemoru ships as design tokens, framework-agnostic Web Components, and thin adapters for the tools you already use.
       </zm-paragraph>
 
-      ${blocks
-        .map(
-          (block) => `
-            <zm-heading class="page-section" level="2" size="xl">${block.title}</zm-heading>
-            ${codeBlock(block.lines.join("\n"))}
-          `,
-        )
-        .join("")}
+      <div class="install-flow">
+        <div>
+          <zm-heading level="2" size="xl">Install the core</zm-heading>
+          <zm-paragraph tone="subtle">
+            Every stack starts with tokens and elements. Add a framework adapter when you want stack-specific helpers or React wrappers.
+          </zm-paragraph>
+        </div>
+        ${codeBlock("pnpm add @zaemoru/elements @zaemoru/tokens", "bash")}
+        ${codeBlock(dedent(`
+          import "@zaemoru/tokens/index.css";
+          import "@zaemoru/elements";
+        `), "ts")}
+      </div>
 
       <zm-heading class="page-section" level="2" size="xl">Frameworks</zm-heading>
       <zm-paragraph tone="subtle">
-        React users install <code>@zaemoru/react</code> for typed wrappers. Vue, Svelte, Angular, Solid, Qwik, and every other framework consume the Web Components directly &mdash; no extra runtime.
+        Pick a tab to see the package, app-entry import, and smallest useful example for each framework without losing your place.
       </zm-paragraph>
+      <div class="framework-tabs-wrap">
+        <zm-tab id="framework-tabs" value="web-components" variant="filled"></zm-tab>
+      </div>
+      <div class="framework-panels">
+        ${frameworkGuides.map(renderFrameworkPanel).join("")}
+      </div>
+
+      <zm-heading class="page-section" level="2" size="xl">Shared adapter exports</zm-heading>
+      <zm-paragraph tone="subtle">
+        React exports typed components. The other adapters register <code>zm-*</code> elements and re-export component metadata and tag constants.
+      </zm-paragraph>
+      ${codeBlock(dedent(`
+        import { Button, Badge, zaemoruComponents, zaemoruComponentTags } from "@zaemoru/vue";
+
+        console.log(Button); // "zm-button"
+        console.log(Badge); // "zm-badge"
+        console.log(zaemoruComponentTags.Button); // "zm-button"
+        console.log(zaemoruComponents.length); // ${definitions.length}
+      `), "ts")}
 
       <div class="page-nav">
         <a href="#/" class="prev">
@@ -1332,6 +1666,13 @@ function renderInstallation() {
       </div>
     </div>
   `;
+
+  applyItems(
+    contentEl,
+    "#framework-tabs",
+    frameworkGuides.map((guide) => ({ value: guide.value, label: guide.label })),
+  );
+  wireFrameworkTabs(contentEl);
 }
 
 function getNeighbors(definition: ComponentDefinition) {

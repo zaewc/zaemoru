@@ -313,6 +313,77 @@ a {
   line-height: 1.7;
 }
 
+.install-flow {
+  display: grid;
+  gap: 12px;
+  margin: 8px 0 12px;
+}
+
+.install-flow zm-heading {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.framework-tabs-wrap {
+  overflow-x: auto;
+  margin: 4px 0 12px;
+  padding-bottom: 4px;
+}
+
+.framework-tabs-wrap zm-tab {
+  min-width: max-content;
+}
+
+.framework-panels {
+  min-width: 0;
+}
+
+.framework-panel {
+  display: grid;
+  gap: 16px;
+}
+
+.framework-panel.hidden {
+  display: none;
+}
+
+.framework-panel-header {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 18px 0 2px;
+}
+
+.framework-panel-header zm-heading {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.framework-panel-header zm-badge {
+  flex: 0 0 auto;
+  margin-top: 2px;
+}
+
+.framework-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
+}
+
+.framework-section {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+
+.framework-step {
+  color: var(--docs-muted);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
 #preview-mode {
   margin-top: 8px;
   margin-bottom: 16px;
