@@ -1,5 +1,6 @@
 import "@zaemoru/tokens/index.css";
 import "@zaemoru/elements";
+import { colorCssVars, colorGroups, colors } from "@zaemoru/tokens/colors";
 import { zaemoruComponents } from "@zaemoru/elements";
 import "./styles.css";
 import * as si from "simple-icons";
@@ -1439,6 +1440,7 @@ root.innerHTML = `
     <a class="logo" href="#/">zaemoru</a>
     <nav class="topnav-links">
       <a href="#/" data-nav="intro">Docs</a>
+      <a href="#/foundation/colors" data-nav="foundation">Foundation</a>
       <a href="#/components/${slugify(firstDefinition.name)}" data-nav="components">Components</a>
       <a href="#/installation" data-nav="installation">Installation</a>
     </nav>
@@ -1462,6 +1464,10 @@ sidebarEl.innerHTML = `
     <zm-side-navigation id="sidebar-getting-started" label="Getting Started"></zm-side-navigation>
   </div>
   <div class="side-section">
+    <h4>Foundation</h4>
+    <zm-side-navigation id="sidebar-foundation" label="Foundation"></zm-side-navigation>
+  </div>
+  <div class="side-section">
     <h4>Components</h4>
     <zm-side-navigation id="sidebar-components" label="Components"></zm-side-navigation>
   </div>
@@ -1471,6 +1477,9 @@ function renderSidebar(activeKey: string) {
   applyItems(sidebarEl, "#sidebar-getting-started", [
     { label: "Introduction", href: "#/", current: activeKey === "intro" },
     { label: "Installation", href: "#/installation", current: activeKey === "installation" },
+  ]);
+  applyItems(sidebarEl, "#sidebar-foundation", [
+    { label: "Colors", href: "#/foundation/colors", current: activeKey === "colors" },
   ]);
   applyItems(
     sidebarEl,
@@ -1486,7 +1495,7 @@ function renderSidebar(activeKey: string) {
   );
 }
 
-function setTopnavActive(key: "intro" | "components" | "installation") {
+function setTopnavActive(key: "intro" | "foundation" | "components" | "installation") {
   root
     .querySelectorAll<HTMLAnchorElement>(".topnav-links a")
     .forEach((anchor) => anchor.classList.toggle("active", anchor.dataset.nav === key));
@@ -1548,6 +1557,156 @@ function renderFrameworkPanel(guide: FrameworkGuide) {
         }
       </div>
     </section>
+  `;
+}
+
+const semanticColorNames = [
+  "primary",
+  "primaryHover",
+  "primaryPressed",
+  "primarySubtle",
+  "success",
+  "warning",
+  "danger",
+  "info",
+  "background",
+  "greyBackground",
+  "layeredBackground",
+  "floatedBackground",
+  "surface",
+  "surfaceRaised",
+  "text",
+  "textStrong",
+  "textSubtle",
+  "textMuted",
+  "textDisabled",
+  "border",
+  "borderStrong",
+  "borderSubtle",
+  "borderFocus",
+  "borderDanger",
+] as const;
+
+function formatTokenName(name: string) {
+  return name.replace(/([a-z])(\d)/g, "$1 $2").replace(/([a-z])([A-Z])/g, "$1 $2");
+}
+
+function cssVarName(name: string) {
+  return `--zm-color-${name
+    .replace(/([a-z])(\d)/g, "$1-$2")
+    .replace(/[A-Z]/g, (letter) => `-${letter.toLowerCase()}`)}`;
+}
+
+function renderColorGroup(name: string, entries: Record<string, string>) {
+  return `
+    <section class="color-group">
+      <div class="color-group-header">
+        <zm-heading level="3" size="lg">${formatTokenName(name)}</zm-heading>
+        <span>${Object.keys(entries).length} colors</span>
+      </div>
+      <div class="color-grid">
+        ${Object.entries(entries)
+          .map(
+            ([token, value]) => `
+              <div class="color-swatch">
+                <span class="color-chip" style="--swatch: ${escapeAttr(value)}"></span>
+                <span class="color-token">colors.${token}</span>
+                <code>${value}</code>
+                <code>${cssVarName(token)}</code>
+              </div>
+            `,
+          )
+          .join("")}
+      </div>
+    </section>
+  `;
+}
+
+function renderSemanticColorRows() {
+  return semanticColorNames
+    .map((name) => {
+      const value = colors[name];
+      return `
+        <tr>
+          <td><span class="semantic-chip" style="--swatch: ${escapeAttr(value)}"></span></td>
+          <td><code>colors.${name}</code></td>
+          <td><code>${colorCssVars[name]}</code></td>
+          <td><code>${value}</code></td>
+        </tr>
+      `;
+    })
+    .join("");
+}
+
+function renderColors() {
+  setTopnavActive("foundation");
+  renderSidebar("colors");
+
+  contentEl.innerHTML = `
+    <div class="page">
+      <zm-heading level="1" size="3xl">Colors</zm-heading>
+      <zm-paragraph class="lead" size="lg" tone="subtle">
+        Use Zaemoru colors as CSS variables in web UI, or import typed color objects when a framework needs plain hex values.
+      </zm-paragraph>
+
+      <div class="install-flow">
+        <div>
+          <zm-heading level="2" size="xl">Basic usage</zm-heading>
+          <zm-paragraph tone="subtle">
+            Import the token stylesheet once for components, then use <code>@zaemoru/tokens/colors</code> wherever JavaScript style objects need color values.
+          </zm-paragraph>
+        </div>
+        ${codeBlock(dedent(`
+          import "@zaemoru/tokens/index.css";
+          import { colors, colorCssVars } from "@zaemoru/tokens/colors";
+
+          element.style.backgroundColor = colors.blue500;
+          element.style.color = colorCssVars.text;
+        `), "ts")}
+        ${codeBlock(dedent(`
+          .panel {
+            background: var(--zm-color-surface);
+            color: var(--zm-color-text);
+            border: 1px solid var(--zm-color-border);
+          }
+        `), "css")}
+      </div>
+
+      <zm-heading class="page-section" level="2" size="xl">Semantic colors</zm-heading>
+      <zm-paragraph tone="subtle">
+        Prefer semantic aliases for product UI so components keep their meaning if the palette changes later.
+      </zm-paragraph>
+      <table class="api-table semantic-color-table">
+        <thead>
+          <tr>
+            <th>Preview</th>
+            <th>JS token</th>
+            <th>CSS variable</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody>${renderSemanticColorRows()}</tbody>
+      </table>
+
+      <zm-heading class="page-section" level="2" size="xl">Palette</zm-heading>
+      <zm-paragraph tone="subtle">
+        Palette tokens are stable primitives. Use them for charts, illustrations, and one-off product surfaces; use semantic aliases for component states.
+      </zm-paragraph>
+      <div class="color-groups">
+        ${Object.entries(colorGroups)
+          .map(([name, group]) => renderColorGroup(name, group))
+          .join("")}
+      </div>
+
+      <div class="page-nav">
+        <a href="#/installation" class="prev">
+          <zm-board-row eyebrow="Previous" row-title="Installation"></zm-board-row>
+        </a>
+        <a href="#/components/${slugify(firstDefinition.name)}" class="next">
+          <zm-board-row eyebrow="Next" row-title="${humanize(firstDefinition.name)}"></zm-board-row>
+        </a>
+      </div>
+    </div>
   `;
 }
 
@@ -1769,6 +1928,11 @@ function route() {
   }
   if (hash === "installation") {
     renderInstallation();
+    contentEl.scrollTop = 0;
+    return;
+  }
+  if (hash === "foundation/colors") {
+    renderColors();
     contentEl.scrollTop = 0;
     return;
   }

@@ -2,7 +2,10 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "types": ["vite/client"],
-    "noEmit": true
+    "noEmit": true,
+    "paths": {
+      "@zaemoru/tokens/colors": ["../../packages/tokens/src/colors.d.ts"]
+    }
   },
   "include": ["src", "vite.config.ts"]
 }

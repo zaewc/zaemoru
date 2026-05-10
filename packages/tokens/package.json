@@ -17,6 +17,11 @@
       "require": "./dist/index.css",
       "default": "./dist/index.css"
     },
+    "./colors": {
+      "types": "./dist/colors.d.ts",
+      "import": "./dist/colors.js",
+      "default": "./dist/colors.js"
+    },
     "./index.css": "./dist/index.css",
     "./src/index.css": "./src/index.css"
   },

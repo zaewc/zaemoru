@@ -13,6 +13,94 @@
   /* ------------------------------------------------------------------ */
   /* Color — brand                                                       */
   /* ------------------------------------------------------------------ */
+  --zm-color-grey-50: #f9fafb;
+  --zm-color-grey-100: #f2f4f6;
+  --zm-color-grey-200: #e5e8eb;
+  --zm-color-grey-300: #d1d6db;
+  --zm-color-grey-400: #b0b8c1;
+  --zm-color-grey-500: #8b95a1;
+  --zm-color-grey-600: #6b7684;
+  --zm-color-grey-700: #4e5968;
+  --zm-color-grey-800: #333d4b;
+  --zm-color-grey-900: #191f28;
+
+  --zm-color-blue-50: #e8f1fe;
+  --zm-color-blue-100: #cfe3ff;
+  --zm-color-blue-200: #9ec8ff;
+  --zm-color-blue-300: #6dacff;
+  --zm-color-blue-400: #4f97fa;
+  --zm-color-blue-500: #3182f6;
+  --zm-color-blue-600: #2272eb;
+  --zm-color-blue-700: #1b64da;
+  --zm-color-blue-800: #1957c2;
+  --zm-color-blue-900: #194aa6;
+
+  --zm-color-red-50: #fff1f2;
+  --zm-color-red-100: #ffe1e4;
+  --zm-color-red-200: #ffc4ca;
+  --zm-color-red-300: #fb8890;
+  --zm-color-red-400: #f66570;
+  --zm-color-red-500: #f04452;
+  --zm-color-red-600: #e42939;
+  --zm-color-red-700: #d22030;
+  --zm-color-red-800: #bc1b2a;
+  --zm-color-red-900: #a51926;
+
+  --zm-color-orange-50: #fff4e5;
+  --zm-color-orange-100: #ffe4bd;
+  --zm-color-orange-200: #ffd091;
+  --zm-color-orange-300: #ffbd64;
+  --zm-color-orange-400: #ffac3d;
+  --zm-color-orange-500: #ff9800;
+  --zm-color-orange-600: #f08a00;
+  --zm-color-orange-700: #df7800;
+  --zm-color-orange-800: #c96500;
+  --zm-color-orange-900: #ad5200;
+
+  --zm-color-yellow-50: #fff9e7;
+  --zm-color-yellow-100: #ffefbf;
+  --zm-color-yellow-200: #ffe69b;
+  --zm-color-yellow-300: #ffdd78;
+  --zm-color-yellow-400: #ffd158;
+  --zm-color-yellow-500: #ffc342;
+  --zm-color-yellow-600: #ffb331;
+  --zm-color-yellow-700: #faa131;
+  --zm-color-yellow-800: #ee8f11;
+  --zm-color-yellow-900: #dd7d02;
+
+  --zm-color-green-50: #ecfbf4;
+  --zm-color-green-100: #c8f5df;
+  --zm-color-green-200: #94eac2;
+  --zm-color-green-300: #5cdda2;
+  --zm-color-green-400: #2dcc85;
+  --zm-color-green-500: #00c471;
+  --zm-color-green-600: #00a967;
+  --zm-color-green-700: #008f5a;
+  --zm-color-green-800: #00764d;
+  --zm-color-green-900: #005f40;
+
+  --zm-color-teal-50: #edfafa;
+  --zm-color-teal-100: #c7eeee;
+  --zm-color-teal-200: #93dede;
+  --zm-color-teal-300: #62cdcd;
+  --zm-color-teal-400: #36baba;
+  --zm-color-teal-500: #18a5a5;
+  --zm-color-teal-600: #109595;
+  --zm-color-teal-700: #0c8585;
+  --zm-color-teal-800: #097575;
+  --zm-color-teal-900: #076565;
+
+  --zm-color-purple-50: #faf0ff;
+  --zm-color-purple-100: #efd3ff;
+  --zm-color-purple-200: #dda6f7;
+  --zm-color-purple-300: #c979ed;
+  --zm-color-purple-400: #b755df;
+  --zm-color-purple-500: #a234c7;
+  --zm-color-purple-600: #9128b4;
+  --zm-color-purple-700: #8222a2;
+  --zm-color-purple-800: #73228e;
+  --zm-color-purple-900: #65237b;
+
   --zm-color-primary: #3182f6;
   --zm-color-primary-hover: #1b64da;
   --zm-color-primary-pressed: #1957c2;
@@ -32,6 +120,9 @@
   /* Color — surface / background                                        */
   /* ------------------------------------------------------------------ */
   --zm-color-background: #ffffff;
+  --zm-color-grey-background: #f2f4f6;
+  --zm-color-layered-background: #ffffff;
+  --zm-color-floated-background: #ffffff;
   --zm-color-background-subtle: #f2f4f6;
   --zm-color-background-muted: #e5e8eb;
   --zm-color-surface: #ffffff;

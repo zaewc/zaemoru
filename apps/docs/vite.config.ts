@@ -5,6 +5,7 @@ export default defineConfig({
   resolve: {
     alias: {
       "@zaemoru/elements": resolve(__dirname, "../../packages/elements/src/index.ts"),
+      "@zaemoru/tokens/colors": resolve(__dirname, "../../packages/tokens/src/colors.js"),
       "@zaemoru/tokens/index.css": resolve(__dirname, "../../packages/tokens/src/index.css"),
     },
   },
