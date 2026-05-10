@@ -1,6 +1,6 @@
 {
   "name": "@zaemoru/angular",
-  "version": "0.1.0",
+  "version": "1.0.1",
   "description": "Angular adapter for Zaemoru Web Components.",
   "license": "MIT",
   "type": "module",

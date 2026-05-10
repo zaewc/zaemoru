@@ -1,6 +1,6 @@
 {
   "name": "@zaemoru/lit",
-  "version": "0.1.0",
+  "version": "1.0.1",
   "description": "Lit adapter for Zaemoru Web Components.",
   "license": "MIT",
   "type": "module",

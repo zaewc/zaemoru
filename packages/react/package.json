@@ -1,6 +1,6 @@
 {
   "name": "@zaemoru/react",
-  "version": "0.1.0",
+  "version": "1.0.1",
   "description": "React adapter for @zaemoru/elements (Lit Web Components).",
   "license": "MIT",
   "type": "module",

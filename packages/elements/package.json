@@ -1,6 +1,6 @@
 {
   "name": "@zaemoru/elements",
-  "version": "0.1.0",
+  "version": "1.0.1",
   "description": "Framework-agnostic Web Components (zm-*) built with Lit. Consumes @zaemoru/tokens.",
   "license": "MIT",
   "type": "module",
